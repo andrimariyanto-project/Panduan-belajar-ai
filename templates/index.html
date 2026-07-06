@@ -1,0 +1,203 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="hero">
+  <div class="container">
+    <div class="quote-row">
+      <span class="quote-pill"><b>Prompt itu brief</b>, bukan mantra ajaib.</span>
+      <span class="quote-pill"><b>Workflow &gt; coba-coba.</b> Biar hasilnya bisa diulang.</span>
+      <span class="quote-pill"><b>Agent pakai tools</b> dan jalan beberapa langkah.</span>
+      <span class="quote-pill"><b>Skill AI butuh bukti</b>, bukan cuma jargon.</span>
+    </div>
+
+    <span class="eyebrow">andremedia.ai</span>
+    <h1>Belajar AI dari nol, sampai bisa dipakai di pekerjaan teknis <span class="hl">sehari-hari</span>.</h1>
+    <p class="lead">Untuk engineer, programmer, data analyst, database expert, dan network integrator. Mulai dari konsep, prompting, tools, workflow, automation, RAG, sampai AI agent — fokus ke praktik, bukan cuma teori.</p>
+
+    <div class="hero-actions">
+      <a href="{{ url_for('roadmap') }}" class="btn btn-primary">Mulai dari Roadmap</a>
+      <a href="{{ url_for('courses') }}" class="btn btn-outline">Lihat Courses</a>
+      <a href="{{ url_for('skillcheck') }}" class="btn btn-outline">Cek Level AI</a>
+    </div>
+
+    <div class="hero-stats">
+      <div><span class="num">10</span><span class="lbl">modul roadmap</span></div>
+      <div><span class="num">40+</span><span class="lbl">prompt siap pakai</span></div>
+      <div><span class="num">25+</span><span class="lbl">tools terkurasi</span></div>
+      <div><span class="num">12+</span><span class="lbl">ide project</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-num">/01</span>
+    <div class="section-head">
+      <h2>Paham konsepnya. Praktik langsung. Bangun sistem sendiri.</h2>
+      <p>AI bukan cuma soal nanya ke chatbot. Yang benar-benar terpakai adalah cara berpikirnya: input-nya apa, output yang mau dibuat apa, dan bagian mana yang tetap perlu dicek manusia.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-item">
+        <span class="pn">01</span>
+        <h3>Paham</h3>
+        <p>Kenalan sama konsepnya secukupnya — tidak perlu terlalu teknis di awal.</p>
+      </div>
+      <div class="process-item">
+        <span class="pn">02</span>
+        <h3>Terapkan</h3>
+        <p>Coba langsung ke pekerjaan yang memang kamu kerjakan sehari-hari.</p>
+      </div>
+      <div class="process-item">
+        <span class="pn">03</span>
+        <h3>Rangkai</h3>
+        <p>Gabungkan prompt, tools, dan review jadi satu workflow yang bisa diulang.</p>
+      </div>
+      <div class="process-item">
+        <span class="pn">04</span>
+        <h3>Buktikan</h3>
+        <p>Susun jadi project nyata yang bisa dibuka, dites, dan ditunjukkan ke orang lain.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-num">/02</span>
+    <div class="section-head">
+      <h2>Ada urutannya. Tidak perlu buru-buru.</h2>
+      <p>Kalau baru mulai, tidak perlu langsung loncat ke AI agent. Mulai dari posisi kamu sekarang, selesaikan satu node, baru lanjut ke berikutnya.</p>
+    </div>
+    <ul class="roadmap-compact">
+      <li><span class="rn">00</span><span class="rt">Fondasi AI — konsep, batas, dan cara memeriksa jawaban</span><span class="rd">1-2 minggu</span></li>
+      <li><span class="rn">01</span><span class="rt">AI sesuai peran kerja — programmer, data, database, network</span><span class="rd">3-4 minggu</span></li>
+      <li><span class="rn">02</span><span class="rt">Dari prompt ke sistem — RAG, agent, automation</span><span class="rd">4-6 minggu</span></li>
+      <li><span class="rn">03</span><span class="rt">Produksi & monetisasi — portofolio dan jasa</span><span class="rd">ongoing</span></li>
+    </ul>
+    <a href="{{ url_for('roadmap') }}" class="btn btn-outline" style="margin-top:28px">Lihat roadmap lengkap</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-num">/03</span>
+    <div class="section-head">
+      <h2>Pilih jalur sesuai profesi teknis kamu.</h2>
+      <p>Tidak semua orang harus jadi AI engineer. Yang penting tahu AI dipakai untuk bantu bagian mana dari kerjaan kamu.</p>
+    </div>
+    <div class="grid grid-5">
+      <div class="role-card c-engineer">
+        <div class="role-icon"><svg><use href="#icon-engineer"/></svg></div>
+        <h3>Engineer</h3>
+        <p>AI untuk automasi sistem & pemecahan masalah teknis harian.</p>
+        <div class="role-skills"><span>automasi</span><span>troubleshooting</span></div>
+        <a href="{{ url_for('courses') }}" class="role-link">Lihat course <span class="arrow">→</span></a>
+      </div>
+      <div class="role-card c-programmer">
+        <div class="role-icon"><svg><use href="#icon-programmer"/></svg></div>
+        <h3>Programmer</h3>
+        <p>Pair-programming, code review, dan refactor dibantu AI.</p>
+        <div class="role-skills"><span>code review</span><span>refactor</span></div>
+        <a href="{{ url_for('courses') }}" class="role-link">Lihat course <span class="arrow">→</span></a>
+      </div>
+      <div class="role-card c-data">
+        <div class="role-icon"><svg><use href="#icon-data"/></svg></div>
+        <h3>Data Analyst</h3>
+        <p>Eksplorasi data lebih cepat dan narasi insight otomatis.</p>
+        <div class="role-skills"><span>EDA</span><span>insight</span></div>
+        <a href="{{ url_for('courses') }}" class="role-link">Lihat course <span class="arrow">→</span></a>
+      </div>
+      <div class="role-card c-database">
+        <div class="role-icon"><svg><use href="#icon-database"/></svg></div>
+        <h3>Database Expert</h3>
+        <p>Query, schema, dan tuning performa dengan bantuan AI.</p>
+        <div class="role-skills"><span>query</span><span>tuning</span></div>
+        <a href="{{ url_for('courses') }}" class="role-link">Lihat course <span class="arrow">→</span></a>
+      </div>
+      <div class="role-card c-network">
+        <div class="role-icon"><svg><use href="#icon-network"/></svg></div>
+        <h3>Network Integrator</h3>
+        <p>Monitoring, triase log, dan dokumentasi topologi otomatis.</p>
+        <div class="role-skills"><span>monitoring</span><span>topologi</span></div>
+        <a href="{{ url_for('courses') }}" class="role-link">Lihat course <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-num">/04</span>
+    <div class="section-head">
+      <h2>Tidak perlu mulai dari nol. Pakai referensinya, lalu modifikasi.</h2>
+      <p>Cari tools yang pas, salin prompt, lihat workflow-nya, baru pelajari cara kerjanya.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <span class="tag">tools</span>
+        <h3>Tools AI itu banyak</h3>
+        <p>25+ tools terkurasi, plus kapan sebaiknya tidak dipakai.</p>
+        <div class="card-footer"><a href="{{ url_for('tools') }}" class="role-link" style="color:var(--accent)">Cek tools <span class="arrow">→</span></a></div>
+      </div>
+      <div class="card">
+        <span class="tag teal">prompts</span>
+        <h3>Prompt siap dipelajari</h3>
+        <p>Template yang tinggal disesuaikan, bukan ditelan mentah-mentah.</p>
+        <div class="card-footer"><a href="{{ url_for('prompts') }}" class="role-link" style="color:var(--accent-2)">Salin prompt <span class="arrow">→</span></a></div>
+      </div>
+      <div class="card">
+        <span class="tag">workflows</span>
+        <h3>Workflow nyata</h3>
+        <p>Alur dari masalah sampai output, lengkap dengan langkah-langkahnya.</p>
+        <div class="card-footer"><a href="{{ url_for('workflows') }}" class="role-link" style="color:var(--accent)">Lihat workflow <span class="arrow">→</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-num">/05</span>
+    <div class="section-head">
+      <h2>Skill AI sudah ada. Sekarang monetize dari mana?</h2>
+      <p>Jual hasil yang jelas, bukan sekadar bilang "kami pakai AI". Mulai dari masalah kecil, scope rapi, lalu tunjukkan buktinya.</p>
+    </div>
+    <ol class="mono-steps">
+      <li>
+        <h3>Cari kerjaan yang menyulitkan</h3>
+        <p>Berulang, makan waktu, atau sering bikin salah — peluangnya biasanya di situ.</p>
+      </li>
+      <li>
+        <h3>Paketkan hasilnya</h3>
+        <p>Tulis jelas apa yang dikerjakan, apa yang diterima klien, apa yang tidak termasuk.</p>
+      </li>
+      <li>
+        <h3>Tunjukkan bukti</h3>
+        <p>Demo kecil dan studi kasus jauh lebih meyakinkan daripada bio penuh jargon.</p>
+      </li>
+    </ol>
+    <a href="{{ url_for('monetize') }}" class="btn btn-outline" style="margin-top:28px">Lihat semua jalur monetisasi</a>
+  </div>
+</section>
+
+<section class="section" style="border-bottom:none">
+  <div class="container">
+    <span class="section-num">/06</span>
+    <div class="skillcheck-band">
+      <div>
+        <h2>Sejauh apa skill AI kamu sekarang?</h2>
+        <p class="lead">Jawab 8 pertanyaan singkat, lihat level kamu, dan dapat rekomendasi titik mulai di roadmap. Gratis, tanpa login, hasil langsung keluar.</p>
+        <a href="{{ url_for('skillcheck') }}" class="btn btn-primary">Mulai Skill Check</a>
+      </div>
+      <div class="preview-card">
+        <span class="pc-label">&gt; preview_kartu_hasil.json</span>
+        <div class="pc-score">62%</div>
+        <div class="pc-tier">Node 01 — Spesialisasi Peran</div>
+        <div class="pc-bar"><span></span></div>
+        <div class="pc-fine">8 pertanyaan · ~3 menit</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

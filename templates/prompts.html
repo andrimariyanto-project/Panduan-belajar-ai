@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}Prompts — andremedia.ai{% endblock %}
+{% block content %}
+<section class="section" style="border-top:1px solid var(--border-soft)">
+  <div class="container">
+    <span class="eyebrow">&gt; cat prompts/*.txt</span>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">Prompt Library</h1>
+    <p class="lead" style="max-width:640px">Prompt siap pakai per peran. Salin, sesuaikan bagian dalam kurung siku, langsung jalan.</p>
+
+    <div class="grid grid-2" style="margin-top:40px">
+
+      <div class="prompt-block">
+        <div class="ph"><span>programmer // code_review.txt</span><button class="copy-btn">Salin</button></div>
+        <pre>Kamu adalah senior code reviewer. Tinjau kode berikut untuk: (1) bug potensial, (2) masalah performa, (3) pelanggaran best practice [bahasa/framework]. Untuk tiap temuan, jelaskan risikonya dan beri contoh perbaikan.
+
+Kode:
+[tempel kode di sini]</pre>
+      </div>
+
+      <div class="prompt-block">
+        <div class="ph"><span>data_analyst // eda_summary.txt</span><button class="copy-btn">Salin</button></div>
+        <pre>Kamu adalah data analyst. Diberi ringkasan statistik dan sample dataset berikut, identifikasi: (1) pola atau tren utama, (2) anomali yang perlu diperiksa, (3) tiga pertanyaan lanjutan yang layak dieksplorasi. Tulis dalam bahasa yang bisa dipahami tim non-teknis.
+
+Konteks dataset: [deskripsikan dataset]
+Ringkasan statistik: [tempel di sini]</pre>
+      </div>
+
+      <div class="prompt-block">
+        <div class="ph"><span>database // schema_review.txt</span><button class="copy-btn">Salin</button></div>
+        <pre>Kamu adalah database architect. Tinjau schema berikut untuk [PostgreSQL/MySQL/lainnya]. Identifikasi masalah normalisasi, indeks yang kurang optimal, dan potensi bottleneck di skala [perkiraan jumlah baris/traffic]. Berikan rekomendasi konkret dengan contoh DDL.
+
+Schema:
+[tempel schema di sini]</pre>
+      </div>
+
+      <div class="prompt-block">
+        <div class="ph"><span>network // log_triage.txt</span><button class="copy-btn">Salin</button></div>
+        <pre>Kamu adalah network engineer. Analisis potongan log perangkat berikut. Kelompokkan entri berdasarkan tingkat urgensi (kritis/perlu-perhatian/normal), jelaskan kemungkinan penyebab untuk entri kritis, dan sarankan langkah investigasi awal.
+
+Log:
+[tempel log di sini]</pre>
+      </div>
+
+      <div class="prompt-block">
+        <div class="ph"><span>devops // incident_summary.txt</span><button class="copy-btn">Salin</button></div>
+        <pre>Kamu membantu menulis ringkasan post-mortem. Dari timeline kejadian berikut, susun: (1) ringkasan singkat insiden, (2) root cause, (3) dampak, (4) tindakan perbaikan jangka pendek dan jangka panjang. Gunakan nada faktual, tanpa menyalahkan individu.
+
+Timeline:
+[tempel catatan kronologis di sini]</pre>
+      </div>
+
+      <div class="prompt-block">
+        <div class="ph"><span>umum // prompt_starter.txt</span><button class="copy-btn">Salin</button></div>
+        <pre>Peran: [peran AI yang diinginkan]
+Tugas: [apa yang perlu dilakukan]
+Konteks: [informasi latar belakang yang relevan]
+Format output: [poin-poin / tabel / paragraf / kode]
+Batasan: [panjang, gaya bahasa, hal yang harus dihindari]</pre>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/copy.js') }}"></script>
+{% endblock %}

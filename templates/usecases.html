@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Use Cases — andremedia.ai{% endblock %}
+{% block content %}
+<section class="section" style="border-top:1px solid var(--border-soft)">
+  <div class="container">
+    <span class="eyebrow">&gt; grep -r "ai_impact" ./teams</span>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">Use Cases per Bidang</h1>
+    <p class="lead" style="max-width:640px">Contoh nyata bagaimana AI dipakai di tiap bidang teknis — bukan teori, tapi pola kerja yang sudah terbukti.</p>
+
+    <div class="entry-list" style="margin-top:32px">
+      <div class="entry">
+        <dt>Software Development</dt>
+        <dd>Percepatan onboarding developer baru lewat AI yang menjelaskan codebase, generate boilerplate test, dan mendampingi migrasi framework lama ke baru.</dd>
+      </div>
+      <div class="entry">
+        <dt>Data & Analytics</dt>
+        <dd>Self-service data: tim non-teknis bertanya dalam bahasa natural, AI menerjemahkan ke query dan menyajikan visualisasi beserta interpretasinya.</dd>
+      </div>
+      <div class="entry">
+        <dt>Database Administration</dt>
+        <dd>Audit rutin schema dan index, deteksi query berisiko sebelum deploy, serta simulasi dampak perubahan schema besar.</dd>
+      </div>
+      <div class="entry">
+        <dt>Network & Infrastructure</dt>
+        <dd>Korelasi otomatis antara alert dari banyak perangkat, ringkasan insiden lintas lokasi, dan draf perubahan konfigurasi yang divalidasi manusia.</dd>
+      </div>
+      <div class="entry">
+        <dt>IT Operations & Support</dt>
+        <dd>Triase tiket otomatis berdasarkan urgensi, draf balasan awal untuk tiket berulang, dan basis pengetahuan yang terus diperbarui dari histori tiket.</dd>
+      </div>
+      <div class="entry">
+        <dt>Keamanan Sistem</dt>
+        <dd>Ringkasan hasil scan kerentanan dalam bahasa yang actionable, serta simulasi skenario serangan untuk latihan tim.</dd>
+      </div>
+      <div class="entry">
+        <dt>Manajemen Proyek Teknis</dt>
+        <dd>Ringkasan status project lintas tim dari update Slack/Jira, dan draf laporan progres mingguan untuk stakeholder non-teknis.</dd>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

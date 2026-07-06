@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Roadmap — andremedia.ai{% endblock %}
+{% block content %}
+<section class="section" style="border-top:1px solid var(--border-soft)">
+  <div class="container">
+    <span class="eyebrow">&gt; cat roadmap.yaml</span>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">Roadmap Belajar AI Terapan</h1>
+    <p class="lead" style="max-width:640px">Disusun untuk orang yang sudah punya fondasi teknis. Bukan mulai dari nol logika, tapi dari nol pemakaian AI di pekerjaan sehari-hari.</p>
+
+    <div class="trace" style="margin-top:56px">
+
+      <div class="trace-node">
+        <span class="node-label">node_00 // fondasi — 1-2 minggu</span>
+        <h3>Fondasi AI</h3>
+        <p>Konsep inti yang jadi bahasa umum sebelum masuk ke jalur spesialisasi.</p>
+        <div class="modules">
+          <span>Apa itu LLM & bagaimana ia "berpikir"</span>
+          <span>Token, context window, temperature</span>
+          <span>Anatomi prompt yang baik</span>
+          <span>Batas & risiko: halusinasi, bias, data privasi</span>
+          <span>Ekosistem model: closed vs open-source</span>
+        </div>
+      </div>
+
+      <div class="trace-node">
+        <span class="node-label">node_01 // spesialisasi peran — 3-4 minggu</span>
+        <h3>AI Sesuai Peran Kerja</h3>
+        <p>Pilih satu atau gabungan jalur sesuai peran kamu sekarang.</p>
+        <div class="modules">
+          <span>Programmer → AI pair-programming & code review</span>
+          <span>Data Analyst → AI untuk EDA & storytelling data</span>
+          <span>Database Expert → AI untuk query, schema, dan tuning</span>
+          <span>Network Integrator → AI untuk monitoring & dokumentasi jaringan</span>
+          <span>System/DevOps Engineer → AI untuk automasi & incident response</span>
+        </div>
+      </div>
+
+      <div class="trace-node">
+        <span class="node-label">node_02 // membangun dengan AI — 4-6 minggu</span>
+        <h3>Dari Prompt ke Sistem</h3>
+        <p>Naik level dari "bertanya ke chatbot" menjadi membangun alur kerja yang bisa diandalkan.</p>
+        <div class="modules">
+          <span>Prompt engineering lanjutan & prompt chaining</span>
+          <span>RAG (Retrieval-Augmented Generation) dasar</span>
+          <span>AI agent & tool-use / function calling</span>
+          <span>Automasi: menghubungkan AI ke API, database, cron job</span>
+          <span>Evaluasi kualitas output AI secara sistematis</span>
+        </div>
+      </div>
+
+      <div class="trace-node">
+        <span class="node-label">node_03 // produksi & monetisasi — ongoing</span>
+        <h3>Portofolio, Jasa, dan Produk</h3>
+        <p>Titik di mana skill mulai menghasilkan — baik untuk karier maupun pendapatan tambahan.</p>
+        <div class="modules">
+          <span>Menyusun portofolio project AI</span>
+          <span>Menjual jasa automasi & konsultasi AI</span>
+          <span>Membangun micro-tool / internal tool berbasis AI</span>
+          <span>Presentasi hasil ke non-teknis (stakeholder, klien)</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cta-band" style="margin-top:64px;border-radius:var(--radius)">
+      <span class="eyebrow" style="justify-content:center">&gt; next_step</span>
+      <h2>Belum yakin mulai dari node mana?</h2>
+      <a href="{{ url_for('skillcheck') }}" class="btn btn-primary">Cek level lewat Skill Check</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

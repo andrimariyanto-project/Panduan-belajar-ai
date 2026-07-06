@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}Workflows — andremedia.ai{% endblock %}
+{% block content %}
+<section class="section" style="border-top:1px solid var(--border-soft)">
+  <div class="container">
+    <span class="eyebrow">&gt; run ./workflows/*.sh</span>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">Workflow AI Terapan</h1>
+    <p class="lead" style="max-width:640px">Bukan cuma prompt tunggal — ini rangkaian langkah yang bisa langsung diadaptasi ke pekerjaan kamu.</p>
+
+    <div class="grid grid-2" style="margin-top:40px">
+
+      <div class="card">
+        <span class="tag">coding</span>
+        <h3>Otomasi code review di pull request</h3>
+        <p>Menyisipkan pemeriksaan AI sebelum review manusia, agar reviewer fokus ke isu yang lebih penting.</p>
+        <ol class="steps">
+          <li>Trigger workflow saat pull request dibuka</li>
+          <li>AI menganalisis diff untuk bug, security, dan style</li>
+          <li>Hasil ditulis sebagai komentar terstruktur di PR</li>
+          <li>Reviewer manusia memvalidasi & memutuskan merge</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <span class="tag teal">data</span>
+        <h3>Laporan data mingguan otomatis</h3>
+        <p>Dari query database ke narasi insight yang siap dikirim ke stakeholder.</p>
+        <ol class="steps">
+          <li>Jadwalkan query ekstraksi data mingguan</li>
+          <li>AI meringkas tren, outlier, dan perbandingan periode sebelumnya</li>
+          <li>Hasil dirender ke format laporan (email/PDF)</li>
+          <li>Analyst meninjau sebelum dikirim ke tim terkait</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <span class="tag">database</span>
+        <h3>Review & optimasi query lambat</h3>
+        <p>Menemukan dan memperbaiki query yang membebani database secara proaktif.</p>
+        <ol class="steps">
+          <li>Ambil daftar query paling lambat dari slow query log</li>
+          <li>AI menganalisis execution plan dan mengusulkan indeks/refactor</li>
+          <li>Uji perubahan di lingkungan staging</li>
+          <li>Terapkan ke produksi dengan monitoring performa</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <span class="tag">infra</span>
+        <h3>Dokumentasi topologi jaringan otomatis</h3>
+        <p>Menjaga dokumentasi tetap sinkron dengan kondisi perangkat sebenarnya.</p>
+        <ol class="steps">
+          <li>Tarik konfigurasi terbaru dari seluruh perangkat</li>
+          <li>AI menyusun ringkasan topologi & perubahan sejak versi terakhir</li>
+          <li>Dokumentasi & diagram diperbarui otomatis</li>
+          <li>Tim meninjau perubahan signifikan sebelum publish</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <span class="tag">devops</span>
+        <h3>Triage insiden lebih cepat</h3>
+        <p>Memangkas waktu dari alert masuk sampai tim tahu harus mulai dari mana.</p>
+        <ol class="steps">
+          <li>Alert monitoring masuk ke channel incident</li>
+          <li>AI meringkas log & metrik terkait dalam satu paragraf</li>
+          <li>AI menyarankan kemungkinan penyebab & runbook terkait</li>
+          <li>On-call engineer melanjutkan investigasi dari titik itu</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <span class="tag teal">karier</span>
+        <h3>Menyusun studi kasus dari project selesai</h3>
+        <p>Mengubah pekerjaan teknis yang sudah selesai jadi materi portofolio.</p>
+        <ol class="steps">
+          <li>Kumpulkan catatan, commit log, dan hasil project</li>
+          <li>AI menyusun draf studi kasus: masalah, pendekatan, hasil</li>
+          <li>Tambahkan angka/metrik dampak yang terukur</li>
+          <li>Edit nada bahasa agar sesuai gaya personal</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

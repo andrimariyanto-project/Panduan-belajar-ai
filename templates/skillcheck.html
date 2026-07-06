@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block title %}Skill Check — andremedia.ai{% endblock %}
+{% block content %}
+<section class="section" style="border-top:1px solid var(--border-soft)">
+  <div class="container quiz-wrap">
+    <span class="eyebrow">&gt; ./skill_check --run</span>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.4rem)">Skill Check</h1>
+    <p class="lead">8 pertanyaan singkat untuk memetakan posisi kamu di roadmap. Tidak ada jawaban "salah" — ini cuma untuk rekomendasi titik mulai.</p>
+
+    <div id="quiz-root" style="margin-top:32px"></div>
+  </div>
+</section>
+
+<script id="quiz-data" type="application/json">
+[
+  {
+    "q": "Seberapa sering kamu memakai AI (chatbot/asisten AI) untuk pekerjaan sehari-hari?",
+    "options": [
+      {"t": "Belum pernah / jarang sekali", "v": 0},
+      {"t": "Sesekali untuk hal ringan", "v": 1},
+      {"t": "Rutin untuk beberapa tugas", "v": 2},
+      {"t": "Terintegrasi di banyak proses kerja saya", "v": 3}
+    ]
+  },
+  {
+    "q": "Apakah kamu tahu apa itu 'context window' pada model AI?",
+    "options": [
+      {"t": "Belum familiar", "v": 0},
+      {"t": "Pernah dengar tapi belum paham detailnya", "v": 1},
+      {"t": "Paham dan bisa jelaskan ke orang lain", "v": 2},
+      {"t": "Paham dan mempertimbangkannya saat menyusun prompt panjang", "v": 3}
+    ]
+  },
+  {
+    "q": "Pernahkah kamu menyusun prompt lebih dari satu langkah (prompt chaining)?",
+    "options": [
+      {"t": "Belum pernah", "v": 0},
+      {"t": "Pernah tanpa sadar itu chaining", "v": 1},
+      {"t": "Pernah sengaja menyusun beberapa langkah", "v": 2},
+      {"t": "Rutin melakukannya untuk tugas kompleks", "v": 3}
+    ]
+  },
+  {
+    "q": "Apakah kamu pernah menghubungkan AI ke API, database, atau tool eksternal?",
+    "options": [
+      {"t": "Belum pernah", "v": 0},
+      {"t": "Sedang belajar konsepnya", "v": 1},
+      {"t": "Pernah coba di project kecil", "v": 2},
+      {"t": "Sudah biasa membangun automasi seperti ini", "v": 3}
+    ]
+  },
+  {
+    "q": "Seberapa familiar kamu dengan konsep RAG (Retrieval-Augmented Generation)?",
+    "options": [
+      {"t": "Belum pernah dengar", "v": 0},
+      {"t": "Pernah dengar istilahnya saja", "v": 1},
+      {"t": "Paham konsepnya", "v": 2},
+      {"t": "Pernah membangun sistem RAG sederhana", "v": 3}
+    ]
+  },
+  {
+    "q": "Apakah kamu punya project atau portofolio yang memanfaatkan AI?",
+    "options": [
+      {"t": "Belum ada", "v": 0},
+      {"t": "Masih ide, belum dikerjakan", "v": 1},
+      {"t": "Sedang mengerjakan satu project", "v": 2},
+      {"t": "Sudah punya lebih dari satu", "v": 3}
+    ]
+  },
+  {
+    "q": "Bagaimana kamu mengevaluasi apakah output AI bisa dipercaya?",
+    "options": [
+      {"t": "Belum punya cara khusus", "v": 0},
+      {"t": "Cek manual sekilas", "v": 1},
+      {"t": "Ada checklist/kriteria sendiri", "v": 2},
+      {"t": "Punya proses evaluasi sistematis (eval)", "v": 3}
+    ]
+  },
+  {
+    "q": "Apakah kamu pernah menawarkan/menjual jasa yang melibatkan AI?",
+    "options": [
+      {"t": "Belum pernah", "v": 0},
+      {"t": "Sedang mempertimbangkan", "v": 1},
+      {"t": "Pernah sekali-dua kali", "v": 2},
+      {"t": "Sudah rutin melakukannya", "v": 3}
+    ]
+  }
+]
+</script>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+{% endblock %}

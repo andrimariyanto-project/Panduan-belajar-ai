@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}Courses — andremedia.ai{% endblock %}
+{% block content %}
+<section class="section" style="border-top:1px solid var(--border-soft)">
+  <div class="container">
+    <span class="eyebrow">&gt; ls ./courses</span>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">Courses</h1>
+    <p class="lead" style="max-width:640px">Setiap course dipetakan ke satu node di roadmap, jadi kamu tahu persis di mana posisinya.</p>
+
+    <div class="grid grid-3" style="margin-top:40px">
+
+      <div class="card">
+        <span class="tag">node_00</span>
+        <h3>AI Literacy untuk Praktisi Teknis</h3>
+        <p>Fondasi LLM, prompt, dan batasan AI — disampaikan pakai analogi sistem & arsitektur yang familiar.</p>
+        <div class="card-footer"><span>6 modul</span><span>Pemula</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag teal"><svg><use href="#icon-programmer"/></svg>node_01 · programmer</span>
+        <h3>AI Pair-Programming</h3>
+        <p>Menggunakan asisten AI untuk code review, refactor, unit test, dan debugging tanpa menurunkan kualitas kode.</p>
+        <div class="card-footer"><span>8 modul</span><span>Menengah</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag teal"><svg><use href="#icon-data"/></svg>node_01 · data analyst</span>
+        <h3>AI untuk Analisis Data</h3>
+        <p>Eksplorasi dataset, deteksi anomali, dan membuat narasi insight otomatis dari data mentah.</p>
+        <div class="card-footer"><span>7 modul</span><span>Menengah</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag teal"><svg><use href="#icon-database"/></svg>node_01 · database</span>
+        <h3>AI untuk Database Engineering</h3>
+        <p>Generate & review query kompleks, desain schema, dan tuning performa dibantu AI.</p>
+        <div class="card-footer"><span>6 modul</span><span>Menengah</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag teal"><svg><use href="#icon-network"/></svg>node_01 · network</span>
+        <h3>AI untuk Network Integration</h3>
+        <p>Analisis log, deteksi anomali trafik, dan dokumentasi topologi jaringan otomatis.</p>
+        <div class="card-footer"><span>6 modul</span><span>Menengah</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag teal">node_01 · devops</span>
+        <h3>AI untuk Ops & Incident Response</h3>
+        <p>Automasi triage insiden, ringkasan post-mortem, dan asisten runbook.</p>
+        <div class="card-footer"><span>5 modul</span><span>Menengah</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">node_02</span>
+        <h3>Prompt Engineering Lanjutan</h3>
+        <p>Prompt chaining, few-shot, structured output, dan teknik mengurangi halusinasi.</p>
+        <div class="card-footer"><span>7 modul</span><span>Menengah</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">node_02</span>
+        <h3>RAG dari Nol</h3>
+        <p>Membangun sistem tanya-jawab berbasis dokumen internal — dari chunking sampai retrieval.</p>
+        <div class="card-footer"><span>8 modul</span><span>Lanjutan</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">node_02</span>
+        <h3>Membangun AI Agent & Automasi</h3>
+        <p>Menghubungkan AI ke API, database, dan tools eksternal lewat tool-use / function calling.</p>
+        <div class="card-footer"><span>9 modul</span><span>Lanjutan</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">node_03</span>
+        <h3>Membangun Portofolio & Jasa AI</h3>
+        <p>Menyusun studi kasus, menentukan harga jasa automasi, dan presentasi ke klien non-teknis.</p>
+        <div class="card-footer"><span>5 modul</span><span>Semua level</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

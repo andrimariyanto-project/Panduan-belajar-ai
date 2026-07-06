@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block title %}Tools — andremedia.ai{% endblock %}
+{% block content %}
+<section class="section" style="border-top:1px solid var(--border-soft)">
+  <div class="container">
+    <span class="eyebrow">&gt; ls ./tools --all</span>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">Direktori Tools AI</h1>
+    <p class="lead" style="max-width:640px">Dikurasi berdasarkan kegunaan sehari-hari, bukan seberapa viral.</p>
+
+    <div class="filters" id="filters">
+      <button class="filter-pill active" data-filter="all">Semua</button>
+      <button class="filter-pill" data-filter="coding">Coding</button>
+      <button class="filter-pill" data-filter="data">Data</button>
+      <button class="filter-pill" data-filter="infra">Infra & Jaringan</button>
+      <button class="filter-pill" data-filter="writing">Menulis</button>
+      <button class="filter-pill" data-filter="automation">Automasi</button>
+      <button class="filter-pill" data-filter="design">Visual</button>
+    </div>
+
+    <div class="grid grid-3" id="tool-grid">
+
+      <div class="card" data-cat="coding">
+        <span class="tag">coding</span>
+        <h3>Asisten coding dalam IDE</h3>
+        <p>Autocomplete kontekstual, penjelasan kode, dan refactor langsung dari editor.</p>
+      </div>
+      <div class="card" data-cat="coding">
+        <span class="tag">coding</span>
+        <h3>Code review otomatis</h3>
+        <p>Menganalisis pull request untuk potensi bug, code smell, dan celah keamanan.</p>
+      </div>
+      <div class="card" data-cat="data">
+        <span class="tag teal">data</span>
+        <h3>Notebook AI untuk EDA</h3>
+        <p>Membuat visualisasi dan ringkasan statistik dari dataset hanya dengan deskripsi bahasa natural.</p>
+      </div>
+      <div class="card" data-cat="data">
+        <span class="tag teal">data</span>
+        <h3>Text-to-SQL assistant</h3>
+        <p>Mengubah pertanyaan bisnis jadi query SQL, lalu menjelaskan hasilnya dalam bahasa awam.</p>
+      </div>
+      <div class="card" data-cat="infra">
+        <span class="tag">infra</span>
+        <h3>Log analyzer berbasis AI</h3>
+        <p>Meringkas ribuan baris log jadi beberapa insight anomali yang perlu ditindaklanjuti.</p>
+      </div>
+      <div class="card" data-cat="infra">
+        <span class="tag">infra</span>
+        <h3>Asisten dokumentasi topologi</h3>
+        <p>Menghasilkan diagram & dokumentasi jaringan dari konfigurasi perangkat.</p>
+      </div>
+      <div class="card" data-cat="writing">
+        <span class="tag teal">writing</span>
+        <h3>Penulis dokumentasi teknis</h3>
+        <p>Mengubah catatan singkat jadi dokumentasi API atau runbook yang rapi.</p>
+      </div>
+      <div class="card" data-cat="automation">
+        <span class="tag">automasi</span>
+        <h3>Workflow automation + AI step</h3>
+        <p>Menyisipkan langkah AI di tengah automasi no-code untuk klasifikasi atau ringkasan otomatis.</p>
+      </div>
+      <div class="card" data-cat="automation">
+        <span class="tag">automasi</span>
+        <h3>Agent framework</h3>
+        <p>Untuk menyusun AI agent multi-langkah yang bisa memanggil tools dan API eksternal.</p>
+      </div>
+      <div class="card" data-cat="design">
+        <span class="tag teal">visual</span>
+        <h3>Generator diagram arsitektur</h3>
+        <p>Membuat diagram sistem atau jaringan dari deskripsi teks singkat.</p>
+      </div>
+      <div class="card" data-cat="design">
+        <span class="tag teal">visual</span>
+        <h3>AI image generator</h3>
+        <p>Untuk kebutuhan visual pendukung materi belajar atau presentasi klien.</p>
+      </div>
+      <div class="card" data-cat="data">
+        <span class="tag teal">data</span>
+        <h3>AI dashboard narrator</h3>
+        <p>Menulis ringkasan naratif otomatis dari dashboard BI untuk laporan mingguan.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/filter.js') }}"></script>
+{% endblock %}

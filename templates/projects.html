@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}Projects — andremedia.ai{% endblock %}
+{% block content %}
+<section class="section" style="border-top:1px solid var(--border-soft)">
+  <div class="container">
+    <span class="eyebrow">&gt; ls ./projects --sort=difficulty</span>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">Ide Project untuk Latihan</h1>
+    <p class="lead" style="max-width:640px">Kerjakan salah satu, dokumentasikan prosesnya, dan itu langsung jadi bahan portofolio.</p>
+
+    <div class="grid grid-3" style="margin-top:40px">
+
+      <div class="card">
+        <span class="tag teal">pemula</span>
+        <h3>Bot ringkasan log harian</h3>
+        <p>Script yang membaca log server/aplikasi lalu mengirim ringkasan anomali ke Slack/email tiap pagi.</p>
+      </div>
+
+      <div class="card">
+        <span class="tag teal">pemula</span>
+        <h3>Asisten dokumentasi API</h3>
+        <p>Alat yang membaca kode endpoint dan menghasilkan draf dokumentasi API secara otomatis.</p>
+      </div>
+
+      <div class="card">
+        <span class="tag">menengah</span>
+        <h3>Text-to-SQL internal</h3>
+        <p>Antarmuka sederhana di mana tim non-teknis bertanya dalam bahasa natural dan mendapat hasil query database.</p>
+      </div>
+
+      <div class="card">
+        <span class="tag">menengah</span>
+        <h3>Dashboard AI-narrated</h3>
+        <p>Menambahkan ringkasan naratif otomatis di atas dashboard BI yang sudah ada.</p>
+      </div>
+
+      <div class="card">
+        <span class="tag">menengah</span>
+        <h3>Asisten troubleshooting jaringan</h3>
+        <p>Chatbot internal yang dilatih dari histori tiket & runbook untuk membantu diagnosis awal gangguan jaringan.</p>
+      </div>
+
+      <div class="card">
+        <span class="tag">lanjutan</span>
+        <h3>RAG untuk basis pengetahuan internal</h3>
+        <p>Sistem tanya-jawab berbasis dokumen internal (SOP, wiki, kode) dengan sitasi sumber.</p>
+      </div>
+
+      <div class="card">
+        <span class="tag">lanjutan</span>
+        <h3>Agent automasi incident response</h3>
+        <p>Agent yang bisa menarik metrik, meringkas insiden, dan menyiapkan draf komunikasi ke stakeholder.</p>
+      </div>
+
+      <div class="card">
+        <span class="tag">lanjutan</span>
+        <h3>Code migration assistant</h3>
+        <p>Tool yang membantu menerjemahkan sebagian codebase dari satu bahasa/framework ke yang lain, lengkap dengan test.</p>
+      </div>
+
+      <div class="card">
+        <span class="tag">lanjutan</span>
+        <h3>Audit schema database otomatis</h3>
+        <p>Tool yang menganalisis schema, memberi skor kesehatan, dan rekomendasi perbaikan terprioritas.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}
