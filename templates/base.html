@@ -15,7 +15,10 @@
 <nav class="nav">
   <div class="nav-inner">
     <a href="{{ url_for('index') }}" class="brand">andremedia<span>.ai</span></a>
-    <div class="nav-links">
+    <button class="nav-toggle" id="nav-toggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="nav-links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="nav-links" id="nav-links">
       <a href="{{ url_for('roadmap') }}" class="{{ 'active' if active=='roadmap' else '' }}">Roadmap</a>
       <a href="{{ url_for('courses') }}" class="{{ 'active' if active=='courses' else '' }}">Courses</a>
       <a href="{{ url_for('tools') }}" class="{{ 'active' if active=='tools' else '' }}">Tools</a>

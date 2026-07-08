@@ -2,22 +2,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const data = JSON.parse(document.getElementById('quiz-data').textContent);
   const root = document.getElementById('quiz-root');
   let current = 0;
-  let score = 0;
+  let answers = new Array(data.length).fill(null);
 
   function renderQuestion() {
     const item = data[current];
+    const pct = Math.round((current / data.length) * 100);
+
     root.innerHTML = `
+      <div class="quiz-progress-bar"><span style="width:${pct}%"></span></div>
       <div class="quiz-progress">Pertanyaan ${current + 1} / ${data.length}</div>
       <div class="quiz-card">
         <h3>${item.q}</h3>
         <div class="quiz-options">
-          ${item.options.map((opt, i) => `<button class="quiz-opt" data-v="${opt.v}">${opt.t}</button>`).join('')}
+          ${item.options.map((opt, i) => `<button class="quiz-opt${answers[current] === i ? ' correct' : ''}" data-i="${i}" data-v="${opt.v}">${opt.t}</button>`).join('')}
         </div>
       </div>
+      <div class="quiz-nav">
+        <button class="quiz-back" id="quiz-back" ${current === 0 ? 'disabled' : ''}>&larr; Kembali</button>
+      </div>
     `;
+
     root.querySelectorAll('.quiz-opt').forEach(btn => {
       btn.addEventListener('click', () => {
-        score += parseInt(btn.dataset.v, 10);
+        answers[current] = parseInt(btn.dataset.i, 10);
         current += 1;
         if (current < data.length) {
           renderQuestion();
@@ -26,9 +33,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
+
+    const backBtn = document.getElementById('quiz-back');
+    if (backBtn) {
+      backBtn.addEventListener('click', () => {
+        if (current > 0) {
+          current -= 1;
+          renderQuestion();
+        }
+      });
+    }
   }
 
   function renderResult() {
+    const score = answers.reduce((sum, i, idx) => {
+      if (i === null) return sum;
+      return sum + data[idx].options[i].v;
+    }, 0);
     const max = data.length * 3;
     const pct = Math.round((score / max) * 100);
     let tier, desc, node;
@@ -52,13 +73,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     root.innerHTML = `
+      <div class="quiz-progress-bar"><span style="width:100%"></span></div>
       <div class="quiz-card quiz-result">
         <div class="score">${pct}%</div>
         <h3>${tier}</h3>
         <p>${desc}</p>
         <a href="${node}" class="btn btn-primary" style="margin-top:8px">Lanjut ke rekomendasi</a>
+        <div>
+          <button class="quiz-restart" id="quiz-restart">Ulangi Skill Check</button>
+        </div>
       </div>
     `;
+
+    const restartBtn = document.getElementById('quiz-restart');
+    if (restartBtn) {
+      restartBtn.addEventListener('click', () => {
+        current = 0;
+        answers = new Array(data.length).fill(null);
+        renderQuestion();
+      });
+    }
   }
 
   renderQuestion();

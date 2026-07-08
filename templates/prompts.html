@@ -18,11 +18,37 @@ Kode:
       </div>
 
       <div class="prompt-block">
+        <div class="ph"><span>programmer // unit_test_generator.txt</span><button class="copy-btn">Salin</button></div>
+        <pre>Kamu adalah QA engineer. Buatkan unit test untuk fungsi berikut memakai [framework testing]. Sertakan test untuk kasus normal, edge case, dan input tidak valid. Jelaskan singkat apa yang diuji tiap test.
+
+Fungsi:
+[tempel fungsi di sini]</pre>
+      </div>
+
+      <div class="prompt-block">
+        <div class="ph"><span>programmer // bug_diagnosis.txt</span><button class="copy-btn">Salin</button></div>
+        <pre>Kamu membantu diagnosis bug. Diberi pesan error, stack trace, dan konteks kode berikut, jelaskan: (1) kemungkinan akar masalah, (2) langkah untuk memverifikasi, (3) opsi perbaikan beserta trade-off-nya.
+
+Error/stack trace:
+[tempel di sini]
+Konteks kode:
+[tempel di sini]</pre>
+      </div>
+
+      <div class="prompt-block">
         <div class="ph"><span>data_analyst // eda_summary.txt</span><button class="copy-btn">Salin</button></div>
         <pre>Kamu adalah data analyst. Diberi ringkasan statistik dan sample dataset berikut, identifikasi: (1) pola atau tren utama, (2) anomali yang perlu diperiksa, (3) tiga pertanyaan lanjutan yang layak dieksplorasi. Tulis dalam bahasa yang bisa dipahami tim non-teknis.
 
 Konteks dataset: [deskripsikan dataset]
 Ringkasan statistik: [tempel di sini]</pre>
+      </div>
+
+      <div class="prompt-block">
+        <div class="ph"><span>data_analyst // sql_query_explainer.txt</span><button class="copy-btn">Salin</button></div>
+        <pre>Kamu adalah data analyst. Jelaskan query SQL berikut langkah demi langkah dalam bahasa awam, lalu sebutkan potensi masalah performa atau hasil yang tidak sesuai ekspektasi.
+
+Query:
+[tempel query di sini]</pre>
       </div>
 
       <div class="prompt-block">
@@ -34,6 +60,16 @@ Schema:
       </div>
 
       <div class="prompt-block">
+        <div class="ph"><span>database // migration_plan.txt</span><button class="copy-btn">Salin</button></div>
+        <pre>Kamu adalah database engineer. Susun rencana migrasi schema dari kondisi berikut ke kondisi target, termasuk urutan langkah yang aman, cara meminimalkan downtime, dan rencana rollback jika gagal.
+
+Schema saat ini:
+[tempel di sini]
+Schema target:
+[tempel di sini]</pre>
+      </div>
+
+      <div class="prompt-block">
         <div class="ph"><span>network // log_triage.txt</span><button class="copy-btn">Salin</button></div>
         <pre>Kamu adalah network engineer. Analisis potongan log perangkat berikut. Kelompokkan entri berdasarkan tingkat urgensi (kritis/perlu-perhatian/normal), jelaskan kemungkinan penyebab untuk entri kritis, dan sarankan langkah investigasi awal.
 
@@ -42,11 +78,59 @@ Log:
       </div>
 
       <div class="prompt-block">
+        <div class="ph"><span>network // config_audit.txt</span><button class="copy-btn">Salin</button></div>
+        <pre>Kamu adalah network engineer. Tinjau konfigurasi perangkat berikut terhadap best practice keamanan & performa dasar [jenis perangkat/vendor]. Sebutkan penyimpangan yang ditemukan, tingkat risikonya, dan perbaikan yang disarankan.
+
+Konfigurasi:
+[tempel config di sini]</pre>
+      </div>
+
+      <div class="prompt-block">
         <div class="ph"><span>devops // incident_summary.txt</span><button class="copy-btn">Salin</button></div>
         <pre>Kamu membantu menulis ringkasan post-mortem. Dari timeline kejadian berikut, susun: (1) ringkasan singkat insiden, (2) root cause, (3) dampak, (4) tindakan perbaikan jangka pendek dan jangka panjang. Gunakan nada faktual, tanpa menyalahkan individu.
 
 Timeline:
 [tempel catatan kronologis di sini]</pre>
+      </div>
+
+      <div class="prompt-block">
+        <div class="ph"><span>devops // runbook_generator.txt</span><button class="copy-btn">Salin</button></div>
+        <pre>Kamu membantu menyusun runbook operasional untuk skenario [nama skenario, mis. "database gagal failover"]. Sertakan: gejala yang terlihat, langkah diagnosis awal, langkah mitigasi, dan kriteria kapan harus eskalasi.
+
+Konteks sistem:
+[deskripsikan sistem/arsitektur singkat di sini]</pre>
+      </div>
+
+      <div class="prompt-block">
+        <div class="ph"><span>security // vuln_scan_summary.txt</span><button class="copy-btn">Salin</button></div>
+        <pre>Kamu adalah security engineer. Ringkas hasil scan kerentanan berikut untuk audiens non-teknis: (1) temuan paling kritis dan dampaknya, (2) urutan prioritas perbaikan, (3) rekomendasi mitigasi sementara jika perbaikan penuh butuh waktu.
+
+Hasil scan:
+[tempel ringkasan/hasil scan di sini]</pre>
+      </div>
+
+      <div class="prompt-block">
+        <div class="ph"><span>qa // test_case_generator.txt</span><button class="copy-btn">Salin</button></div>
+        <pre>Kamu adalah QA engineer. Dari deskripsi fitur berikut, buat daftar test case yang mencakup happy path, edge case, dan skenario negatif. Format: ID, langkah, hasil yang diharapkan.
+
+Deskripsi fitur:
+[tempel deskripsi fitur di sini]</pre>
+      </div>
+
+      <div class="prompt-block">
+        <div class="ph"><span>technical_writer // api_doc_draft.txt</span><button class="copy-btn">Salin</button></div>
+        <pre>Kamu adalah technical writer. Dari definisi endpoint berikut, susun draf dokumentasi API: deskripsi singkat, parameter, contoh request, contoh response, dan kemungkinan error code.
+
+Definisi endpoint:
+[tempel signature/kode endpoint di sini]</pre>
+      </div>
+
+      <div class="prompt-block">
+        <div class="ph"><span>karier // portfolio_case_study.txt</span><button class="copy-btn">Salin</button></div>
+        <pre>Kamu membantu menyusun studi kasus portofolio dari project berikut. Susun dengan struktur: masalah, pendekatan, alat yang dipakai, hasil terukur (angka jika ada), dan pembelajaran. Nada profesional, ringkas, cocok untuk dibaca calon klien/perekrut.
+
+Catatan project:
+[tempel ringkasan/commit log/hasil project di sini]</pre>
       </div>
 
       <div class="prompt-block">

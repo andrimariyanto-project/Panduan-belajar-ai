@@ -32,7 +32,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-Buka `http://127.0.0.1:3005` di browser.
+Buka `http://127.0.0.1:5000` di browser.
 
 ## Struktur folder
 

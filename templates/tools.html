@@ -7,6 +7,9 @@
     <h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">Direktori Tools AI</h1>
     <p class="lead" style="max-width:640px">Dikurasi berdasarkan kegunaan sehari-hari, bukan seberapa viral.</p>
 
+    <input id="tool-search" type="text" placeholder="Cari tools... (mis. code review, log, dashboard)"
+      style="width:100%;max-width:420px;margin-top:24px;padding:12px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--text);font-family:var(--font-mono);font-size:.9rem">
+
     <div class="filters" id="filters">
       <button class="filter-pill active" data-filter="all">Semua</button>
       <button class="filter-pill" data-filter="coding">Coding</button>
@@ -16,6 +19,8 @@
       <button class="filter-pill" data-filter="automation">Automasi</button>
       <button class="filter-pill" data-filter="design">Visual</button>
     </div>
+
+    <p id="tool-count" class="fine" style="margin-top:12px"></p>
 
     <div class="grid grid-3" id="tool-grid">
 
@@ -29,6 +34,22 @@
         <h3>Code review otomatis</h3>
         <p>Menganalisis pull request untuk potensi bug, code smell, dan celah keamanan.</p>
       </div>
+      <div class="card" data-cat="coding">
+        <span class="tag">coding</span>
+        <h3>AI test generator</h3>
+        <p>Menghasilkan unit test dari fungsi yang sudah ada, termasuk edge case yang sering terlewat.</p>
+      </div>
+      <div class="card" data-cat="coding">
+        <span class="tag">coding</span>
+        <h3>Asisten CLI & scripting</h3>
+        <p>Menjelaskan dan menyusun command shell/script otomasi dari deskripsi bahasa natural.</p>
+      </div>
+      <div class="card" data-cat="coding">
+        <span class="tag">coding</span>
+        <h3>Agent coding otonom</h3>
+        <p>Mengerjakan task coding multi-file dari satu instruksi, lalu menyiapkan pull request untuk direview.</p>
+      </div>
+
       <div class="card" data-cat="data">
         <span class="tag teal">data</span>
         <h3>Notebook AI untuk EDA</h3>
@@ -39,6 +60,22 @@
         <h3>Text-to-SQL assistant</h3>
         <p>Mengubah pertanyaan bisnis jadi query SQL, lalu menjelaskan hasilnya dalam bahasa awam.</p>
       </div>
+      <div class="card" data-cat="data">
+        <span class="tag teal">data</span>
+        <h3>AI dashboard narrator</h3>
+        <p>Menulis ringkasan naratif otomatis dari dashboard BI untuk laporan mingguan.</p>
+      </div>
+      <div class="card" data-cat="data">
+        <span class="tag teal">data</span>
+        <h3>AI data cleaning</h3>
+        <p>Mendeteksi tipe data salah, duplikasi, dan outlier di dataset mentah sebelum dianalisis.</p>
+      </div>
+      <div class="card" data-cat="data">
+        <span class="tag teal">data</span>
+        <h3>Anomaly detection untuk metrik</h3>
+        <p>Mendeteksi lonjakan atau penurunan tidak wajar pada metrik bisnis/infra secara otomatis dari time series.</p>
+      </div>
+
       <div class="card" data-cat="infra">
         <span class="tag">infra</span>
         <h3>Log analyzer berbasis AI</h3>
@@ -49,11 +86,33 @@
         <h3>Asisten dokumentasi topologi</h3>
         <p>Menghasilkan diagram & dokumentasi jaringan dari konfigurasi perangkat.</p>
       </div>
+      <div class="card" data-cat="infra">
+        <span class="tag">infra</span>
+        <h3>Config compliance checker</h3>
+        <p>Membandingkan konfigurasi perangkat dengan baseline/best practice dan menandai penyimpangan.</p>
+      </div>
+      <div class="card" data-cat="infra">
+        <span class="tag">infra</span>
+        <h3>AI incident summarizer</h3>
+        <p>Meringkas alert dari banyak sumber monitoring jadi satu narasi insiden yang mudah ditindaklanjuti.</p>
+      </div>
+
       <div class="card" data-cat="writing">
         <span class="tag teal">writing</span>
         <h3>Penulis dokumentasi teknis</h3>
         <p>Mengubah catatan singkat jadi dokumentasi API atau runbook yang rapi.</p>
       </div>
+      <div class="card" data-cat="writing">
+        <span class="tag teal">writing</span>
+        <h3>Meeting notes summarizer</h3>
+        <p>Meringkas transkrip rapat jadi keputusan, action item, dan penanggung jawab.</p>
+      </div>
+      <div class="card" data-cat="writing">
+        <span class="tag teal">writing</span>
+        <h3>Asisten terjemahan dokumentasi</h3>
+        <p>Menerjemahkan dokumentasi teknis multi-bahasa sambil menjaga istilah teknis tetap konsisten.</p>
+      </div>
+
       <div class="card" data-cat="automation">
         <span class="tag">automasi</span>
         <h3>Workflow automation + AI step</h3>
@@ -64,6 +123,17 @@
         <h3>Agent framework</h3>
         <p>Untuk menyusun AI agent multi-langkah yang bisa memanggil tools dan API eksternal.</p>
       </div>
+      <div class="card" data-cat="automation">
+        <span class="tag">automasi</span>
+        <h3>Auto-classifier tiket/email</h3>
+        <p>Mengelompokkan tiket atau email masuk berdasarkan urgensi dan kategori secara otomatis.</p>
+      </div>
+      <div class="card" data-cat="automation">
+        <span class="tag">automasi</span>
+        <h3>Scheduler AI report</h3>
+        <p>Menjadwalkan pembuatan & pengiriman laporan otomatis dari sumber data yang berubah rutin.</p>
+      </div>
+
       <div class="card" data-cat="design">
         <span class="tag teal">visual</span>
         <h3>Generator diagram arsitektur</h3>
@@ -74,13 +144,20 @@
         <h3>AI image generator</h3>
         <p>Untuk kebutuhan visual pendukung materi belajar atau presentasi klien.</p>
       </div>
-      <div class="card" data-cat="data">
-        <span class="tag teal">data</span>
-        <h3>AI dashboard narrator</h3>
-        <p>Menulis ringkasan naratif otomatis dari dashboard BI untuk laporan mingguan.</p>
+      <div class="card" data-cat="design">
+        <span class="tag teal">visual</span>
+        <h3>Screenshot-to-code</h3>
+        <p>Mengubah gambar/mockup UI jadi kerangka HTML/CSS atau komponen frontend awal.</p>
+      </div>
+      <div class="card" data-cat="design">
+        <span class="tag teal">visual</span>
+        <h3>AI wireframe generator</h3>
+        <p>Menghasilkan wireframe kasar dari deskripsi kebutuhan halaman atau dashboard.</p>
       </div>
 
     </div>
+
+    <p id="no-results" class="fine" style="display:none;margin-top:24px">Tidak ada tools yang cocok. Coba kata kunci atau kategori lain.</p>
   </div>
 </section>
 {% endblock %}

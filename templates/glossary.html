@@ -10,6 +10,8 @@
     <input id="glossary-search" type="text" placeholder="Cari istilah... (mis. token, RAG, agent)"
       style="width:100%;max-width:420px;margin-top:24px;padding:12px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--text);font-family:var(--font-mono);font-size:.9rem">
 
+    <p id="glossary-count" class="fine" style="margin-top:12px"></p>
+
     <dl class="entry-list" id="glossary-list" style="margin-top:24px">
       <div class="entry" data-term="llm large language model"><dt>LLM</dt><dd>Large Language Model — model AI yang dilatih pada teks dalam jumlah besar untuk memprediksi dan menghasilkan bahasa.</dd></div>
       <div class="entry" data-term="token"><dt>Token</dt><dd>Satuan terkecil teks yang diproses model, bisa berupa kata utuh, pecahan kata, atau tanda baca.</dd></div>
@@ -35,7 +37,21 @@
       <div class="entry" data-term="evaluasi eval"><dt>Eval (Evaluation)</dt><dd>Proses sistematis mengukur kualitas output AI terhadap kriteria atau dataset uji tertentu.</dd></div>
       <div class="entry" data-term="context engineering"><dt>Context Engineering</dt><dd>Praktik menyusun informasi (dokumen, riwayat, data) yang diberikan ke model agar hasilnya lebih relevan dan akurat.</dd></div>
       <div class="entry" data-term="multimodal"><dt>Multimodal</dt><dd>Kemampuan model memproses lebih dari satu jenis data sekaligus, misalnya teks, gambar, dan audio.</dd></div>
+      <div class="entry" data-term="chunking"><dt>Chunking</dt><dd>Proses memecah dokumen panjang jadi potongan lebih kecil agar bisa diindeks dan diambil (retrieve) secara efektif dalam sistem RAG.</dd></div>
+      <div class="entry" data-term="reranking rerank"><dt>Reranking</dt><dd>Langkah tambahan setelah pencarian awal untuk mengurutkan ulang hasil berdasarkan relevansi yang lebih akurat terhadap query.</dd></div>
+      <div class="entry" data-term="quantization"><dt>Quantization</dt><dd>Teknik mengurangi presisi angka dalam model agar ukurannya lebih kecil dan lebih cepat dijalankan, dengan trade-off akurasi.</dd></div>
+      <div class="entry" data-term="model routing router"><dt>Model Routing</dt><dd>Strategi mengarahkan permintaan ke model berbeda (kecil/besar, umum/khusus) tergantung kompleksitas tugas, untuk efisiensi biaya dan latency.</dd></div>
+      <div class="entry" data-term="sampling top-p top-k"><dt>Sampling (Top-p / Top-k)</dt><dd>Parameter yang mengatur dari kandidat kata mana model boleh memilih output berikutnya, memengaruhi variasi dan koherensi hasil.</dd></div>
+      <div class="entry" data-term="grounding"><dt>Grounding</dt><dd>Menyandarkan jawaban AI pada sumber data atau fakta konkret (dokumen, hasil pencarian) agar tidak sekadar mengarang.</dd></div>
+      <div class="entry" data-term="sycophancy"><dt>Sycophancy</dt><dd>Kecenderungan model menyetujui atau membenarkan pernyataan pengguna meski salah, demi terdengar menyenangkan.</dd></div>
+      <div class="entry" data-term="structured output json mode"><dt>Structured Output</dt><dd>Kemampuan model menghasilkan output dalam format terstruktur (JSON, tabel) yang bisa langsung diproses sistem lain.</dd></div>
+      <div class="entry" data-term="context rot"><dt>Context Rot</dt><dd>Penurunan kualitas jawaban model saat context window terisi terlalu penuh atau berisi informasi yang tidak relevan.</dd></div>
+      <div class="entry" data-term="agentic workflow"><dt>Agentic Workflow</dt><dd>Alur kerja di mana AI mengambil beberapa keputusan dan tindakan berurutan menuju tujuan, bukan hanya menjawab satu pertanyaan.</dd></div>
+      <div class="entry" data-term="system prompt"><dt>System Prompt</dt><dd>Instruksi awal yang mengatur peran, gaya, dan batasan model sebelum percakapan dengan pengguna dimulai.</dd></div>
+      <div class="entry" data-term="distillation"><dt>Distillation</dt><dd>Proses melatih model kecil untuk meniru perilaku model besar, menghasilkan model yang lebih murah dijalankan.</dd></div>
     </dl>
+
+    <p id="glossary-no-results" class="fine" style="display:none;margin-top:24px">Tidak ada istilah yang cocok. Coba kata kunci lain.</p>
   </div>
 </section>
 {% endblock %}
