@@ -5,11 +5,27 @@
   <div class="container">
     <span class="eyebrow">&gt; cat prompts/*.txt</span>
     <h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">Prompt Library</h1>
-    <p class="lead" style="max-width:640px">Prompt siap pakai per peran. Salin, sesuaikan bagian dalam kurung siku, langsung jalan.</p>
+    <p class="lead" style="max-width:640px">36+ prompt siap pakai per peran. Salin, sesuaikan bagian dalam kurung siku, langsung jalan.</p>
 
-    <div class="grid grid-2" style="margin-top:40px">
+    <input id="prompts-search" class="tools-search" type="text" placeholder="Cari prompt... (mis. schema, incident, test case)">
 
-      <div class="prompt-block">
+    <div class="filters" id="prompt-filters">
+      <button class="filter-pill active" data-filter="all">Semua</button>
+      <button class="filter-pill" data-filter="coding">Coding</button>
+      <button class="filter-pill" data-filter="data">Data</button>
+      <button class="filter-pill" data-filter="database">Database</button>
+      <button class="filter-pill" data-filter="network">Network</button>
+      <button class="filter-pill" data-filter="devops">DevOps</button>
+      <button class="filter-pill" data-filter="security">Security</button>
+      <button class="filter-pill" data-filter="qa">QA</button>
+      <button class="filter-pill" data-filter="writing">Docs</button>
+      <button class="filter-pill" data-filter="career">Karier</button>
+      <button class="filter-pill" data-filter="umum">Umum</button>
+    </div>
+
+    <div class="grid grid-2" style="margin-top:24px" id="prompt-grid">
+
+      <div class="prompt-block" data-cat="coding" data-name="programmer // code_review.txt prompt tinjau kode: bug, performa, best practice.">
         <div class="ph"><span>programmer // code_review.txt</span>
           <div style="display:flex;gap:8px">
             <button class="fav-btn" data-fav-id="prompt-code-review" data-fav-type="prompt" data-fav-title="programmer // code_review.txt" data-fav-desc="Prompt tinjau kode: bug, performa, best practice." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
@@ -22,7 +38,61 @@ Kode:
 [tempel kode di sini]</pre>
       </div>
 
-      <div class="prompt-block">
+      <div class="prompt-block" data-cat="coding" data-name="programmer // refactor_legacy.txt prompt refactor kode legacy tanpa mengubah perilaku.">
+        <div class="ph"><span>programmer // refactor_legacy.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-refactor-legacy" data-fav-type="prompt" data-fav-title="programmer // refactor_legacy.txt" data-fav-desc="Prompt refactor kode legacy tanpa mengubah perilaku." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah software engineer berpengalaman. Refactor kode legacy berikut agar lebih mudah dibaca dan dirawat, TANPA mengubah perilaku/output-nya. Jelaskan tiap perubahan dan alasannya, lalu tandai bagian yang butuh test tambahan sebelum di-merge.
+
+Bahasa/framework: [sebutkan]
+Kode:
+[tempel kode di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="coding" data-name="programmer // unit_test_generator.txt prompt hasilkan unit test dari fungsi/kelas.">
+        <div class="ph"><span>programmer // unit_test_generator.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-unit-test-generator" data-fav-type="prompt" data-fav-title="programmer // unit_test_generator.txt" data-fav-desc="Prompt hasilkan unit test dari fungsi/kelas." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah QA engineer. Buatkan unit test untuk kode berikut menggunakan [nama framework testing]. Sertakan test untuk: (1) kasus normal, (2) edge case, (3) input tidak valid. Jelaskan singkat apa yang divalidasi tiap test.
+
+Kode:
+[tempel kode di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="coding" data-name="programmer // bug_reproduction.txt prompt analisis stack trace &amp; rencana reproduksi bug.">
+        <div class="ph"><span>programmer // bug_reproduction.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-bug-reproduction" data-fav-type="prompt" data-fav-title="programmer // bug_reproduction.txt" data-fav-desc="Prompt analisis stack trace &amp; rencana reproduksi bug." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah debugging assistant. Dari stack trace dan deskripsi berikut, jelaskan: (1) kemungkinan penyebab error, (2) langkah untuk mereproduksi bug secara konsisten, (3) area kode yang perlu diperiksa lebih dulu.
+
+Deskripsi masalah: [ceritakan gejalanya]
+Stack trace:
+[tempel stack trace di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="coding" data-name="programmer // api_design_review.txt prompt tinjau desain rest api.">
+        <div class="ph"><span>programmer // api_design_review.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-api-design-review" data-fav-type="prompt" data-fav-title="programmer // api_design_review.txt" data-fav-desc="Prompt tinjau desain REST API." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah API architect. Tinjau desain REST API berikut untuk konsistensi penamaan endpoint, kesesuaian HTTP method/status code, dan potensi masalah versioning. Berikan revisi konkret untuk tiap isu.
+
+Daftar endpoint &amp; contoh payload:
+[tempel spesifikasi API di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="data" data-name="data_analyst // eda_summary.txt prompt ringkas pola, anomali, dan pertanyaan lanjutan.">
         <div class="ph"><span>data_analyst // eda_summary.txt</span>
           <div style="display:flex;gap:8px">
             <button class="fav-btn" data-fav-id="prompt-eda-summary" data-fav-type="prompt" data-fav-title="data_analyst // eda_summary.txt" data-fav-desc="Prompt ringkas pola, anomali, dan pertanyaan lanjutan." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
@@ -35,7 +105,58 @@ Konteks dataset: [deskripsikan dataset]
 Ringkasan statistik: [tempel di sini]</pre>
       </div>
 
-      <div class="prompt-block">
+      <div class="prompt-block" data-cat="data" data-name="data_analyst // data_cleaning_plan.txt prompt susun rencana pembersihan data mentah.">
+        <div class="ph"><span>data_analyst // data_cleaning_plan.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-data-cleaning-plan" data-fav-type="prompt" data-fav-title="data_analyst // data_cleaning_plan.txt" data-fav-desc="Prompt susun rencana pembersihan data mentah." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah data engineer. Dari deskripsi kondisi dataset berikut, susun rencana pembersihan data: (1) masalah kualitas data yang teridentifikasi, (2) urutan langkah pembersihan yang disarankan, (3) risiko jika langkah tertentu dilewati.
+
+Kondisi data: [jelaskan missing value, duplikat, format tidak konsisten, dll]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="data" data-name="data_analyst // feature_engineering.txt prompt usulkan fitur untuk model machine learning.">
+        <div class="ph"><span>data_analyst // feature_engineering.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-feature-engineering" data-fav-type="prompt" data-fav-title="data_analyst // feature_engineering.txt" data-fav-desc="Prompt usulkan fitur untuk model machine learning." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah data scientist. Berdasarkan deskripsi dataset dan tujuan model berikut, usulkan 8-10 fitur turunan yang berpotensi meningkatkan performa model. Jelaskan alasan tiap fitur dan cara menghitungnya.
+
+Tujuan model: [klasifikasi/regresi/lainnya, target prediksi]
+Kolom yang tersedia: [daftar kolom]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="data" data-name="data_analyst // dashboard_narrative.txt prompt ubah angka dashboard jadi narasi insight.">
+        <div class="ph"><span>data_analyst // dashboard_narrative.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-dashboard-narrative" data-fav-type="prompt" data-fav-title="data_analyst // dashboard_narrative.txt" data-fav-desc="Prompt ubah angka dashboard jadi narasi insight." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah analyst yang menulis ringkasan mingguan untuk stakeholder non-teknis. Dari angka dashboard berikut, tulis narasi singkat yang menyoroti perubahan penting, kemungkinan penyebabnya, dan rekomendasi tindak lanjut.
+
+Metrik minggu ini vs minggu lalu:
+[tempel angka di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="data" data-name="data_analyst // ab_test_analysis.txt prompt interpretasi hasil a/b test.">
+        <div class="ph"><span>data_analyst // ab_test_analysis.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-ab-test-analysis" data-fav-type="prompt" data-fav-title="data_analyst // ab_test_analysis.txt" data-fav-desc="Prompt interpretasi hasil A/B test." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah data analyst yang paham statistik eksperimen. Dari hasil A/B test berikut, jelaskan: (1) apakah hasilnya signifikan secara statistik, (2) risiko kesimpulan yang terlalu dini, (3) rekomendasi keputusan (ship/lanjutkan uji/hentikan).
+
+Setup eksperimen: [deskripsikan varian A vs B]
+Hasil: [tempel angka konversi, sample size, dll]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="database" data-name="database // schema_review.txt prompt tinjau schema, indeks, dan bottleneck.">
         <div class="ph"><span>database // schema_review.txt</span>
           <div style="display:flex;gap:8px">
             <button class="fav-btn" data-fav-id="prompt-schema-review" data-fav-type="prompt" data-fav-title="database // schema_review.txt" data-fav-desc="Prompt tinjau schema, indeks, dan bottleneck." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
@@ -48,7 +169,48 @@ Schema:
 [tempel schema di sini]</pre>
       </div>
 
-      <div class="prompt-block">
+      <div class="prompt-block" data-cat="database" data-name="database // query_optimization.txt prompt optimasi query yang lambat.">
+        <div class="ph"><span>database // query_optimization.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-query-optimization" data-fav-type="prompt" data-fav-title="database // query_optimization.txt" data-fav-desc="Prompt optimasi query yang lambat." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah database performance engineer. Analisis query dan execution plan berikut. Jelaskan mengapa query ini lambat, lalu berikan versi query yang dioptimalkan beserta indeks yang disarankan.
+
+Query:
+[tempel query di sini]
+Execution plan / EXPLAIN output:
+[tempel di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="database" data-name="database // migration_plan.txt prompt susun rencana migrasi schema yang aman.">
+        <div class="ph"><span>database // migration_plan.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-migration-plan" data-fav-type="prompt" data-fav-title="database // migration_plan.txt" data-fav-desc="Prompt susun rencana migrasi schema yang aman." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah database engineer. Susun rencana migrasi untuk perubahan schema berikut agar bisa dijalankan tanpa downtime signifikan pada sistem produksi. Sertakan urutan langkah, rencana rollback, dan hal yang perlu dimonitor selama migrasi.
+
+Perubahan yang diinginkan: [jelaskan perubahan schema]
+Skala data saat ini: [perkiraan jumlah baris/traffic]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="database" data-name="database // index_strategy.txt prompt rekomendasi strategi indexing.">
+        <div class="ph"><span>database // index_strategy.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-index-strategy" data-fav-type="prompt" data-fav-title="database // index_strategy.txt" data-fav-desc="Prompt rekomendasi strategi indexing." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah database consultant. Berdasarkan pola query yang paling sering dijalankan berikut, rekomendasikan indeks yang sebaiknya dibuat, indeks yang mungkin redundan, dan trade-off write performance yang perlu dipertimbangkan.
+
+Pola query yang sering dijalankan:
+[tempel daftar query representatif]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="network" data-name="network // log_triage.txt prompt kelompokkan log berdasar urgensi.">
         <div class="ph"><span>network // log_triage.txt</span>
           <div style="display:flex;gap:8px">
             <button class="fav-btn" data-fav-id="prompt-log-triage" data-fav-type="prompt" data-fav-title="network // log_triage.txt" data-fav-desc="Prompt kelompokkan log berdasar urgensi." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
@@ -61,7 +223,46 @@ Log:
 [tempel log di sini]</pre>
       </div>
 
-      <div class="prompt-block">
+      <div class="prompt-block" data-cat="network" data-name="network // topology_doc.txt prompt hasilkan dokumentasi topologi dari konfigurasi.">
+        <div class="ph"><span>network // topology_doc.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-topology-doc" data-fav-type="prompt" data-fav-title="network // topology_doc.txt" data-fav-desc="Prompt hasilkan dokumentasi topologi dari konfigurasi." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah network documentation assistant. Dari konfigurasi perangkat berikut, susun ringkasan topologi jaringan: perangkat utama, koneksi antar perangkat, dan VLAN/segmen yang teridentifikasi. Tandai bagian yang ambigu dan butuh verifikasi manual.
+
+Konfigurasi perangkat:
+[tempel konfigurasi di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="network" data-name="network // capacity_planning.txt prompt analisis kebutuhan kapasitas jaringan.">
+        <div class="ph"><span>network // capacity_planning.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-capacity-planning" data-fav-type="prompt" data-fav-title="network // capacity_planning.txt" data-fav-desc="Prompt analisis kebutuhan kapasitas jaringan." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah network capacity planner. Dari data utilisasi bandwidth berikut, proyeksikan kapan kapasitas saat ini akan terlampaui, dan rekomendasikan langkah mitigasi jangka pendek maupun jangka panjang.
+
+Data utilisasi (mis. 3-6 bulan terakhir):
+[tempel data di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="network" data-name="network // anomaly_detection.txt prompt deteksi anomali dari pola traffic.">
+        <div class="ph"><span>network // anomaly_detection.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-anomaly-detection" data-fav-type="prompt" data-fav-title="network // anomaly_detection.txt" data-fav-desc="Prompt deteksi anomali dari pola traffic." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah network security analyst. Dari deskripsi pola traffic berikut, identifikasi indikasi anomali (mis. lonjakan tidak wajar, koneksi ke IP mencurigakan), tingkat urgensinya, dan langkah verifikasi lanjutan yang disarankan.
+
+Deskripsi/pola traffic:
+[jelaskan atau tempel ringkasan traffic]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="devops" data-name="devops // incident_summary.txt prompt susun ringkasan post-mortem.">
         <div class="ph"><span>devops // incident_summary.txt</span>
           <div style="display:flex;gap:8px">
             <button class="fav-btn" data-fav-id="prompt-incident-summary" data-fav-type="prompt" data-fav-title="devops // incident_summary.txt" data-fav-desc="Prompt susun ringkasan post-mortem." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
@@ -74,7 +275,176 @@ Timeline:
 [tempel catatan kronologis di sini]</pre>
       </div>
 
-      <div class="prompt-block">
+      <div class="prompt-block" data-cat="devops" data-name="devops // runbook_generator.txt prompt susun runbook dari catatan penanganan insiden.">
+        <div class="ph"><span>devops // runbook_generator.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-runbook-generator" data-fav-type="prompt" data-fav-title="devops // runbook_generator.txt" data-fav-desc="Prompt susun runbook dari catatan penanganan insiden." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah SRE yang menyusun dokumentasi operasional. Dari catatan penanganan masalah berikut, susun runbook terstruktur: gejala, langkah diagnosis, langkah perbaikan, dan kapan harus eskalasi.
+
+Catatan penanganan sebelumnya:
+[tempel catatan/step yang pernah dilakukan]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="devops" data-name="devops // ci_cd_pipeline_review.txt prompt tinjau konfigurasi pipeline ci/cd.">
+        <div class="ph"><span>devops // ci_cd_pipeline_review.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-ci-cd-pipeline-review" data-fav-type="prompt" data-fav-title="devops // ci_cd_pipeline_review.txt" data-fav-desc="Prompt tinjau konfigurasi pipeline CI/CD." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah DevOps engineer. Tinjau konfigurasi pipeline CI/CD berikut untuk potensi masalah: waktu build yang tidak efisien, celah keamanan (mis. secret ter-hardcode), dan langkah yang bisa diparalelkan.
+
+Konfigurasi pipeline:
+[tempel file konfigurasi di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="devops" data-name="devops // capacity_alert_triage.txt prompt tinjau ulang aturan alert yang terlalu berisik.">
+        <div class="ph"><span>devops // capacity_alert_triage.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-capacity-alert-triage" data-fav-type="prompt" data-fav-title="devops // capacity_alert_triage.txt" data-fav-desc="Prompt tinjau ulang aturan alert yang terlalu berisik." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah SRE yang menangani alert fatigue. Dari daftar alert yang sering trigger berikut, tentukan mana yang perlu disesuaikan threshold-nya, digabung, atau dihapus, dan berikan alasannya.
+
+Daftar alert &amp; frekuensi trigger:
+[tempel daftar di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="security" data-name="security // vuln_triage.txt prompt triase hasil vulnerability scan.">
+        <div class="ph"><span>security // vuln_triage.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-vuln-triage" data-fav-type="prompt" data-fav-title="security // vuln_triage.txt" data-fav-desc="Prompt triase hasil vulnerability scan." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah security analyst. Dari hasil vulnerability scan berikut, urutkan temuan berdasarkan prioritas perbaikan (mempertimbangkan severity dan exploitability), dan jelaskan alasan singkat untuk tiap prioritas tinggi.
+
+Hasil scan:
+[tempel daftar temuan di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="security" data-name="security // secure_code_review.txt prompt review kode fokus keamanan.">
+        <div class="ph"><span>security // secure_code_review.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-secure-code-review" data-fav-type="prompt" data-fav-title="security // secure_code_review.txt" data-fav-desc="Prompt review kode fokus keamanan." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah application security engineer. Tinjau kode berikut khusus dari sisi keamanan: injeksi (SQL/command), validasi input, penanganan secret/credential, dan otorisasi. Untuk tiap temuan, sertakan tingkat risiko dan contoh perbaikan.
+
+Kode:
+[tempel kode di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="security" data-name="security // incident_response_plan.txt prompt susun rencana awal respons insiden keamanan.">
+        <div class="ph"><span>security // incident_response_plan.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-incident-response-plan" data-fav-type="prompt" data-fav-title="security // incident_response_plan.txt" data-fav-desc="Prompt susun rencana awal respons insiden keamanan." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah incident responder. Dari indikasi insiden keamanan berikut, susun rencana respons awal: langkah containment segera, pihak yang perlu diberi tahu, dan bukti/log yang perlu diamankan untuk investigasi lanjutan.
+
+Indikasi insiden:
+[jelaskan gejala/temuan awal]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="qa" data-name="qa // test_case_generator.txt prompt hasilkan test case dari spesifikasi fitur.">
+        <div class="ph"><span>qa // test_case_generator.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-test-case-generator" data-fav-type="prompt" data-fav-title="qa // test_case_generator.txt" data-fav-desc="Prompt hasilkan test case dari spesifikasi fitur." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah QA engineer. Dari spesifikasi fitur berikut, buatkan daftar test case yang mencakup: happy path, edge case, dan skenario negatif. Format: ID, deskripsi, langkah, hasil yang diharapkan.
+
+Spesifikasi fitur:
+[tempel spesifikasi/user story di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="qa" data-name="qa // bug_report_polish.txt prompt ubah catatan mentah jadi bug report yang jelas.">
+        <div class="ph"><span>qa // bug_report_polish.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-bug-report-polish" data-fav-type="prompt" data-fav-title="qa // bug_report_polish.txt" data-fav-desc="Prompt ubah catatan mentah jadi bug report yang jelas." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu membantu menulis bug report yang jelas untuk tim developer. Dari catatan mentah berikut, susun bug report terstruktur: judul singkat, langkah reproduksi, hasil aktual vs yang diharapkan, dan tingkat keparahan.
+
+Catatan mentah:
+[tempel catatan/observasi kamu di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="writing" data-name="writing // api_docs_writer.txt prompt susun dokumentasi api dari catatan endpoint.">
+        <div class="ph"><span>writing // api_docs_writer.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-api-docs-writer" data-fav-type="prompt" data-fav-title="writing // api_docs_writer.txt" data-fav-desc="Prompt susun dokumentasi API dari catatan endpoint." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah technical writer. Dari catatan endpoint berikut, susun dokumentasi API yang rapi: deskripsi, method, parameter, contoh request, dan contoh response.
+
+Catatan endpoint:
+[tempel catatan/definisi endpoint di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="writing" data-name="writing // release_notes_writer.txt prompt susun release notes dari daftar commit.">
+        <div class="ph"><span>writing // release_notes_writer.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-release-notes-writer" data-fav-type="prompt" data-fav-title="writing // release_notes_writer.txt" data-fav-desc="Prompt susun release notes dari daftar commit." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah technical writer. Dari daftar commit/perubahan berikut, susun release notes yang mudah dipahami pengguna: kelompokkan menjadi Fitur Baru, Perbaikan, dan Perubahan Lain. Hindari istilah teknis internal yang tidak relevan bagi pengguna.
+
+Daftar commit/perubahan:
+[tempel changelog mentah di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="career" data-name="karier // case_study_writer.txt prompt ubah project selesai jadi studi kasus portofolio.">
+        <div class="ph"><span>karier // case_study_writer.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-case-study-writer" data-fav-type="prompt" data-fav-title="karier // case_study_writer.txt" data-fav-desc="Prompt ubah project selesai jadi studi kasus portofolio." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu membantu menyusun studi kasus portofolio dari project yang sudah selesai. Dari catatan project berikut, tulis studi kasus dengan struktur: masalah, pendekatan, proses singkat, dan hasil terukur.
+
+Catatan project (tujuan, langkah yang dilakukan, hasil):
+[tempel catatan project di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="career" data-name="karier // service_pricing_helper.txt prompt bantu menyusun scope &amp; harga jasa automasi ai.">
+        <div class="ph"><span>karier // service_pricing_helper.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-service-pricing-helper" data-fav-type="prompt" data-fav-title="karier // service_pricing_helper.txt" data-fav-desc="Prompt bantu menyusun scope &amp; harga jasa automasi AI." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah konsultan bisnis untuk jasa freelance berbasis AI. Dari deskripsi kebutuhan klien berikut, bantu susun: batasan scope pekerjaan yang jelas, estimasi waktu pengerjaan, dan kisaran harga yang wajar berdasarkan kompleksitasnya.
+
+Kebutuhan klien:
+[jelaskan masalah yang ingin diselesaikan klien]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="career" data-name="karier // portfolio_bio_writer.txt prompt tulis bio portofolio yang fokus ke bukti, bukan jargon.">
+        <div class="ph"><span>karier // portfolio_bio_writer.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-portfolio-bio-writer" data-fav-type="prompt" data-fav-title="karier // portfolio_bio_writer.txt" data-fav-desc="Prompt tulis bio portofolio yang fokus ke bukti, bukan jargon." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu membantu menulis bio portofolio profesional. Dari daftar pengalaman/skill berikut, tulis bio singkat (3-4 kalimat) yang fokus pada hasil konkret, bukan jargon buzzword AI. Sertakan 2 variasi: satu formal untuk LinkedIn, satu santai untuk website personal.
+
+Pengalaman &amp; skill:
+[tempel daftar pengalaman/skill di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="umum" data-name="umum // prompt_starter.txt template prompt generik: peran, tugas, konteks, format.">
         <div class="ph"><span>umum // prompt_starter.txt</span>
           <div style="display:flex;gap:8px">
             <button class="fav-btn" data-fav-id="prompt-starter" data-fav-type="prompt" data-fav-title="umum // prompt_starter.txt" data-fav-desc="Template prompt generik: peran, tugas, konteks, format." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
@@ -88,10 +458,51 @@ Format output: [poin-poin / tabel / paragraf / kode]
 Batasan: [panjang, gaya bahasa, hal yang harus dihindari]</pre>
       </div>
 
+      <div class="prompt-block" data-cat="umum" data-name="umum // prompt_chain_planner.txt prompt pecah tugas kompleks jadi rangkaian prompt.">
+        <div class="ph"><span>umum // prompt_chain_planner.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-prompt-chain-planner" data-fav-type="prompt" data-fav-title="umum // prompt_chain_planner.txt" data-fav-desc="Prompt pecah tugas kompleks jadi rangkaian prompt." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu membantu merancang alur prompt chaining. Dari tugas kompleks berikut, pecah menjadi 3-5 langkah prompt berurutan, di mana output tiap langkah jadi input langkah berikutnya. Untuk tiap langkah, tuliskan tujuannya secara singkat.
+
+Tugas kompleks yang ingin diselesaikan:
+[jelaskan tugas akhir yang diinginkan]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="umum" data-name="umum // output_critique.txt prompt minta ai mengkritik &amp; memperbaiki outputnya sendiri.">
+        <div class="ph"><span>umum // output_critique.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-output-critique" data-fav-type="prompt" data-fav-title="umum // output_critique.txt" data-fav-desc="Prompt minta AI mengkritik &amp; memperbaiki outputnya sendiri." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah reviewer yang kritis. Tinjau ulang output berikut terhadap kriteria: [akurasi/kejelasan/kelengkapan/format]. Sebutkan minimal 3 kelemahan konkret, lalu tulis ulang versi yang lebih baik.
+
+Output yang mau dikritik:
+[tempel output sebelumnya di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="umum" data-name="umum // meeting_notes_summary.txt prompt ubah catatan rapat mentah jadi action items.">
+        <div class="ph"><span>umum // meeting_notes_summary.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-meeting-notes-summary" data-fav-type="prompt" data-fav-title="umum // meeting_notes_summary.txt" data-fav-desc="Prompt ubah catatan rapat mentah jadi action items." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu membantu meringkas catatan rapat. Dari catatan mentah berikut, susun ringkasan singkat, daftar keputusan yang diambil, dan action item dengan format: [tugas] - [penanggung jawab] - [tenggat waktu jika disebutkan].
+
+Catatan rapat mentah:
+[tempel catatan di sini]</pre>
+      </div>
+
     </div>
+    <p class="tools-empty" id="prompts-empty">Tidak ada prompt yang cocok. Coba kata kunci atau kategori lain.</p>
   </div>
 </section>
 {% endblock %}
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/copy.js') }}"></script>
+<script src="{{ url_for('static', filename='js/prompt-filter.js') }}"></script>
 {% endblock %}

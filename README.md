@@ -40,7 +40,68 @@ tanpa backend/database (murni frontend server-rendered).
   tipis di bagian atas halaman.
 - **Notifikasi toast** — konfirmasi visual singkat untuk aksi seperti menambah favorit atau menyalin prompt.
 
-## Menjalankan secara lokal
+## Alur update yang aman (biar fitur lama tidak pernah hilang)
+
+Setiap kali menambah/mengubah fitur, ikuti urutan ini:
+
+**1. Kerjakan di branch terpisah (bukan langsung di `main`)**
+```bash
+git checkout -b fitur/nama-fitur-baru
+# ...edit kode...
+```
+
+**2. Jalankan smoke test sebelum commit**
+```bash
+python scripts/smoke_test.py
+```
+Script ini otomatis membuka semua halaman dan mengecek penanda-penanda fitur
+(search box, filter, tombol favorit, checklist roadmap, dst). Kalau ada yang
+hilang karena editan baru, script akan **gagal dan sebutkan persis** halaman +
+fitur mana yang bermasalah — jangan commit dulu sebelum ini hijau ✅.
+
+**3. Commit & push branch, buka Pull Request ke `main`**
+```bash
+git add -A
+git commit -m "Deskripsi singkat perubahan"
+git push origin fitur/nama-fitur-baru
+```
+GitHub Actions (`.github/workflows/smoke-test.yml`) otomatis menjalankan
+`smoke_test.py` lagi di server GitHub. Aktifkan **branch protection**
+(Settings → Branches → Add rule → `main` → centang "Require status checks
+to pass before merging" → pilih job *Smoke Test*) supaya PR **tidak bisa
+di-merge** kalau smoke test gagal.
+
+**4. Merge ke `main`, lalu catat di CHANGELOG.md**
+
+Tambahkan entri baru di `CHANGELOG.md` (lihat format yang sudah ada) yang
+menjelaskan apa yang berubah di versi ini.
+
+**5. "Lock" versi dengan git tag**
+```bash
+git checkout main
+git pull
+git tag -a v1.2.0 -m "Ringkasan singkat rilis ini"
+git push origin v1.2.0
+```
+Tag ini jadi titik aman yang bisa selalu kamu kembali ke sana kalau suatu
+saat versi terbaru ternyata bermasalah:
+```bash
+# lihat semua versi yang pernah di-lock
+git tag -l
+
+# rollback penuh ke versi tertentu (hati-hati, ini menimpa main)
+git reset --hard v1.1.0
+git push --force origin main
+```
+
+**6. Deploy ke PythonAnywhere seperti biasa**
+```bash
+cd ~/Panduan-belajar-ai
+git pull origin main
+```
+lalu klik **Reload** di tab **Web**.
+
+
 
 ```bash
 # 1. Buat virtual environment (opsional tapi disarankan)
@@ -62,6 +123,11 @@ Buka `http://127.0.0.1:5000` di browser.
 andremedia/
 ├── app.py                  # Routing Flask (tanpa database)
 ├── requirements.txt
+├── CHANGELOG.md            # Riwayat versi — isi tiap kali "lock" versi baru
+├── scripts/
+│   └── smoke_test.py       # Cek otomatis semua fitur lama masih ada
+├── .github/workflows/
+│   └── smoke-test.yml      # CI: jalankan smoke test otomatis tiap push/PR
 ├── templates/
 │   ├── base.html           # Layout dasar: nav, footer, command palette, toast host
 │   ├── index.html
