@@ -64,5 +64,15 @@ def skillcheck():
     return render_template("skillcheck.html", active="skillcheck")
 
 
+@app.route("/prompt-builder")
+def prompt_builder():
+    return render_template("prompt_builder.html", active="prompt_builder")
+
+
+@app.route("/tersimpan")
+def tersimpan():
+    return render_template("tersimpan.html", active="tersimpan")
+
+
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

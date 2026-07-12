@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Tersimpan — andremedia.ai{% endblock %}
+{% block content %}
+<section class="section" style="border-top:1px solid var(--border-soft)">
+  <div class="container">
+    <span class="eyebrow">&gt; cat ./tersimpan.json</span>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">Tersimpan</h1>
+    <p class="lead" style="max-width:640px">Tools dan prompt yang kamu tandai favorit. Tersimpan hanya di browser ini, tanpa login.</p>
+
+    <div id="fav-container" style="margin-top:24px"></div>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/tersimpan.js') }}"></script>
+{% endblock %}

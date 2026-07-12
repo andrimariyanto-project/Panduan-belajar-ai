@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Prompt Builder — andremedia.ai{% endblock %}
+{% block content %}
+<section class="section" style="border-top:1px solid var(--border-soft)">
+  <div class="container">
+    <span class="eyebrow">&gt; ./prompt_builder --interactive</span>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">Prompt Builder</h1>
+    <p class="lead" style="max-width:640px">Isi tiap bagian, lihat prompt-nya tersusun langsung di panel kanan. Pilih preset peran untuk mulai lebih cepat.</p>
+
+    <div class="pb-presets" id="pb-presets">
+      <button type="button" class="filter-pill" data-preset="programmer">Programmer</button>
+      <button type="button" class="filter-pill" data-preset="data">Data Analyst</button>
+      <button type="button" class="filter-pill" data-preset="database">Database</button>
+      <button type="button" class="filter-pill" data-preset="network">Network</button>
+      <button type="button" class="filter-pill" data-preset="devops">DevOps</button>
+      <button type="button" class="filter-pill" data-preset="clear">Kosongkan</button>
+    </div>
+
+    <div class="pb-grid">
+      <div>
+        <div class="pb-field">
+          <label for="pb-role">Peran AI</label>
+          <input id="pb-role" type="text" placeholder="mis. senior code reviewer, database architect">
+        </div>
+        <div class="pb-field">
+          <label for="pb-task">Tugas</label>
+          <textarea id="pb-task" placeholder="Apa yang perlu dilakukan AI secara spesifik?"></textarea>
+        </div>
+        <div class="pb-field">
+          <label for="pb-context">Konteks</label>
+          <textarea id="pb-context" placeholder="Informasi latar belakang yang relevan (tempel data/kode/log di sini nanti)"></textarea>
+        </div>
+        <div class="pb-field">
+          <label for="pb-format">Format output</label>
+          <select id="pb-format">
+            <option value="poin-poin">Poin-poin</option>
+            <option value="tabel">Tabel</option>
+            <option value="paragraf">Paragraf</option>
+            <option value="kode">Kode</option>
+            <option value="langkah bernomor">Langkah bernomor</option>
+          </select>
+        </div>
+        <div class="pb-field">
+          <label for="pb-tone">Gaya bahasa</label>
+          <select id="pb-tone">
+            <option value="netral dan faktual">Netral & faktual</option>
+            <option value="singkat dan langsung ke poin">Singkat & langsung</option>
+            <option value="detail dan edukatif">Detail & edukatif</option>
+            <option value="santai tapi tetap profesional">Santai tapi profesional</option>
+          </select>
+        </div>
+        <div class="pb-field">
+          <label for="pb-constraints">Batasan tambahan (opsional)</label>
+          <textarea id="pb-constraints" placeholder="mis. maksimal 200 kata, hindari jargon, sertakan contoh kode"></textarea>
+        </div>
+      </div>
+
+      <div class="pb-preview">
+        <div class="ph"><span>&gt; preview_prompt.txt</span><button class="copy-btn" id="pb-copy">Salin</button></div>
+        <pre id="pb-output">Isi form di kiri untuk menyusun prompt-nya di sini...</pre>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/prompt-builder.js') }}"></script>
+{% endblock %}

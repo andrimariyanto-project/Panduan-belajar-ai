@@ -7,16 +7,38 @@ tanpa backend/database (murni frontend server-rendered).
 ## Struktur halaman
 
 - `/` — Beranda
-- `/roadmap` — Roadmap belajar 4 tahap (node_00 – node_03)
-- `/courses` — Daftar course per node/peran
-- `/tools` — Direktori tools AI (dengan filter kategori)
-- `/prompts` — Prompt library siap salin
+- `/roadmap` — Roadmap belajar 4 tahap (node_00 – node_03), dengan **checklist progress interaktif**
+- `/courses` — Daftar course per node/peran (bisa difavoritkan)
+- `/tools` — Direktori tools AI (filter kategori + **pencarian teks live** + favorit)
+- `/prompts` — Prompt library siap salin (bisa difavoritkan)
+- `/prompt-builder` — **Baru:** susun prompt custom secara interaktif dengan preview langsung
 - `/workflows` — Workflow AI langkah-per-langkah
 - `/use-cases` — Use case per bidang teknis
 - `/projects` — Ide project latihan
 - `/monetize` — Cara memonetisasi skill AI
-- `/glossary` — Kamus istilah AI (dengan pencarian)
-- `/skill-check` — Kuis interaktif penentu level (klien-side, tanpa server)
+- `/glossary` — Kamus istilah AI, dengan pencarian **dan mode flashcard interaktif**
+- `/skill-check` — Kuis interaktif penentu level, dengan progress bar, tombol kembali, dan riwayat hasil
+- `/tersimpan` — **Baru:** daftar tools/prompt/course yang sudah kamu favoritkan
+
+## Fitur interaktif
+
+- **Command palette / pencarian global** — tekan `Ctrl+K` (atau klik ikon cari di navbar) untuk mencari
+  ke semua halaman, tools, prompt, istilah kamus, dan course sekaligus, lengkap dengan navigasi keyboard.
+- **Sistem favorit/bookmark** — tandai tool, prompt, atau course dengan ikon bintang; tersimpan di
+  `localStorage` browser, terlihat di halaman `/tersimpan` dan lencana penghitung di navbar.
+- **Roadmap progress tracker** — centang modul yang sudah dipelajari, progress bar otomatis
+  terisi, node berubah status "selesai", dan bisa direset kapan saja.
+- **Prompt Builder** — form interaktif dengan preset per peran (programmer/data/database/network/devops)
+  yang menyusun prompt custom secara live, siap disalin.
+- **Kamus AI mode flashcard** — beralih dari mode daftar ke mode kartu flip, tandai istilah yang
+  sudah dihafal, dan acak urutan kartu.
+- **Tools live search** — cari tool berdasarkan nama/deskripsi selain filter kategori, dengan pesan
+  kosong jika tidak ada hasil.
+- **Skill Check yang lebih kaya** — progress bar per pertanyaan, tombol kembali ke soal sebelumnya,
+  serta riwayat 5 hasil terakhir yang tersimpan otomatis.
+- **Navigasi mobile & scroll progress bar** — menu hamburger responsif dan indikator progres scroll
+  tipis di bagian atas halaman.
+- **Notifikasi toast** — konfirmasi visual singkat untuk aksi seperti menambah favorit atau menyalin prompt.
 
 ## Menjalankan secara lokal
 
@@ -41,26 +63,38 @@ andremedia/
 ├── app.py                  # Routing Flask (tanpa database)
 ├── requirements.txt
 ├── templates/
-│   ├── base.html           # Layout dasar: nav, footer, font
+│   ├── base.html           # Layout dasar: nav, footer, command palette, toast host
 │   ├── index.html
-│   ├── roadmap.html
-│   ├── courses.html
-│   ├── tools.html
-│   ├── prompts.html
+│   ├── roadmap.html        # + checklist progress
+│   ├── courses.html        # + tombol favorit
+│   ├── tools.html          # + live search + favorit
+│   ├── prompts.html        # + tombol favorit
+│   ├── prompt_builder.html # Baru: prompt builder interaktif
 │   ├── workflows.html
 │   ├── usecases.html
 │   ├── projects.html
 │   ├── monetize.html
-│   ├── glossary.html
-│   └── skillcheck.html
+│   ├── glossary.html       # + mode flashcard
+│   ├── skillcheck.html     # + riwayat hasil
+│   └── tersimpan.html      # Baru: halaman favorit
 └── static/
     ├── css/style.css       # Design system (warna, tipografi, komponen)
     └── js/
         ├── main.js
-        ├── filter.js       # Filter kategori di halaman Tools
-        ├── copy.js         # Tombol salin di halaman Prompts
-        ├── glossary.js     # Pencarian di halaman Kamus AI
-        └── quiz.js         # Logika kuis Skill Check
+        ├── filter.js           # Filter kategori + pencarian di halaman Tools
+        ├── copy.js             # Tombol salin di halaman Prompts
+        ├── glossary.js         # Pencarian mode-list di halaman Kamus AI
+        ├── flashcards.js       # Mode flashcard di halaman Kamus AI
+        ├── quiz.js             # Logika kuis Skill Check + riwayat
+        ├── roadmap-progress.js # Checklist & progress bar Roadmap
+        ├── prompt-builder.js   # Logika Prompt Builder
+        ├── favorites.js        # Sistem favorit/bookmark (shared)
+        ├── tersimpan.js        # Render halaman Tersimpan
+        ├── search-data.js      # Index data untuk command palette
+        ├── command-palette.js  # Command palette (Ctrl+K)
+        ├── mobile-nav.js       # Toggle menu mobile
+        ├── scroll-progress.js  # Progress bar scroll
+        └── toast.js            # Notifikasi toast (shared)
 ```
 
 ## Konsep desain
@@ -78,7 +112,9 @@ database, jadi mengubah konten cukup dengan mengedit HTML/teks di template.
 
 ## Langkah lanjutan yang bisa ditambahkan
 
-- Autentikasi & progress tracking per user (butuh database — misalnya PostgreSQL + SQLAlchemy)
+- Autentikasi & sinkronisasi favorit/progress lintas perangkat (saat ini semua state — favorit,
+  progress roadmap, riwayat skill check, kartu dikuasai — tersimpan lokal di `localStorage` browser)
 - CMS sederhana agar non-developer bisa mengubah konten tanpa edit kode
-- Integrasi API AI sungguhan di halaman Skill Check untuk rekomendasi yang lebih personal
+- Integrasi API AI sungguhan di halaman Skill Check & Prompt Builder untuk hasil yang lebih personal
 - Analytics untuk melihat halaman/mata pelajaran yang paling banyak diakses
+- Endpoint `/api/search-index` di backend agar index command palette tidak perlu di-hardcode di JS

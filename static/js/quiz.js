@@ -1,30 +1,77 @@
 document.addEventListener('DOMContentLoaded', () => {
   const data = JSON.parse(document.getElementById('quiz-data').textContent);
   const root = document.getElementById('quiz-root');
+  const banner = document.getElementById('quiz-history-banner');
+  const HISTORY_KEY = 'andre_skillcheck_history_v1';
+
   let current = 0;
   let answers = new Array(data.length).fill(null);
 
+  function getHistory() {
+    try {
+      return JSON.parse(localStorage.getItem(HISTORY_KEY)) || [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function saveResult(pct, tier) {
+    const history = getHistory();
+    history.unshift({ pct, tier, date: new Date().toLocaleDateString('id-ID') });
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(history.slice(0, 5)));
+  }
+
+  function renderBanner() {
+    const history = getHistory();
+    if (!banner) return;
+    if (!history.length) {
+      banner.innerHTML = '';
+      return;
+    }
+    const last = history[0];
+    banner.innerHTML = `
+      <div class="quiz-history-banner">
+        <span>Hasil terakhir kamu (${last.date}): <b>${last.pct}%</b> — ${last.tier}</span>
+        <button class="quiz-back" id="quiz-retake" style="padding:8px 14px">Ambil lagi</button>
+      </div>`;
+    const retakeBtn = document.getElementById('quiz-retake');
+    if (retakeBtn) {
+      retakeBtn.addEventListener('click', () => {
+        current = 0;
+        answers = new Array(data.length).fill(null);
+        renderQuestion();
+      });
+    }
+  }
+
+  function score() {
+    return answers.reduce((sum, v) => sum + (v || 0), 0);
+  }
+
   function renderQuestion() {
     const item = data[current];
-    const pct = Math.round((current / data.length) * 100);
-
+    const pct = Math.round(((current) / data.length) * 100);
     root.innerHTML = `
-      <div class="quiz-progress-bar"><span style="width:${pct}%"></span></div>
-      <div class="quiz-progress">Pertanyaan ${current + 1} / ${data.length}</div>
+      <div class="quiz-topbar">
+        <div class="quiz-progress">Pertanyaan ${current + 1} / ${data.length}</div>
+        <button class="quiz-back" id="quiz-back" ${current === 0 ? 'disabled' : ''}>← Kembali</button>
+      </div>
+      <div class="quiz-bar"><span style="width:${pct}%"></span></div>
       <div class="quiz-card">
         <h3>${item.q}</h3>
         <div class="quiz-options">
-          ${item.options.map((opt, i) => `<button class="quiz-opt${answers[current] === i ? ' correct' : ''}" data-i="${i}" data-v="${opt.v}">${opt.t}</button>`).join('')}
+          ${item.options
+            .map(
+              (opt, i) =>
+                `<button class="quiz-opt${answers[current] === opt.v ? ' correct' : ''}" data-v="${opt.v}">${opt.t}</button>`
+            )
+            .join('')}
         </div>
       </div>
-      <div class="quiz-nav">
-        <button class="quiz-back" id="quiz-back" ${current === 0 ? 'disabled' : ''}>&larr; Kembali</button>
-      </div>
     `;
-
-    root.querySelectorAll('.quiz-opt').forEach(btn => {
+    root.querySelectorAll('.quiz-opt').forEach((btn) => {
       btn.addEventListener('click', () => {
-        answers[current] = parseInt(btn.dataset.i, 10);
+        answers[current] = parseInt(btn.dataset.v, 10);
         current += 1;
         if (current < data.length) {
           renderQuestion();
@@ -33,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
-
     const backBtn = document.getElementById('quiz-back');
     if (backBtn) {
       backBtn.addEventListener('click', () => {
@@ -46,12 +92,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function renderResult() {
-    const score = answers.reduce((sum, i, idx) => {
-      if (i === null) return sum;
-      return sum + data[idx].options[i].v;
-    }, 0);
+    const raw = score();
     const max = data.length * 3;
-    const pct = Math.round((score / max) * 100);
+    const pct = Math.round((raw / max) * 100);
     let tier, desc, node;
 
     if (pct < 25) {
@@ -72,19 +115,20 @@ document.addEventListener('DOMContentLoaded', () => {
       node = '/monetize';
     }
 
+    saveResult(pct, tier);
+    if (banner) banner.innerHTML = '';
+
     root.innerHTML = `
-      <div class="quiz-progress-bar"><span style="width:100%"></span></div>
       <div class="quiz-card quiz-result">
         <div class="score">${pct}%</div>
         <h3>${tier}</h3>
         <p>${desc}</p>
-        <a href="${node}" class="btn btn-primary" style="margin-top:8px">Lanjut ke rekomendasi</a>
-        <div>
-          <button class="quiz-restart" id="quiz-restart">Ulangi Skill Check</button>
+        <div class="actions">
+          <a href="${node}" class="btn btn-primary">Lanjut ke rekomendasi</a>
+          <button class="btn btn-outline" id="quiz-restart">Ulangi kuis</button>
         </div>
       </div>
     `;
-
     const restartBtn = document.getElementById('quiz-restart');
     if (restartBtn) {
       restartBtn.addEventListener('click', () => {
@@ -95,5 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  renderBanner();
   renderQuestion();
 });

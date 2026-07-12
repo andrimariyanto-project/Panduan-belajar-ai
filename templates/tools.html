@@ -7,8 +7,7 @@
     <h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">Direktori Tools AI</h1>
     <p class="lead" style="max-width:640px">Dikurasi berdasarkan kegunaan sehari-hari, bukan seberapa viral.</p>
 
-    <input id="tool-search" type="text" placeholder="Cari tools... (mis. code review, log, dashboard)"
-      style="width:100%;max-width:420px;margin-top:24px;padding:12px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--text);font-family:var(--font-mono);font-size:.9rem">
+    <input id="tools-search" class="tools-search" type="text" placeholder="Cari tool... (mis. SQL, log, agent)">
 
     <div class="filters" id="filters">
       <button class="filter-pill active" data-filter="all">Semua</button>
@@ -20,144 +19,95 @@
       <button class="filter-pill" data-filter="design">Visual</button>
     </div>
 
-    <p id="tool-count" class="fine" style="margin-top:12px"></p>
-
     <div class="grid grid-3" id="tool-grid">
 
-      <div class="card" data-cat="coding">
-        <span class="tag">coding</span>
+      <div class="card" data-cat="coding" data-name="asisten coding dalam ide">
+        <div class="card-top"><span class="tag">coding</span>
+          <button class="fav-btn" data-fav-id="tool-ide-assistant" data-fav-type="tool" data-fav-title="Asisten coding dalam IDE" data-fav-desc="Autocomplete kontekstual, penjelasan kode, dan refactor langsung dari editor." data-fav-url="/tools" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+        </div>
         <h3>Asisten coding dalam IDE</h3>
         <p>Autocomplete kontekstual, penjelasan kode, dan refactor langsung dari editor.</p>
       </div>
-      <div class="card" data-cat="coding">
-        <span class="tag">coding</span>
+      <div class="card" data-cat="coding" data-name="code review otomatis">
+        <div class="card-top"><span class="tag">coding</span>
+          <button class="fav-btn" data-fav-id="tool-code-review" data-fav-type="tool" data-fav-title="Code review otomatis" data-fav-desc="Menganalisis pull request untuk potensi bug, code smell, dan celah keamanan." data-fav-url="/tools" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+        </div>
         <h3>Code review otomatis</h3>
         <p>Menganalisis pull request untuk potensi bug, code smell, dan celah keamanan.</p>
       </div>
-      <div class="card" data-cat="coding">
-        <span class="tag">coding</span>
-        <h3>AI test generator</h3>
-        <p>Menghasilkan unit test dari fungsi yang sudah ada, termasuk edge case yang sering terlewat.</p>
-      </div>
-      <div class="card" data-cat="coding">
-        <span class="tag">coding</span>
-        <h3>Asisten CLI & scripting</h3>
-        <p>Menjelaskan dan menyusun command shell/script otomasi dari deskripsi bahasa natural.</p>
-      </div>
-      <div class="card" data-cat="coding">
-        <span class="tag">coding</span>
-        <h3>Agent coding otonom</h3>
-        <p>Mengerjakan task coding multi-file dari satu instruksi, lalu menyiapkan pull request untuk direview.</p>
-      </div>
-
-      <div class="card" data-cat="data">
-        <span class="tag teal">data</span>
+      <div class="card" data-cat="data" data-name="notebook ai untuk eda">
+        <div class="card-top"><span class="tag teal">data</span>
+          <button class="fav-btn" data-fav-id="tool-eda-notebook" data-fav-type="tool" data-fav-title="Notebook AI untuk EDA" data-fav-desc="Membuat visualisasi dan ringkasan statistik dari dataset hanya dengan deskripsi bahasa natural." data-fav-url="/tools" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+        </div>
         <h3>Notebook AI untuk EDA</h3>
         <p>Membuat visualisasi dan ringkasan statistik dari dataset hanya dengan deskripsi bahasa natural.</p>
       </div>
-      <div class="card" data-cat="data">
-        <span class="tag teal">data</span>
+      <div class="card" data-cat="data" data-name="text-to-sql assistant">
+        <div class="card-top"><span class="tag teal">data</span>
+          <button class="fav-btn" data-fav-id="tool-text-to-sql" data-fav-type="tool" data-fav-title="Text-to-SQL assistant" data-fav-desc="Mengubah pertanyaan bisnis jadi query SQL, lalu menjelaskan hasilnya dalam bahasa awam." data-fav-url="/tools" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+        </div>
         <h3>Text-to-SQL assistant</h3>
         <p>Mengubah pertanyaan bisnis jadi query SQL, lalu menjelaskan hasilnya dalam bahasa awam.</p>
       </div>
-      <div class="card" data-cat="data">
-        <span class="tag teal">data</span>
-        <h3>AI dashboard narrator</h3>
-        <p>Menulis ringkasan naratif otomatis dari dashboard BI untuk laporan mingguan.</p>
-      </div>
-      <div class="card" data-cat="data">
-        <span class="tag teal">data</span>
-        <h3>AI data cleaning</h3>
-        <p>Mendeteksi tipe data salah, duplikasi, dan outlier di dataset mentah sebelum dianalisis.</p>
-      </div>
-      <div class="card" data-cat="data">
-        <span class="tag teal">data</span>
-        <h3>Anomaly detection untuk metrik</h3>
-        <p>Mendeteksi lonjakan atau penurunan tidak wajar pada metrik bisnis/infra secara otomatis dari time series.</p>
-      </div>
-
-      <div class="card" data-cat="infra">
-        <span class="tag">infra</span>
+      <div class="card" data-cat="infra" data-name="log analyzer berbasis ai">
+        <div class="card-top"><span class="tag">infra</span>
+          <button class="fav-btn" data-fav-id="tool-log-analyzer" data-fav-type="tool" data-fav-title="Log analyzer berbasis AI" data-fav-desc="Meringkas ribuan baris log jadi beberapa insight anomali yang perlu ditindaklanjuti." data-fav-url="/tools" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+        </div>
         <h3>Log analyzer berbasis AI</h3>
         <p>Meringkas ribuan baris log jadi beberapa insight anomali yang perlu ditindaklanjuti.</p>
       </div>
-      <div class="card" data-cat="infra">
-        <span class="tag">infra</span>
+      <div class="card" data-cat="infra" data-name="asisten dokumentasi topologi">
+        <div class="card-top"><span class="tag">infra</span>
+          <button class="fav-btn" data-fav-id="tool-topology-docs" data-fav-type="tool" data-fav-title="Asisten dokumentasi topologi" data-fav-desc="Menghasilkan diagram & dokumentasi jaringan dari konfigurasi perangkat." data-fav-url="/tools" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+        </div>
         <h3>Asisten dokumentasi topologi</h3>
         <p>Menghasilkan diagram & dokumentasi jaringan dari konfigurasi perangkat.</p>
       </div>
-      <div class="card" data-cat="infra">
-        <span class="tag">infra</span>
-        <h3>Config compliance checker</h3>
-        <p>Membandingkan konfigurasi perangkat dengan baseline/best practice dan menandai penyimpangan.</p>
-      </div>
-      <div class="card" data-cat="infra">
-        <span class="tag">infra</span>
-        <h3>AI incident summarizer</h3>
-        <p>Meringkas alert dari banyak sumber monitoring jadi satu narasi insiden yang mudah ditindaklanjuti.</p>
-      </div>
-
-      <div class="card" data-cat="writing">
-        <span class="tag teal">writing</span>
+      <div class="card" data-cat="writing" data-name="penulis dokumentasi teknis">
+        <div class="card-top"><span class="tag teal">writing</span>
+          <button class="fav-btn" data-fav-id="tool-tech-writer" data-fav-type="tool" data-fav-title="Penulis dokumentasi teknis" data-fav-desc="Mengubah catatan singkat jadi dokumentasi API atau runbook yang rapi." data-fav-url="/tools" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+        </div>
         <h3>Penulis dokumentasi teknis</h3>
         <p>Mengubah catatan singkat jadi dokumentasi API atau runbook yang rapi.</p>
       </div>
-      <div class="card" data-cat="writing">
-        <span class="tag teal">writing</span>
-        <h3>Meeting notes summarizer</h3>
-        <p>Meringkas transkrip rapat jadi keputusan, action item, dan penanggung jawab.</p>
-      </div>
-      <div class="card" data-cat="writing">
-        <span class="tag teal">writing</span>
-        <h3>Asisten terjemahan dokumentasi</h3>
-        <p>Menerjemahkan dokumentasi teknis multi-bahasa sambil menjaga istilah teknis tetap konsisten.</p>
-      </div>
-
-      <div class="card" data-cat="automation">
-        <span class="tag">automasi</span>
+      <div class="card" data-cat="automation" data-name="workflow automation ai step">
+        <div class="card-top"><span class="tag">automasi</span>
+          <button class="fav-btn" data-fav-id="tool-workflow-automation" data-fav-type="tool" data-fav-title="Workflow automation + AI step" data-fav-desc="Menyisipkan langkah AI di tengah automasi no-code untuk klasifikasi atau ringkasan otomatis." data-fav-url="/tools" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+        </div>
         <h3>Workflow automation + AI step</h3>
         <p>Menyisipkan langkah AI di tengah automasi no-code untuk klasifikasi atau ringkasan otomatis.</p>
       </div>
-      <div class="card" data-cat="automation">
-        <span class="tag">automasi</span>
+      <div class="card" data-cat="automation" data-name="agent framework">
+        <div class="card-top"><span class="tag">automasi</span>
+          <button class="fav-btn" data-fav-id="tool-agent-framework" data-fav-type="tool" data-fav-title="Agent framework" data-fav-desc="Untuk menyusun AI agent multi-langkah yang bisa memanggil tools dan API eksternal." data-fav-url="/tools" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+        </div>
         <h3>Agent framework</h3>
         <p>Untuk menyusun AI agent multi-langkah yang bisa memanggil tools dan API eksternal.</p>
       </div>
-      <div class="card" data-cat="automation">
-        <span class="tag">automasi</span>
-        <h3>Auto-classifier tiket/email</h3>
-        <p>Mengelompokkan tiket atau email masuk berdasarkan urgensi dan kategori secara otomatis.</p>
-      </div>
-      <div class="card" data-cat="automation">
-        <span class="tag">automasi</span>
-        <h3>Scheduler AI report</h3>
-        <p>Menjadwalkan pembuatan & pengiriman laporan otomatis dari sumber data yang berubah rutin.</p>
-      </div>
-
-      <div class="card" data-cat="design">
-        <span class="tag teal">visual</span>
+      <div class="card" data-cat="design" data-name="generator diagram arsitektur">
+        <div class="card-top"><span class="tag teal">visual</span>
+          <button class="fav-btn" data-fav-id="tool-diagram-generator" data-fav-type="tool" data-fav-title="Generator diagram arsitektur" data-fav-desc="Membuat diagram sistem atau jaringan dari deskripsi teks singkat." data-fav-url="/tools" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+        </div>
         <h3>Generator diagram arsitektur</h3>
         <p>Membuat diagram sistem atau jaringan dari deskripsi teks singkat.</p>
       </div>
-      <div class="card" data-cat="design">
-        <span class="tag teal">visual</span>
+      <div class="card" data-cat="design" data-name="ai image generator">
+        <div class="card-top"><span class="tag teal">visual</span>
+          <button class="fav-btn" data-fav-id="tool-image-generator" data-fav-type="tool" data-fav-title="AI image generator" data-fav-desc="Untuk kebutuhan visual pendukung materi belajar atau presentasi klien." data-fav-url="/tools" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+        </div>
         <h3>AI image generator</h3>
         <p>Untuk kebutuhan visual pendukung materi belajar atau presentasi klien.</p>
       </div>
-      <div class="card" data-cat="design">
-        <span class="tag teal">visual</span>
-        <h3>Screenshot-to-code</h3>
-        <p>Mengubah gambar/mockup UI jadi kerangka HTML/CSS atau komponen frontend awal.</p>
-      </div>
-      <div class="card" data-cat="design">
-        <span class="tag teal">visual</span>
-        <h3>AI wireframe generator</h3>
-        <p>Menghasilkan wireframe kasar dari deskripsi kebutuhan halaman atau dashboard.</p>
+      <div class="card" data-cat="data" data-name="ai dashboard narrator">
+        <div class="card-top"><span class="tag teal">data</span>
+          <button class="fav-btn" data-fav-id="tool-dashboard-narrator" data-fav-type="tool" data-fav-title="AI dashboard narrator" data-fav-desc="Menulis ringkasan naratif otomatis dari dashboard BI untuk laporan mingguan." data-fav-url="/tools" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+        </div>
+        <h3>AI dashboard narrator</h3>
+        <p>Menulis ringkasan naratif otomatis dari dashboard BI untuk laporan mingguan.</p>
       </div>
 
     </div>
-
-    <p id="no-results" class="fine" style="display:none;margin-top:24px">Tidak ada tools yang cocok. Coba kata kunci atau kategori lain.</p>
+    <p class="tools-empty" id="tools-empty">Tidak ada tool yang cocok. Coba kata kunci atau kategori lain.</p>
   </div>
 </section>
 {% endblock %}
