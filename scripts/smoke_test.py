@@ -78,6 +78,10 @@ CHECKS = {
     ],
     "/tersimpan": [
         'id="fav-container"',
+        'id="fav-export-bar"',
+        'id="export-pdf"',
+        'id="export-txt"',
+        'id="export-json"',
     ],
 }
 
@@ -111,13 +115,14 @@ STATIC_FILES = [
     "/static/js/roadmap-progress.js",
     "/static/js/prompt-builder.js",
     "/static/js/tersimpan.js",
+    "/static/js/export.js",
 ]
 
 # Jumlah minimum item yang wajib ada — kalau berkurang berarti ada
 # konten yang tidak sengaja terhapus.
 MIN_COUNTS = {
     "/tools": ('class="card"', 12),
-    "/prompts": ('class="prompt-block"', 30),
+    "/prompts": ('class="prompt-block"', 48),
     "/courses": ('class="card"', 10),
     "/roadmap": ("data-mid=", 18),
 }

@@ -727,6 +727,7 @@ footer .fine{
 }
 .toast.show{ opacity:1; transform:translateY(0); }
 .toast-success{ border-color:var(--accent-2-dim); color:var(--accent-2); }
+.toast-error{ border-color:var(--danger); color:var(--danger); }
 
 /* ---------- Favorite star button ---------- */
 .fav-btn{
@@ -874,6 +875,18 @@ footer .fine{
 }
 
 /* ---------- Tersimpan (favorites) page ---------- */
+.fav-export-bar{
+  display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+  margin-top:20px; padding-top:20px; border-top:1px solid var(--border-soft);
+}
+.fav-export-bar span{ font-family:var(--font-mono); font-size:.76rem; color:var(--text-faint); margin-right:4px; }
+.fav-export-btn{
+  font-family:var(--font-mono); font-size:.78rem; color:var(--text-muted);
+  background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm);
+  padding:8px 14px; cursor:pointer; display:inline-flex; align-items:center; gap:6px;
+}
+.fav-export-btn:hover{ color:var(--accent-2); border-color:var(--accent-2-dim); }
+.fav-export-btn:disabled{ opacity:.45; cursor:not-allowed; }
 .fav-empty{
   text-align:center; padding:60px 0; color:var(--text-faint);
   font-family:var(--font-mono); font-size:.9rem;

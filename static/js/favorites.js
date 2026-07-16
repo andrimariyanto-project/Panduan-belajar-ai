@@ -48,12 +48,15 @@
 
   function bindButtons() {
     document.querySelectorAll('.fav-btn').forEach((btn) => {
+      const block = btn.closest('.prompt-block, .tool-card, .card');
+      const preEl = block ? block.querySelector('pre') : null;
       const item = {
         id: btn.dataset.favId,
         type: btn.dataset.favType || 'item',
         title: btn.dataset.favTitle || '',
         desc: btn.dataset.favDesc || '',
         url: btn.dataset.favUrl || '#',
+        content: preEl ? preEl.textContent.trim() : '',
       };
       if (!item.id) return;
       if (isFavorited(item.id)) btn.classList.add('active');

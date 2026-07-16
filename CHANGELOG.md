@@ -10,6 +10,19 @@ MINOR untuk fitur baru, PATCH untuk perbaikan kecil/typo.
 
 ## [Unreleased]
 
+## [1.3.0] — 2026-07-16
+### Ditambahkan
+- Prompt Library diperluas dari 36 menjadi 48 prompt: kategori baru **AI/LLM Engineering**
+  (4 prompt: evaluasi output LLM, desain pipeline RAG, optimasi biaya LLM, pemilihan model),
+  plus 2 prompt tambahan masing-masing di kategori QA, Docs, Karier, dan Security.
+- Filter pill "AI/LLM" di halaman `/prompts`.
+- Fitur **export favorit** di halaman `/tersimpan`: unduh daftar tersimpan sebagai PDF, .txt,
+  atau .json (`static/js/export.js`). Konten prompt lengkap ikut tersimpan di data favorit
+  (`favorites.js` kini menyimpan `content` dari elemen `<pre>` terdekat) sehingga hasil export
+  prompt tidak hanya berisi judul, tapi juga isi promptnya.
+- Penanda smoke test baru untuk elemen export (`fav-export-bar`, `export-pdf`, `export-txt`,
+  `export-json`) dan `export.js`; batas minimum jumlah prompt dinaikkan ke 48.
+
 ## [1.2.0] — 2026-07-12
 ### Ditambahkan
 - Prompt Library diperluas dari 6 menjadi 36 prompt, dikelompokkan ke 10 kategori

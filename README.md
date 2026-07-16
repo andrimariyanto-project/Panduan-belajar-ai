@@ -18,7 +18,7 @@ tanpa backend/database (murni frontend server-rendered).
 - `/monetize` — Cara memonetisasi skill AI
 - `/glossary` — Kamus istilah AI, dengan pencarian **dan mode flashcard interaktif**
 - `/skill-check` — Kuis interaktif penentu level, dengan progress bar, tombol kembali, dan riwayat hasil
-- `/tersimpan` — **Baru:** daftar tools/prompt/course yang sudah kamu favoritkan
+- `/tersimpan` — daftar tools/prompt/course yang sudah kamu favoritkan, dengan **export ke PDF/.txt/.json**
 
 ## Fitur interaktif
 
@@ -39,6 +39,10 @@ tanpa backend/database (murni frontend server-rendered).
 - **Navigasi mobile & scroll progress bar** — menu hamburger responsif dan indikator progres scroll
   tipis di bagian atas halaman.
 - **Notifikasi toast** — konfirmasi visual singkat untuk aksi seperti menambah favorit atau menyalin prompt.
+- **Prompt Library 48 prompt** — kini mencakup 11 kategori termasuk kategori baru **AI/LLM Engineering**
+  (evaluasi prompt, desain RAG, optimasi biaya LLM, pemilihan model), plus tambahan QA, Docs, Karier, Security.
+- **Export favorit** — di halaman `/tersimpan`, unduh semua tools/prompt/course yang disimpan sebagai
+  file **PDF**, **.txt**, atau **.json** (isi prompt lengkap ikut disertakan, bukan cuma judul).
 
 ## Alur update yang aman (biar fitur lama tidak pernah hilang)
 
