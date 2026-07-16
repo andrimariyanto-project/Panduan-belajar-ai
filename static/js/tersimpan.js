@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function render() {
     const items = window.AndreFavorites.getFavorites();
+    const exportBar = document.getElementById('fav-export-bar');
+    if (exportBar) exportBar.hidden = items.length === 0;
+
     if (!items.length) {
       container.innerHTML = `
         <div class="fav-empty">
@@ -64,5 +67,38 @@ document.addEventListener('DOMContentLoaded', () => {
     return div.innerHTML;
   }
 
+  function bindExportButtons() {
+    const pdfBtn = document.getElementById('export-pdf');
+    const txtBtn = document.getElementById('export-txt');
+    const jsonBtn = document.getElementById('export-json');
+    if (!window.AndreExport) return;
+
+    if (pdfBtn) {
+      pdfBtn.addEventListener('click', () => {
+        const items = window.AndreFavorites.getFavorites();
+        pdfBtn.disabled = true;
+        pdfBtn.textContent = '... membuat PDF';
+        Promise.resolve(window.AndreExport.exportAsPdf(items)).finally(() => {
+          pdfBtn.disabled = false;
+          pdfBtn.textContent = '↓ PDF';
+        });
+        if (window.andreToast) window.andreToast('Menyiapkan file PDF...', 'info');
+      });
+    }
+    if (txtBtn) {
+      txtBtn.addEventListener('click', () => {
+        window.AndreExport.exportAsText(window.AndreFavorites.getFavorites());
+        if (window.andreToast) window.andreToast('File .txt diunduh', 'success');
+      });
+    }
+    if (jsonBtn) {
+      jsonBtn.addEventListener('click', () => {
+        window.AndreExport.exportAsJson(window.AndreFavorites.getFavorites());
+        if (window.andreToast) window.andreToast('File .json diunduh', 'success');
+      });
+    }
+  }
+
+  bindExportButtons();
   render();
 });

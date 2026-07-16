@@ -7,10 +7,18 @@
     <h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">Tersimpan</h1>
     <p class="lead" style="max-width:640px">Tools dan prompt yang kamu tandai favorit. Tersimpan hanya di browser ini, tanpa login.</p>
 
+    <div class="fav-export-bar" id="fav-export-bar" hidden>
+      <span>Ekspor semua tersimpan:</span>
+      <button class="fav-export-btn" id="export-pdf" type="button">↓ PDF</button>
+      <button class="fav-export-btn" id="export-txt" type="button">↓ Teks (.txt)</button>
+      <button class="fav-export-btn" id="export-json" type="button">↓ JSON</button>
+    </div>
+
     <div id="fav-container" style="margin-top:24px"></div>
   </div>
 </section>
 {% endblock %}
 {% block scripts %}
+<script src="{{ url_for('static', filename='js/export.js') }}"></script>
 <script src="{{ url_for('static', filename='js/tersimpan.js') }}"></script>
 {% endblock %}
