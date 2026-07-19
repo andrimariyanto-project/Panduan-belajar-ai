@@ -10,6 +10,26 @@ MINOR untuk fitur baru, PATCH untuk perbaikan kecil/typo.
 
 ## [Unreleased]
 
+## [1.4.0] — 2026-07-19
+### Ditambahkan
+- Prompt Library diperluas dari 48 menjadi **70 prompt**: 22 prompt baru seri **Lanjutan**
+  (2 per kategori di 11 kategori yang ada — coding, data, database, network, devops, security,
+  qa, writing, career, umum, ai) untuk kebutuhan yang lebih kompleks, mis. Architecture Decision
+  Record, audit IAM/firewall, rencana disaster recovery, definisi SLO/SLI, desain AI agent, dan
+  checklist mitigasi halusinasi LLM.
+- Badge visual **"Lanjutan"** (`class="lvl lvl-adv"`) di header tiap prompt baru, membedakannya
+  dari prompt dasar sekaligus jadi penanda tingkat kompleksitas prompt tersebut.
+- **Filter pill dengan jumlah live** di halaman `/prompts` — tiap pill kategori kini menampilkan
+  `(n)` yang dihitung otomatis dari DOM (`renderPillCounts()` di `prompt-filter.js`), sehingga
+  jumlahnya selalu akurat tanpa perlu diperbarui manual tiap kali konten berubah.
+- Tombol **"🎲 Acak"** di halaman `/prompts` — meloncat ke satu prompt acak dari hasil
+  filter/pencarian yang sedang tampil, dengan highlight visual sementara dan notifikasi toast
+  berisi judul prompt yang terpilih.
+- Statistik jumlah prompt di beranda (`index.html`) disinkronkan ke 70+ (sebelumnya nilainya
+  basi, masih menunjukkan 16+).
+- Penanda smoke test baru untuk `/prompts` (`id="prompts-random-btn"`, `lvl-adv`); batas minimum
+  jumlah prompt dinaikkan dari 48 ke 70.
+
 ## [1.3.0] — 2026-07-16
 ### Ditambahkan
 - Prompt Library diperluas dari 36 menjadi 48 prompt: kategori baru **AI/LLM Engineering**

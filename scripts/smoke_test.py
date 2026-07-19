@@ -54,6 +54,8 @@ CHECKS = {
         'id="prompt-grid"',
         'class="fav-btn"',
         'class="copy-btn"',
+        'id="prompts-random-btn"',
+        'lvl-adv',
     ],
     "/prompt-builder": [
         'id="pb-output"',
@@ -122,7 +124,7 @@ STATIC_FILES = [
 # konten yang tidak sengaja terhapus.
 MIN_COUNTS = {
     "/tools": ('class="card"', 12),
-    "/prompts": ('class="prompt-block"', 48),
+    "/prompts": ('class="prompt-block"', 70),
     "/courses": ('class="card"', 10),
     "/roadmap": ("data-mid=", 18),
 }

@@ -39,8 +39,14 @@ tanpa backend/database (murni frontend server-rendered).
 - **Navigasi mobile & scroll progress bar** — menu hamburger responsif dan indikator progres scroll
   tipis di bagian atas halaman.
 - **Notifikasi toast** — konfirmasi visual singkat untuk aksi seperti menambah favorit atau menyalin prompt.
-- **Prompt Library 48 prompt** — kini mencakup 11 kategori termasuk kategori baru **AI/LLM Engineering**
-  (evaluasi prompt, desain RAG, optimasi biaya LLM, pemilihan model), plus tambahan QA, Docs, Karier, Security.
+- **Prompt Library 70 prompt** — mencakup 11 kategori termasuk **AI/LLM Engineering** (evaluasi prompt,
+  desain RAG, optimasi biaya LLM, desain AI agent, mitigasi halusinasi), plus QA, Docs, Karier, Security,
+  Coding, Data, Database, Network, DevOps, dan Umum. 22 di antaranya adalah prompt **seri Lanjutan** —
+  ditandai badge khusus — untuk kebutuhan yang lebih kompleks (ADR, audit IAM, cutover jaringan, SLO/SLI, dst).
+- **Filter pill dengan jumlah live** — tiap kategori di halaman `/prompts` menampilkan jumlah prompt-nya
+  secara otomatis (dihitung dari DOM), jadi tidak akan pernah basi walau kontennya terus bertambah.
+- **Tombol "🎲 Acak"** — loncat ke satu prompt acak dari hasil filter/pencarian yang sedang tampil,
+  lengkap dengan highlight visual dan notifikasi toast; membantu eksplorasi 70+ prompt yang tersedia.
 - **Export favorit** — di halaman `/tersimpan`, unduh semua tools/prompt/course yang disimpan sebagai
   file **PDF**, **.txt**, atau **.json** (isi prompt lengkap ikut disertakan, bukan cuma judul).
 
