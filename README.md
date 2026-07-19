@@ -7,7 +7,8 @@ tanpa backend/database (murni frontend server-rendered).
 ## Struktur halaman
 
 - `/` — Beranda
-- `/roadmap` — Roadmap belajar 4 tahap (node_00 – node_03), dengan **checklist progress interaktif**
+- `/roadmap` — Roadmap belajar 4 tahap (node_00 – node_03), dengan **checklist progress interaktif**,
+  tombol **"Lanjutkan belajar"**, **streak harian**, **catatan per node**, dan link cepat ke **prompt terkait**
 - `/courses` — Daftar course per node/peran (bisa difavoritkan)
 - `/tools` — Direktori tools AI (filter kategori + **pencarian teks live** + favorit)
 - `/prompts` — Prompt library siap salin (bisa difavoritkan)
@@ -28,6 +29,16 @@ tanpa backend/database (murni frontend server-rendered).
   `localStorage` browser, terlihat di halaman `/tersimpan` dan lencana penghitung di navbar.
 - **Roadmap progress tracker** — centang modul yang sudah dipelajari, progress bar otomatis
   terisi, node berubah status "selesai", dan bisa direset kapan saja.
+- **Roadmap companion — "Lanjutkan belajar"** — tombol yang meloncat & menyorot modul
+  berikutnya yang belum dicentang, indikator sisa modul ("X dari Y selesai"), dan **streak
+  harian** (🔥 hari beruntun belajar) yang dihitung dari riwayat centang tersimpan di browser.
+- **Catatan per node roadmap** — tiap node roadmap punya kotak catatan pribadi yang bisa
+  dibuka/tutup, tersimpan otomatis (debounced) ke `localStorage`, terpisah untuk tiap node.
+- **Prompt terkait di tiap node roadmap** — link cepat dari tiap node roadmap ke Prompt
+  Library yang sudah **terfilter otomatis** ke kategori yang relevan (mis. node "Spesialisasi
+  Peran" → tombol Coding/Data/Database/Network/DevOps), lewat deep-link `/prompts?cat=...`.
+- **Banner "Lanjutkan belajar" di beranda** — kalau kamu sudah punya progress roadmap
+  tersimpan, beranda otomatis menampilkan ringkasan persentase & tombol lanjut ke roadmap.
 - **Prompt Builder** — form interaktif dengan preset per peran (programmer/data/database/network/devops)
   yang menyusun prompt custom secara live, siap disalin.
 - **Kamus AI mode flashcard** — beralih dari mode daftar ke mode kartu flip, tandai istilah yang
@@ -39,8 +50,20 @@ tanpa backend/database (murni frontend server-rendered).
 - **Navigasi mobile & scroll progress bar** — menu hamburger responsif dan indikator progres scroll
   tipis di bagian atas halaman.
 - **Notifikasi toast** — konfirmasi visual singkat untuk aksi seperti menambah favorit atau menyalin prompt.
-- **Prompt Library 48 prompt** — kini mencakup 11 kategori termasuk kategori baru **AI/LLM Engineering**
-  (evaluasi prompt, desain RAG, optimasi biaya LLM, pemilihan model), plus tambahan QA, Docs, Karier, Security.
+- **Prompt Library 100 prompt** — mencakup 11 kategori termasuk **AI/LLM Engineering** (evaluasi prompt,
+  desain RAG, optimasi biaya LLM, desain AI agent, mitigasi halusinasi, pertahanan prompt injection),
+  plus QA, Docs, Karier, Security, Coding, Data, Database, Network, DevOps, dan Umum. 34 di antaranya
+  adalah prompt **seri Lanjutan** — ditandai badge khusus — untuk kebutuhan yang lebih kompleks (ADR,
+  audit IAM, cutover jaringan, SLO/SLI, zero trust, data governance, dst).
+- **Filter pill dengan jumlah live** — tiap kategori di halaman `/prompts` menampilkan jumlah prompt-nya
+  secara otomatis (dihitung dari DOM), jadi tidak akan pernah basi walau kontennya terus bertambah.
+- **Deep-link filter Prompts** (`/prompts?cat=coding&q=review`) — halaman Prompts otomatis
+  memilih filter kategori/kata kunci dari parameter URL, dipakai oleh link "Prompt terkait" di
+  Roadmap supaya lompatannya langsung terfilter, bukan cuma membuka halaman kosong.
+- **Tombol "🎲 Acak"** — loncat ke satu prompt acak dari hasil filter/pencarian yang sedang tampil,
+  lengkap dengan highlight visual dan notifikasi toast; membantu eksplorasi 100+ prompt yang tersedia.
+- **Command palette terindeks penuh** — seluruh 100 prompt (bukan cuma sebagian) kini muncul di
+  hasil pencarian global (`Ctrl+K`), sinkron dengan isi halaman `/prompts`.
 - **Export favorit** — di halaman `/tersimpan`, unduh semua tools/prompt/course yang disimpan sebagai
   file **PDF**, **.txt**, atau **.json** (isi prompt lengkap ikut disertakan, bukan cuma judul).
 
@@ -157,6 +180,7 @@ andremedia/
         ├── flashcards.js       # Mode flashcard di halaman Kamus AI
         ├── quiz.js             # Logika kuis Skill Check + riwayat
         ├── roadmap-progress.js # Checklist & progress bar Roadmap
+        ├── roadmap-companion.js # Baru: resume, streak, sisa modul, catatan & prompt terkait per node
         ├── prompt-builder.js   # Logika Prompt Builder
         ├── favorites.js        # Sistem favorit/bookmark (shared)
         ├── tersimpan.js        # Render halaman Tersimpan

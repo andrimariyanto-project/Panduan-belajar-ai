@@ -14,6 +14,12 @@
     </div>
     <p style="font-family:var(--font-mono);font-size:.78rem;color:var(--text-faint);margin-top:-6px">Centang modul yang sudah kamu pelajari — progress disimpan otomatis di browser ini.</p>
 
+    <div class="roadmap-meta" id="roadmap-meta">
+      <span class="roadmap-meta-item" id="roadmap-remaining">memuat progress...</span>
+      <span class="roadmap-meta-item roadmap-streak" id="roadmap-streak" hidden></span>
+      <button class="roadmap-meta-item resume-btn" id="roadmap-resume" type="button" hidden>↻ Lanjutkan ke modul berikutnya</button>
+    </div>
+
     <div class="trace" style="margin-top:40px">
 
       <div class="trace-node" data-node="00">
@@ -26,6 +32,18 @@
           <label><input type="checkbox" data-mid="00-2"><span>Anatomi prompt yang baik</span></label>
           <label><input type="checkbox" data-mid="00-3"><span>Batas & risiko: halusinasi, bias, data privasi</span></label>
           <label><input type="checkbox" data-mid="00-4"><span>Ekosistem model: closed vs open-source</span></label>
+        </div>
+        <div class="node-actions">
+          <div class="node-links">
+            <span class="node-links-label">Prompt terkait:</span>
+            <a href="{{ url_for('prompts') }}?cat=umum" class="node-prompt-link">Umum</a>
+            <a href="{{ url_for('prompts') }}?cat=ai" class="node-prompt-link">AI/LLM</a>
+          </div>
+          <button class="node-notes-toggle" type="button" data-node-toggle="00">📝 Catatan</button>
+        </div>
+        <div class="node-notes" data-node-notes="00" hidden>
+          <textarea class="node-notes-area" data-mid-notes="00" placeholder="Catatan pribadi untuk node ini (mis. istilah yang masih membingungkan, hal yang mau dicoba)... tersimpan otomatis."></textarea>
+          <span class="node-notes-saved" data-notes-saved="00"></span>
         </div>
       </div>
 
@@ -40,6 +58,21 @@
           <label><input type="checkbox" data-mid="01-3"><span>Network Integrator → AI untuk monitoring & dokumentasi jaringan</span></label>
           <label><input type="checkbox" data-mid="01-4"><span>System/DevOps Engineer → AI untuk automasi & incident response</span></label>
         </div>
+        <div class="node-actions">
+          <div class="node-links">
+            <span class="node-links-label">Prompt terkait:</span>
+            <a href="{{ url_for('prompts') }}?cat=coding" class="node-prompt-link">Coding</a>
+            <a href="{{ url_for('prompts') }}?cat=data" class="node-prompt-link">Data</a>
+            <a href="{{ url_for('prompts') }}?cat=database" class="node-prompt-link">Database</a>
+            <a href="{{ url_for('prompts') }}?cat=network" class="node-prompt-link">Network</a>
+            <a href="{{ url_for('prompts') }}?cat=devops" class="node-prompt-link">DevOps</a>
+          </div>
+          <button class="node-notes-toggle" type="button" data-node-toggle="01">📝 Catatan</button>
+        </div>
+        <div class="node-notes" data-node-notes="01" hidden>
+          <textarea class="node-notes-area" data-mid-notes="01" placeholder="Catatan pribadi untuk node ini... tersimpan otomatis."></textarea>
+          <span class="node-notes-saved" data-notes-saved="01"></span>
+        </div>
       </div>
 
       <div class="trace-node" data-node="02">
@@ -53,6 +86,18 @@
           <label><input type="checkbox" data-mid="02-3"><span>Automasi: menghubungkan AI ke API, database, cron job</span></label>
           <label><input type="checkbox" data-mid="02-4"><span>Evaluasi kualitas output AI secara sistematis</span></label>
         </div>
+        <div class="node-actions">
+          <div class="node-links">
+            <span class="node-links-label">Prompt terkait:</span>
+            <a href="{{ url_for('prompts') }}?cat=ai" class="node-prompt-link">AI/LLM</a>
+            <a href="{{ url_for('prompts') }}?cat=devops" class="node-prompt-link">DevOps</a>
+          </div>
+          <button class="node-notes-toggle" type="button" data-node-toggle="02">📝 Catatan</button>
+        </div>
+        <div class="node-notes" data-node-notes="02" hidden>
+          <textarea class="node-notes-area" data-mid-notes="02" placeholder="Catatan pribadi untuk node ini... tersimpan otomatis."></textarea>
+          <span class="node-notes-saved" data-notes-saved="02"></span>
+        </div>
       </div>
 
       <div class="trace-node" data-node="03">
@@ -64,6 +109,18 @@
           <label><input type="checkbox" data-mid="03-1"><span>Menjual jasa automasi & konsultasi AI</span></label>
           <label><input type="checkbox" data-mid="03-2"><span>Membangun micro-tool / internal tool berbasis AI</span></label>
           <label><input type="checkbox" data-mid="03-3"><span>Presentasi hasil ke non-teknis (stakeholder, klien)</span></label>
+        </div>
+        <div class="node-actions">
+          <div class="node-links">
+            <span class="node-links-label">Prompt terkait:</span>
+            <a href="{{ url_for('prompts') }}?cat=career" class="node-prompt-link">Karier</a>
+            <a href="{{ url_for('prompts') }}?cat=writing" class="node-prompt-link">Docs</a>
+          </div>
+          <button class="node-notes-toggle" type="button" data-node-toggle="03">📝 Catatan</button>
+        </div>
+        <div class="node-notes" data-node-notes="03" hidden>
+          <textarea class="node-notes-area" data-mid-notes="03" placeholder="Catatan pribadi untuk node ini... tersimpan otomatis."></textarea>
+          <span class="node-notes-saved" data-notes-saved="03"></span>
         </div>
       </div>
 
@@ -79,4 +136,5 @@
 {% endblock %}
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/roadmap-progress.js') }}"></script>
+<script src="{{ url_for('static', filename='js/roadmap-companion.js') }}"></script>
 {% endblock %}

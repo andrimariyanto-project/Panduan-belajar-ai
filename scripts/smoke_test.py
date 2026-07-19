@@ -32,12 +32,19 @@ except ImportError as e:
 CHECKS = {
     "/": [
         "hero",
+        'id="home-resume-banner"',
     ],
     "/roadmap": [
         'id="roadmap-bar"',
         'id="roadmap-reset"',
         'class="modules"',
         'data-mid=',
+        'id="roadmap-meta"',
+        'id="roadmap-remaining"',
+        'id="roadmap-resume"',
+        'class="node-actions"',
+        'class="node-notes-area"',
+        'node-prompt-link',
     ],
     "/courses": [
         'class="fav-btn"',
@@ -54,6 +61,8 @@ CHECKS = {
         'id="prompt-grid"',
         'class="fav-btn"',
         'class="copy-btn"',
+        'id="prompts-random-btn"',
+        'lvl-adv',
     ],
     "/prompt-builder": [
         'id="pb-output"',
@@ -113,6 +122,7 @@ STATIC_FILES = [
     "/static/js/flashcards.js",
     "/static/js/quiz.js",
     "/static/js/roadmap-progress.js",
+    "/static/js/roadmap-companion.js",
     "/static/js/prompt-builder.js",
     "/static/js/tersimpan.js",
     "/static/js/export.js",
@@ -122,7 +132,7 @@ STATIC_FILES = [
 # konten yang tidak sengaja terhapus.
 MIN_COUNTS = {
     "/tools": ('class="card"', 12),
-    "/prompts": ('class="prompt-block"', 48),
+    "/prompts": ('class="prompt-block"', 100),
     "/courses": ('class="card"', 10),
     "/roadmap": ("data-mid=", 18),
 }
