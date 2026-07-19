@@ -823,6 +823,80 @@ footer .fine{
 .modules input[type="checkbox"]:checked{ background:var(--accent-2); border-color:var(--accent-2); }
 .modules input[type="checkbox"]:checked + span{ color:var(--text-faint); text-decoration:line-through; }
 
+/* ---------- Roadmap companion: meta row (sisa modul, streak, resume) ---------- */
+.roadmap-meta{
+  display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  margin:14px 0 0;
+}
+.roadmap-meta-item{
+  font-family:var(--font-mono); font-size:.78rem; color:var(--text-faint);
+}
+.roadmap-streak{ color:var(--accent); }
+.resume-btn{
+  font-family:var(--font-mono); font-size:.78rem; color:var(--bg);
+  background:var(--accent-2); border:1px solid var(--accent-2);
+  border-radius:var(--radius-sm); padding:8px 14px; cursor:pointer;
+  font-weight:600;
+}
+.resume-btn:hover{ background:var(--accent-2-dim); border-color:var(--accent-2-dim); }
+
+/* Highlight sementara saat "Lanjutkan ke modul berikutnya" diklik */
+.trace-node.node-highlight{
+  border-radius:var(--radius);
+  box-shadow:0 0 0 3px var(--accent-2-dim);
+  animation:promptPulse 1.8s ease-out;
+}
+
+/* ---------- Roadmap companion: prompt terkait & catatan per node ---------- */
+.node-actions{
+  margin-top:16px; padding-top:14px; border-top:1px dashed var(--border-soft);
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:10px;
+}
+.node-links{
+  display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+  font-family:var(--font-mono); font-size:.74rem; color:var(--text-faint);
+}
+.node-prompt-link{
+  border:1px solid var(--border); border-radius:999px; padding:3px 11px;
+  color:var(--text-muted); text-decoration:none; white-space:nowrap;
+}
+.node-prompt-link:hover{ color:var(--accent-2); border-color:var(--accent-2-dim); }
+.node-notes-toggle{
+  font-family:var(--font-mono); font-size:.74rem;
+  background:transparent; border:1px solid var(--border); border-radius:var(--radius-sm);
+  padding:6px 11px; color:var(--text-muted); cursor:pointer; white-space:nowrap;
+}
+.node-notes-toggle:hover{ color:var(--accent); border-color:var(--accent-dim); }
+.node-notes-toggle.active{ color:var(--accent); border-color:var(--accent-dim); }
+.node-notes{ margin-top:10px; }
+.node-notes-area{
+  width:100%; min-height:76px; resize:vertical; box-sizing:border-box;
+  background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm);
+  color:var(--text); font-family:var(--font-body); font-size:.86rem; padding:10px 12px;
+}
+.node-notes-area:focus{ outline:none; border-color:var(--accent-2-dim); }
+.node-notes-saved{
+  display:block; margin-top:4px; font-family:var(--font-mono);
+  font-size:.68rem; color:var(--text-faint);
+}
+@media (max-width:640px){
+  .node-actions{ flex-direction:column; align-items:flex-start; }
+}
+
+/* ---------- Beranda: banner "lanjutkan belajar" (muncul via JS jika ada progress) ---------- */
+.resume-banner{
+  display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  margin-top:22px; padding:14px 18px; border-radius:var(--radius);
+  background:var(--surface); border:1px solid var(--accent-2-dim);
+}
+.resume-banner-text{ font-family:var(--font-mono); font-size:.82rem; color:var(--text-muted); }
+.resume-banner-link{
+  font-family:var(--font-mono); font-size:.8rem; font-weight:600; color:var(--accent-2);
+  text-decoration:none; white-space:nowrap;
+}
+.resume-banner-link:hover{ color:var(--accent); }
+
 /* ---------- Glossary flashcards ---------- */
 .glossary-toolbar{
   display:flex; justify-content:space-between; align-items:center;

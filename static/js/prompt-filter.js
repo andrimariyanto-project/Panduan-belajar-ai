@@ -9,6 +9,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let activeFilter = 'all';
 
+  // ---- Deep-link dari halaman lain (mis. Roadmap) lewat ?cat=xxx&q=yyy ----
+  // Contoh: /prompts?cat=coding membuka Prompts sudah terfilter ke kategori "coding",
+  // supaya lompatan dari roadmap/course langsung ke prompt yang relevan, tanpa
+  // pengguna perlu klik filter manual.
+  function applyUrlParams() {
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get('cat');
+    const q = params.get('q');
+
+    if (cat) {
+      const match = Array.from(pills).find((p) => p.dataset.filter === cat);
+      if (match) {
+        pills.forEach((p) => p.classList.remove('active'));
+        match.classList.add('active');
+        activeFilter = cat;
+      }
+    }
+    if (q && searchInput) {
+      searchInput.value = q;
+    }
+  }
+
   // ---- Live category counts di tiap filter pill (dihitung dari DOM,
   // jadi otomatis akurat walau jumlah/kategori prompt berubah nanti) ----
   function renderPillCounts() {
@@ -80,6 +102,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  applyUrlParams();
   renderPillCounts();
   applyFilters();
+
+  if (window.location.search.includes('cat=') || window.location.search.includes('q=')) {
+    const grid = document.getElementById('prompt-grid');
+    if (grid) setTimeout(() => grid.scrollIntoView({ behavior: 'smooth', block: 'start' }), 150);
+  }
 });

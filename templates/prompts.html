@@ -5,7 +5,7 @@
   <div class="container">
     <span class="eyebrow">&gt; cat prompts/*.txt</span>
     <h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">Prompt Library</h1>
-    <p class="lead" style="max-width:640px">70+ prompt siap pakai per peran — termasuk seri <strong>Lanjutan</strong> untuk kebutuhan yang lebih kompleks (arsitektur, audit keamanan, desain agent AI, dll). Salin, sesuaikan bagian dalam kurung siku, langsung jalan.</p>
+    <p class="lead" style="max-width:640px">100+ prompt siap pakai per peran — termasuk seri <strong>Lanjutan</strong> untuk kebutuhan yang lebih kompleks (arsitektur, audit keamanan, desain agent AI, dll). Salin, sesuaikan bagian dalam kurung siku, langsung jalan.</p>
 
     <div class="prompts-toolbar">
       <input id="prompts-search" class="tools-search" type="text" placeholder="Cari prompt... (mis. schema, incident, test case)">
@@ -957,6 +957,393 @@ Deskripsi aplikasi &amp; use case: [jelaskan]
 Tingkat toleransi risiko: [mis. internal tool vs customer-facing]</pre>
       </div>
 
+      <div class="prompt-block" data-cat="ai" data-name="ai // ai_model_benchmark_comparison.txt prompt bandingkan beberapa model ai untuk sebuah use case.">
+        <div class="ph"><span>ai // ai_model_benchmark_comparison.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-ai-model-benchmark" data-fav-type="prompt" data-fav-title="ai // ai_model_benchmark_comparison.txt" data-fav-desc="Prompt bandingkan beberapa model AI untuk sebuah use case." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI solutions consultant. Bandingkan beberapa model AI (LLM) berikut untuk kebutuhan yang disebutkan, dengan mempertimbangkan: (1) kualitas output untuk task terkait, (2) biaya per penggunaan, (3) latensi &amp; batas context window, (4) ketersediaan (API vs self-host). Tutup dengan rekomendasi model utama &amp; alternatif cadangan.
+
+Kebutuhan/use case: [jelaskan]
+Model yang dibandingkan: [sebutkan daftar model]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="ai" data-name="ai // prompt_injection_defense_checklist.txt prompt susun checklist pertahanan terhadap prompt injection.">
+        <div class="ph"><span>ai // prompt_injection_defense_checklist.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-injection-defense" data-fav-type="prompt" data-fav-title="ai // prompt_injection_defense_checklist.txt" data-fav-desc="Prompt susun checklist pertahanan terhadap prompt injection." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI security engineer. Berdasarkan aplikasi berbasis LLM berikut, susun checklist pertahanan terhadap prompt injection yang mencakup: (1) teknik sanitasi/pemisahan input pengguna dari instruksi sistem, (2) strategi validasi/filtering output sebelum dieksekusi (terutama jika ada tool-calling), (3) skenario uji red-team minimal yang perlu dicoba sebelum rilis.
+
+Deskripsi aplikasi &amp; sumber input yang tidak tepercaya: [jelaskan]
+Tool/aksi yang bisa dipicu oleh model: [sebutkan]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="ai" data-name="ai // vector_db_selection_advisor.txt prompt bantu pilih vector database yang cocok untuk sistem rag.">
+        <div class="ph"><span>ai // vector_db_selection_advisor.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-vector-db-selection" data-fav-type="prompt" data-fav-title="ai // vector_db_selection_advisor.txt" data-fav-desc="Prompt bantu pilih vector database yang cocok untuk sistem RAG." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI infrastructure engineer. Bantu pilih vector database yang cocok untuk sistem RAG berikut, dengan menimbangkan: (1) skala data &amp; kecepatan query yang dibutuhkan, (2) dukungan filtering metadata, (3) kemudahan operasional (managed vs self-host), (4) estimasi biaya di skala saat ini dan proyeksi 1 tahun ke depan.
+
+Skala data (jumlah dokumen/vektor): [sebutkan]
+Kebutuhan query per detik &amp; latensi maksimum: [sebutkan]
+Batasan tim (budget, keahlian ops): [sebutkan]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="career" data-name="karier // career_pivot_transition_plan.txt prompt susun rencana transisi karier ke peran yang melibatkan ai.">
+        <div class="ph"><span>karier // career_pivot_transition_plan.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-career-pivot-plan" data-fav-type="prompt" data-fav-title="karier // career_pivot_transition_plan.txt" data-fav-desc="Prompt susun rencana transisi karier ke peran yang melibatkan AI." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah career coach untuk profesional teknis. Susun rencana transisi karier dari peran saat ini ke peran target yang melibatkan AI, mencakup: (1) gap skill yang perlu ditutup, (2) urutan belajar/sertifikasi yang realistis, (3) cara memanfaatkan pengalaman saat ini sebagai nilai jual, (4) linimasa transisi yang masuk akal.
+
+Peran saat ini &amp; pengalaman relevan: [jelaskan]
+Peran target: [sebutkan]
+Waktu belajar yang tersedia per minggu: [sebutkan]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="career" data-name="karier // personal_brand_content_calendar.txt prompt susun kalender konten untuk membangun personal brand ai.">
+        <div class="ph"><span>karier // personal_brand_content_calendar.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-personal-brand-calendar" data-fav-type="prompt" data-fav-title="karier // personal_brand_content_calendar.txt" data-fav-desc="Prompt susun kalender konten untuk membangun personal brand AI." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah personal branding strategist untuk praktisi teknis. Susun kalender konten 4 minggu untuk membangun personal brand di bidang AI, mencakup: (1) tema konten tiap minggu yang relevan dengan keahlian, (2) format &amp; platform yang disarankan untuk tiap tema, (3) call-to-action yang konsisten dengan tujuan karier, (4) metrik sederhana untuk menilai keberhasilan.
+
+Keahlian/niche yang ingin ditonjolkan: [sebutkan]
+Platform utama (LinkedIn/X/blog/YouTube): [sebutkan]
+Tujuan akhir (cari klien/kerja/networking): [sebutkan]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="coding" data-name="programmer // dependency_upgrade_impact_analysis.txt prompt analisis risiko &amp; dampak upgrade dependency.">
+        <div class="ph"><span>programmer // dependency_upgrade_impact_analysis.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-dependency-upgrade-impact" data-fav-type="prompt" data-fav-title="programmer // dependency_upgrade_impact_analysis.txt" data-fav-desc="Prompt analisis risiko &amp; dampak upgrade dependency." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah senior engineer yang menilai risiko upgrade dependency. Berdasarkan daftar perubahan versi berikut, analisis: (1) breaking change yang berpotensi memengaruhi kode saat ini, (2) urutan upgrade paling aman jika ada banyak dependency, (3) area kode/test yang wajib diperiksa ulang setelah upgrade.
+
+Daftar dependency &amp; versi lama → baru: [tempel daftar]
+Bahasa/framework project: [sebutkan]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="coding" data-name="programmer // code_documentation_generator.txt prompt hasilkan dokumentasi inline dari kode.">
+        <div class="ph"><span>programmer // code_documentation_generator.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-code-doc-generator" data-fav-type="prompt" data-fav-title="programmer // code_documentation_generator.txt" data-fav-desc="Prompt hasilkan dokumentasi inline dari kode." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah technical writer sekaligus programmer. Buatkan dokumentasi inline (docstring/komentar) untuk kode berikut, jelaskan tujuan fungsi, parameter, nilai kembalian, dan efek samping (jika ada) dengan gaya yang konsisten dengan konvensi [bahasa pemrograman].
+
+Kode:
+[tempel kode di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="coding" data-name="programmer // git_commit_message_helper.txt prompt susun commit message yang jelas dari ringkasan perubahan.">
+        <div class="ph"><span>programmer // git_commit_message_helper.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-git-commit-helper" data-fav-type="prompt" data-fav-title="programmer // git_commit_message_helper.txt" data-fav-desc="Prompt susun commit message yang jelas dari ringkasan perubahan." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah engineer yang menjaga kualitas riwayat git. Berdasarkan diff/ringkasan perubahan berikut, susun commit message mengikuti format [conventional commits/format lain] yang jelas, ringkas, dan menjelaskan alasan perubahan (bukan cuma apa yang berubah).
+
+Ringkasan perubahan/diff:
+[tempel di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="data" data-name="data_analyst // sql_query_explainer.txt prompt jelaskan query sql ke bahasa yang mudah dipahami.">
+        <div class="ph"><span>data_analyst // sql_query_explainer.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-sql-query-explainer" data-fav-type="prompt" data-fav-title="data_analyst // sql_query_explainer.txt" data-fav-desc="Prompt jelaskan query SQL ke bahasa yang mudah dipahami." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah data analyst yang membantu rekan non-teknis memahami query. Jelaskan query SQL berikut dalam bahasa yang mudah dipahami: apa yang diambil, dari tabel mana, filter/join apa yang diterapkan, dan potensi hasil yang tidak terduga (mis. duplikasi akibat join).
+
+Query:
+[tempel query di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="data" data-name="data_analyst // data_governance_policy_draft.txt prompt susun draf kebijakan tata kelola data.">
+        <div class="ph"><span>data_analyst // data_governance_policy_draft.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-data-governance-policy" data-fav-type="prompt" data-fav-title="data_analyst // data_governance_policy_draft.txt" data-fav-desc="Prompt susun draf kebijakan tata kelola data." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah data governance lead. Susun draf kebijakan tata kelola data yang mencakup: (1) klasifikasi sensitivitas data, (2) aturan akses &amp; retensi per klasifikasi, (3) tanggung jawab data owner vs data steward, (4) proses audit berkala.
+
+Jenis data yang dikelola &amp; sumbernya: [jelaskan]
+Regulasi yang perlu dipatuhi (jika ada): [sebutkan]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="database" data-name="database // database_capacity_forecast.txt prompt susun proyeksi kapasitas database 6-12 bulan ke depan.">
+        <div class="ph"><span>database // database_capacity_forecast.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-database-capacity-forecast" data-fav-type="prompt" data-fav-title="database // database_capacity_forecast.txt" data-fav-desc="Prompt susun proyeksi kapasitas database 6-12 bulan ke depan." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah database reliability engineer. Berdasarkan tren pertumbuhan data &amp; traffic berikut, susun proyeksi kapasitas untuk 6-12 bulan ke depan, mencakup: (1) estimasi kebutuhan storage &amp; IOPS, (2) titik di mana perlu scaling vertikal vs horizontal, (3) rekomendasi tindakan pencegahan sebelum kapasitas mendekati batas.
+
+Data pertumbuhan historis (storage/traffic per bulan): [tempel data]
+Arsitektur database saat ini: [jelaskan]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="database" data-name="database // stored_procedure_review.txt prompt tinjau stored procedure: performa, error handling, keamanan.">
+        <div class="ph"><span>database // stored_procedure_review.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-stored-procedure-review" data-fav-type="prompt" data-fav-title="database // stored_procedure_review.txt" data-fav-desc="Prompt tinjau stored procedure: performa, error handling, keamanan." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah senior DBA. Tinjau stored procedure berikut untuk: (1) potensi masalah performa, (2) penanganan error yang kurang, (3) risiko keamanan (mis. SQL injection dari input dinamis). Beri saran perbaikan konkret untuk tiap temuan.
+
+Stored procedure:
+[tempel kode di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="database" data-name="database // replication_lag_troubleshoot.txt prompt diagnosis penyebab replication lag &amp; mitigasinya.">
+        <div class="ph"><span>database // replication_lag_troubleshoot.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-replication-lag-troubleshoot" data-fav-type="prompt" data-fav-title="database // replication_lag_troubleshoot.txt" data-fav-desc="Prompt diagnosis penyebab replication lag &amp; mitigasinya." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah database engineer yang menangani insiden replikasi. Berdasarkan gejala &amp; metrik berikut, susun langkah diagnosis untuk menemukan penyebab replication lag, dan rekomendasi mitigasi jangka pendek maupun jangka panjang.
+
+Gejala yang teramati: [jelaskan]
+Metrik terkait (lag time, load, network): [tempel data]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="devops" data-name="devops // container_image_hardening.txt prompt hardening image container: attack surface, secret, privilege.">
+        <div class="ph"><span>devops // container_image_hardening.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-container-image-hardening" data-fav-type="prompt" data-fav-title="devops // container_image_hardening.txt" data-fav-desc="Prompt hardening image container: attack surface, secret, privilege." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah cloud security engineer. Tinjau Dockerfile/konfigurasi image container berikut dan berikan rekomendasi hardening: (1) pengurangan attack surface (base image, package tidak perlu), (2) pengelolaan secret yang aman, (3) konfigurasi user/permission yang minim privilege.
+
+Dockerfile/konfigurasi image:
+[tempel di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="devops" data-name="devops // deployment_checklist_generator.txt prompt susun checklist pre &amp; post-deployment.">
+        <div class="ph"><span>devops // deployment_checklist_generator.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-deployment-checklist" data-fav-type="prompt" data-fav-title="devops // deployment_checklist_generator.txt" data-fav-desc="Prompt susun checklist pre &amp; post-deployment." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah release manager. Susun checklist pre-deployment &amp; post-deployment untuk rilis berikut, mencakup verifikasi konfigurasi, rencana rollback, dan pihak yang perlu diberi tahu.
+
+Deskripsi rilis (fitur/perubahan utama): [jelaskan]
+Environment tujuan: [sebutkan]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="devops" data-name="devops // cost_optimization_cloud_review.txt prompt identifikasi peluang optimasi biaya cloud.">
+        <div class="ph"><span>devops // cost_optimization_cloud_review.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-cost-optimization-cloud" data-fav-type="prompt" data-fav-title="devops // cost_optimization_cloud_review.txt" data-fav-desc="Prompt identifikasi peluang optimasi biaya cloud." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah cloud cost engineer (FinOps). Berdasarkan ringkasan penggunaan resource cloud berikut, identifikasi: (1) resource yang over-provisioned atau idle, (2) peluang penggunaan pricing model lebih murah (reserved/spot), (3) rekomendasi prioritas berdasarkan potensi penghematan vs risiko.
+
+Ringkasan penggunaan &amp; biaya resource: [tempel data]
+Batasan yang harus dijaga (SLA, performa): [sebutkan]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="network" data-name="network // network_segmentation_plan.txt prompt susun rencana segmentasi jaringan.">
+        <div class="ph"><span>network // network_segmentation_plan.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-network-segmentation-plan" data-fav-type="prompt" data-fav-title="network // network_segmentation_plan.txt" data-fav-desc="Prompt susun rencana segmentasi jaringan." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah network security architect. Susun rencana segmentasi jaringan untuk lingkungan berikut, mencakup: (1) pengelompokan segmen berdasarkan sensitivitas &amp; fungsi, (2) aturan komunikasi antar-segmen yang diperbolehkan, (3) langkah implementasi bertahap untuk meminimalkan gangguan layanan.
+
+Deskripsi jaringan &amp; aset saat ini: [jelaskan]
+Kebutuhan kepatuhan/compliance (jika ada): [sebutkan]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="network" data-name="network // vpn_troubleshoot_guide.txt prompt susun langkah troubleshooting koneksi vpn.">
+        <div class="ph"><span>network // vpn_troubleshoot_guide.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-vpn-troubleshoot-guide" data-fav-type="prompt" data-fav-title="network // vpn_troubleshoot_guide.txt" data-fav-desc="Prompt susun langkah troubleshooting koneksi VPN." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah network support engineer. Berdasarkan gejala masalah koneksi VPN berikut, susun langkah troubleshooting berurutan dari yang paling mungkin ke paling jarang terjadi, beserta cara memverifikasi tiap kemungkinan penyebab.
+
+Gejala yang dilaporkan pengguna: [jelaskan]
+Jenis VPN &amp; konfigurasi: [sebutkan]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="network" data-name="network // bandwidth_utilization_report.txt prompt ubah data utilisasi bandwidth jadi laporan naratif.">
+        <div class="ph"><span>network // bandwidth_utilization_report.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-bandwidth-utilization-report" data-fav-type="prompt" data-fav-title="network // bandwidth_utilization_report.txt" data-fav-desc="Prompt ubah data utilisasi bandwidth jadi laporan naratif." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah network analyst. Ubah data utilisasi bandwidth mentah berikut menjadi laporan naratif yang menyoroti: (1) pola penggunaan puncak, (2) segmen/perangkat dengan konsumsi tidak wajar, (3) rekomendasi kapan perlu penambahan kapasitas.
+
+Data utilisasi bandwidth:
+[tempel data di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="qa" data-name="qa // accessibility_test_checklist.txt prompt susun checklist pengujian aksesibilitas dasar.">
+        <div class="ph"><span>qa // accessibility_test_checklist.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-accessibility-test-checklist" data-fav-type="prompt" data-fav-title="qa // accessibility_test_checklist.txt" data-fav-desc="Prompt susun checklist pengujian aksesibilitas dasar." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah QA engineer yang fokus aksesibilitas. Susun checklist pengujian aksesibilitas dasar (WCAG level A/AA) untuk halaman/fitur berikut, mencakup navigasi keyboard, kontras warna, dan label untuk pembaca layar.
+
+Deskripsi halaman/fitur yang diuji: [jelaskan]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="qa" data-name="qa // api_contract_test_plan.txt prompt susun rencana contract testing untuk api.">
+        <div class="ph"><span>qa // api_contract_test_plan.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-api-contract-test-plan" data-fav-type="prompt" data-fav-title="qa // api_contract_test_plan.txt" data-fav-desc="Prompt susun rencana contract testing untuk API." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah QA engineer spesialis API. Susun rencana contract testing untuk API berikut, mencakup: (1) skema request/response yang perlu divalidasi, (2) skenario breaking change yang wajib terdeteksi otomatis, (3) strategi integrasi contract test ke pipeline CI/CD antar-tim.
+
+Spesifikasi API (endpoint &amp; schema): [tempel di sini]
+Konsumen API (tim/servis lain): [sebutkan]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="qa" data-name="qa // flaky_test_root_cause.txt prompt analisis penyebab test yang flaky.">
+        <div class="ph"><span>qa // flaky_test_root_cause.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-flaky-test-root-cause" data-fav-type="prompt" data-fav-title="qa // flaky_test_root_cause.txt" data-fav-desc="Prompt analisis penyebab test yang flaky." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah QA automation engineer. Berdasarkan log hasil test yang flaky (kadang lolos, kadang gagal) berikut, analisis kemungkinan penyebab (race condition, dependency eksternal, data test tidak konsisten, dll) dan sarankan perbaikan untuk tiap kemungkinan.
+
+Log/hasil test yang flaky:
+[tempel log di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="security" data-name="security // phishing_simulation_report_analysis.txt prompt ringkas hasil simulasi phishing &amp; rekomendasi training.">
+        <div class="ph"><span>security // phishing_simulation_report_analysis.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-phishing-simulation-report" data-fav-type="prompt" data-fav-title="security // phishing_simulation_report_analysis.txt" data-fav-desc="Prompt ringkas hasil simulasi phishing &amp; rekomendasi training." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah security awareness analyst. Berdasarkan hasil simulasi phishing berikut, susun ringkasan yang mencakup: (1) tingkat klik &amp; pelaporan per departemen, (2) pola yang menunjukkan kebutuhan training tambahan, (3) rekomendasi materi awareness untuk siklus berikutnya.
+
+Data hasil simulasi (klik, laporan, departemen): [tempel data]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="security" data-name="security // zero_trust_architecture_plan.txt prompt susun rencana awal adopsi arsitektur zero trust.">
+        <div class="ph"><span>security // zero_trust_architecture_plan.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-zero-trust-architecture-plan" data-fav-type="prompt" data-fav-title="security // zero_trust_architecture_plan.txt" data-fav-desc="Prompt susun rencana awal adopsi arsitektur zero trust." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah security architect. Susun rencana awal adopsi arsitektur zero trust untuk lingkungan berikut, mencakup: (1) prioritas komponen yang diterapkan lebih dulu (identity, device, network), (2) dependency antar-komponen, (3) risiko/hambatan organisasi yang perlu diantisipasi.
+
+Deskripsi arsitektur &amp; identity provider saat ini: [jelaskan]
+Tingkat kematangan keamanan saat ini: [sebutkan]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="umum" data-name="umum // meeting_agenda_builder.txt prompt susun agenda rapat yang terstruktur.">
+        <div class="ph"><span>umum // meeting_agenda_builder.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-meeting-agenda-builder" data-fav-type="prompt" data-fav-title="umum // meeting_agenda_builder.txt" data-fav-desc="Prompt susun agenda rapat yang terstruktur." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah asisten produktivitas. Susun agenda rapat yang terstruktur dari topik-topik berikut, termasuk estimasi waktu tiap topik, penanggung jawab pembahasan, dan hasil yang diharapkan dari rapat.
+
+Topik yang perlu dibahas: [sebutkan daftar]
+Durasi rapat &amp; jumlah peserta: [sebutkan]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="umum" data-name="umum // risk_assessment_matrix.txt prompt susun matriks penilaian risiko untuk sebuah rencana.">
+        <div class="ph"><span>umum // risk_assessment_matrix.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-risk-assessment-matrix" data-fav-type="prompt" data-fav-title="umum // risk_assessment_matrix.txt" data-fav-desc="Prompt susun matriks penilaian risiko untuk sebuah rencana." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah risk analyst. Susun matriks penilaian risiko (probability x impact) untuk rencana/keputusan berikut, mencakup identifikasi risiko utama, skor tiap risiko, dan rencana mitigasi untuk risiko dengan skor tertinggi.
+
+Deskripsi rencana/keputusan yang dinilai: [jelaskan]
+Konteks/batasan yang relevan: [sebutkan]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="umum" data-name="umum // weekly_report_summarizer.txt prompt ubah catatan aktivitas mingguan jadi laporan ringkas.">
+        <div class="ph"><span>umum // weekly_report_summarizer.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-weekly-report-summarizer" data-fav-type="prompt" data-fav-title="umum // weekly_report_summarizer.txt" data-fav-desc="Prompt ubah catatan aktivitas mingguan jadi laporan ringkas." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah asisten pelaporan. Ubah catatan aktivitas mingguan yang tidak terstruktur berikut menjadi laporan ringkas berformat: pencapaian, kendala, dan rencana minggu depan.
+
+Catatan aktivitas mentah:
+[tempel catatan di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="writing" data-name="writing // changelog_writer.txt prompt susun entri changelog dari daftar commit.">
+        <div class="ph"><span>writing // changelog_writer.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-changelog-writer" data-fav-type="prompt" data-fav-title="writing // changelog_writer.txt" data-fav-desc="Prompt susun entri changelog dari daftar commit." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah technical writer. Susun entri changelog dari daftar commit/perubahan berikut, dikelompokkan ke kategori Ditambahkan/Diubah/Diperbaiki, dengan bahasa yang bisa dipahami pengguna non-teknis.
+
+Daftar commit/perubahan: [tempel daftar]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="writing" data-name="writing // technical_faq_generator.txt prompt susun halaman faq dari pertanyaan tim support.">
+        <div class="ph"><span>writing // technical_faq_generator.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-technical-faq-generator" data-fav-type="prompt" data-fav-title="writing // technical_faq_generator.txt" data-fav-desc="Prompt susun halaman FAQ dari pertanyaan tim support." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah technical writer. Berdasarkan pertanyaan yang sering diajukan tim support berikut, susun halaman FAQ yang terstruktur dengan jawaban singkat dan jelas, dikelompokkan per topik.
+
+Daftar pertanyaan &amp; jawaban mentah: [tempel di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="writing" data-name="writing // executive_summary_writer.txt prompt ubah laporan teknis jadi ringkasan eksekutif.">
+        <div class="ph"><span>writing // executive_summary_writer.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-executive-summary-writer" data-fav-type="prompt" data-fav-title="writing // executive_summary_writer.txt" data-fav-desc="Prompt ubah laporan teknis jadi ringkasan eksekutif." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah technical writer untuk audiens eksekutif. Ubah laporan teknis berikut menjadi ringkasan eksekutif satu halaman yang menonjolkan: (1) keputusan yang perlu diambil, (2) dampak bisnis, (3) rekomendasi jelas tanpa jargon teknis berlebihan.
+
+Laporan teknis lengkap: [tempel/ringkas di sini]</pre>
+      </div>
     </div>
     <p class="tools-empty" id="prompts-empty">Tidak ada prompt yang cocok. Coba kata kunci atau kategori lain.</p>
   </div>
