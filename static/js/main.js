@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const textEl = document.getElementById('home-resume-text');
   if (!banner || !textEl) return; // elemen ini cuma ada di index.html
 
-  const TOTAL_MODULES = 19; // total data-mid di /roadmap — update jika modul roadmap berubah jumlahnya
+  const TOTAL_MODULES = 23; // total data-mid di /roadmap — update jika modul roadmap berubah jumlahnya
   let state;
   try {
     state = JSON.parse(localStorage.getItem('andre_roadmap_progress_v1')) || {};

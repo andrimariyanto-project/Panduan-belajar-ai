@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — andremedia.ai{% endblock %}
+{% block content %}
+<section class="section" style="border-top:1px solid var(--border-soft)">
+  <div class="container">
+    <span class="eyebrow">&gt; cat dashboard/summary.log</span>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">Dashboard Belajar</h1>
+    <p class="lead" style="max-width:640px">Ringkasan progres kamu di andremedia.ai — semua dihitung langsung dari data yang tersimpan di browser ini (roadmap, streak, skill check, kartu Kamus AI, dan favorit). Tidak ada akun, tidak ada server: buka dari perangkat lain berarti mulai dari nol.</p>
+
+    <div class="dash-grid" id="dash-stats">
+      <div class="dash-stat"><div class="num" id="dash-roadmap-pct">0%</div><div class="label">Progress Roadmap</div><div class="sub" id="dash-roadmap-sub">0 / 0 modul</div></div>
+      <div class="dash-stat"><div class="num" id="dash-streak">0🔥</div><div class="label">Streak Belajar</div><div class="sub" id="dash-streak-sub">hari beruntun</div></div>
+      <div class="dash-stat"><div class="num" id="dash-quiz">—</div><div class="label">Skill Check Terakhir</div><div class="sub" id="dash-quiz-sub">belum pernah dicoba</div></div>
+      <div class="dash-stat"><div class="num" id="dash-cards">0</div><div class="label">Istilah Dikuasai</div><div class="sub" id="dash-cards-sub">dari Kamus AI</div></div>
+      <div class="dash-stat"><div class="num" id="dash-fav">0</div><div class="label">Item Tersimpan</div><div class="sub" id="dash-fav-sub">tools, prompt & course</div></div>
+      <div class="dash-stat"><div class="num" id="dash-badges">0 / 12</div><div class="label">Badge Terbuka</div><div class="sub">lihat detail di bawah</div></div>
+      <div class="dash-stat"><div class="num" id="dash-notes">0</div><div class="label">Catatan Roadmap</div><div class="sub">node dengan catatan aktif</div></div>
+      <div class="dash-stat"><div class="num" id="dash-next">—</div><div class="label">Langkah Berikutnya</div><div class="sub" id="dash-next-sub">rekomendasi otomatis</div></div>
+    </div>
+
+    <div class="dash-section">
+      <h2>🏅 Badge Pencapaian</h2>
+      <p class="ref-desc" style="margin-top:-8px">Badge terbuka otomatis berdasarkan aktivitas belajarmu di platform ini — bukan gimmick, tapi penanda progres nyata.</p>
+      <div class="badge-grid" id="badge-grid"></div>
+    </div>
+
+    <div class="dash-section" id="dash-empty-wrap" hidden>
+      <p class="dash-empty">Belum ada aktivitas tersimpan. Mulai dari <a href="{{ url_for('roadmap') }}">Roadmap</a> atau <a href="{{ url_for('skillcheck') }}">Skill Check</a> untuk mengisi dashboard ini.</p>
+    </div>
+
+    <button class="dash-reset" id="dash-reset" type="button">Reset semua data lokal (roadmap, streak, catatan, favorit, riwayat)</button>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/badges.js') }}"></script>
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

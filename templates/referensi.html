@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+{% block title %}Referensi — andremedia.ai{% endblock %}
+{% block content %}
+<section class="section" style="border-top:1px solid var(--border-soft)">
+  <div class="container">
+    <span class="eyebrow">&gt; cat referensi/sumber.md</span>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">Referensi & Jalan Pintas Belajar</h1>
+    <p class="lead" style="max-width:680px">Kurasi sumber belajar AI eksternal yang <strong>resmi dan aktif diperbarui</strong> — dipakai sebagai pelengkap roadmap, bukan pengganti. Semua tautan mengarah ke dokumentasi resmi vendor atau course gratis yang sudah dicek ketersediaannya. Kalau kamu cuma punya waktu terbatas, ini "jalan pintas" paling efisien untuk paham AI secara mendalam tanpa tersesat di lautan konten.</p>
+
+    <div class="ref-shortcut cta-band" style="margin-top:28px;border-radius:var(--radius);text-align:left">
+      <span class="eyebrow">&gt; jalur_kilat.plan</span>
+      <h2 style="margin-top:6px">Jalur Kilat 30-60-90 Hari</h2>
+      <div class="ref-shortcut-grid">
+        <div>
+          <h4>Hari 1–30 · Fondasi</h4>
+          <p>Selesaikan node_00 di <a href="{{ url_for('roadmap') }}">Roadmap</a>, lalu tuntaskan <strong>AI Prompting for Everyone</strong> (DeepLearning.AI) dan baca <strong>Panduan Prompt Engineering Anthropic</strong>. Latih dengan 10 prompt kategori 🎓 Pembelajaran sub-topik "Fondasi AI" di <a href="{{ url_for('prompts') }}?cat=belajar">Prompt Library</a>.</p>
+        </div>
+        <div>
+          <h4>Hari 31–60 · Spesialisasi & Sistem</h4>
+          <p>Ambil <strong>ChatGPT Prompt Engineering for Developers</strong>, lalu satu course RAG (LangChain/LlamaIndex). Praktikkan lewat 10 prompt sub-topik "RAG" dan "AI Agent & MCP", plus workflow di <a href="{{ url_for('workflows') }}">Workflows</a>.</p>
+        </div>
+        <div>
+          <h4>Hari 61–90 · Produksi & Portofolio</h4>
+          <p>Baca dokumentasi resmi <strong>Model Context Protocol</strong>, bangun 1 project dari <a href="{{ url_for('projects') }}">Projects</a> dengan bimbingan sub-topik "Project Praktik", lalu susun studi kasus di <a href="{{ url_for('monetize') }}">Monetize</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ref-toc">
+      <a href="#resmi">Dokumentasi Resmi</a>
+      <a href="#kursus">Kursus Gratis</a>
+      <a href="#roadmap-eksternal">Roadmap Eksternal</a>
+      <a href="#rag-agent">RAG & Agent Mendalam</a>
+      <a href="#komunitas">Komunitas & Update Terbaru</a>
+    </div>
+
+    <h2 id="resmi" class="ref-h2">Dokumentasi & Panduan Resmi Vendor</h2>
+    <p class="ref-desc">Sumber paling akurat karena ditulis langsung oleh tim yang membangun modelnya — dipakai sebagai rujukan utama tiap kali istilah di Kamus AI atau prompt di sini terasa kurang jelas.</p>
+    <div class="grid grid-2 ref-grid">
+      <a class="card ref-card" href="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview" target="_blank" rel="noopener">
+        <div class="card-top"><span class="tag">resmi</span><span class="ref-src">Anthropic</span></div>
+        <h3>Prompt Engineering Overview (Claude Docs)</h3>
+        <p>Dokumentasi teknik inti: instruksi jelas, multishot example, chain-of-thought, XML tag, hingga strategi context panjang — sumber utama gaya penulisan prompt di Prompt Library ini.</p>
+      </a>
+      <a class="card ref-card" href="https://www.anthropic.com/learn" target="_blank" rel="noopener">
+        <div class="card-top"><span class="tag">resmi</span><span class="ref-src">Anthropic Academy</span></div>
+        <h3>Anthropic Academy — Building with the Claude API</h3>
+        <p>Kelas terstruktur gratis dengan sertifikat, mencakup dasar API, tool use, hingga praktik agent — cocok setelah menuntaskan node_02 di Roadmap.</p>
+      </a>
+      <a class="card ref-card" href="https://cookbook.openai.com/" target="_blank" rel="noopener">
+        <div class="card-top"><span class="tag">resmi</span><span class="ref-src">OpenAI</span></div>
+        <h3>OpenAI Cookbook</h3>
+        <p>Kumpulan notebook resmi berisi pola prompting per model, function calling, RAG, hingga agent — bagus untuk melihat contoh kode nyata, bukan cuma teori.</p>
+      </a>
+      <a class="card ref-card" href="https://modelcontextprotocol.io/" target="_blank" rel="noopener">
+        <div class="card-top"><span class="tag">resmi</span><span class="ref-src">MCP / Anthropic</span></div>
+        <h3>Model Context Protocol — Dokumentasi Resmi</h3>
+        <p>Spesifikasi dan panduan protokol terbuka untuk menghubungkan AI ke tools & sumber data eksternal secara standar — rujukan untuk node_02 "AI agent & tool-use".</p>
+      </a>
+      <a class="card ref-card" href="https://cloud.google.com/discover/what-is-generative-ai" target="_blank" rel="noopener">
+        <div class="card-top"><span class="tag">resmi</span><span class="ref-src">Google Cloud</span></div>
+        <h3>Google Cloud — Generative AI Learning Path</h3>
+        <p>Jalur belajar generative AI dari Google, termasuk modul gratis "Introduction to Generative AI" dan "Machine Learning Crash Course".</p>
+      </a>
+      <a class="card ref-card" href="https://github.com/openai/openai-cookbook" target="_blank" rel="noopener">
+        <div class="card-top"><span class="tag">resmi</span><span class="ref-src">GitHub</span></div>
+        <h3>openai-cookbook (repositori)</h3>
+        <p>Versi kode sumber dari OpenAI Cookbook — clone lalu jalankan notebook-nya langsung kalau kamu tipe belajar sambil oprek.</p>
+      </a>
+    </div>
+
+    <h2 id="kursus" class="ref-h2">Kursus Terstruktur Gratis</h2>
+    <p class="ref-desc">Semua bisa diakses tanpa biaya untuk materinya (beberapa sertifikat berbayar), formatnya video + latihan singkat 1–8 jam — pas untuk belajar konsisten tanpa harus cuti kerja.</p>
+    <div class="grid grid-2 ref-grid">
+      <a class="card ref-card" href="https://www.deeplearning.ai/short-courses/" target="_blank" rel="noopener">
+        <div class="card-top"><span class="tag teal">kursus</span><span class="ref-src">DeepLearning.AI</span></div>
+        <h3>DeepLearning.AI Short Courses</h3>
+        <p>Ratusan course singkat gratis (1–2 jam) yang dibuat bareng OpenAI, Anthropic, LangChain, dan Google — mulai dari prompting dasar sampai agentic RAG.</p>
+      </a>
+      <a class="card ref-card" href="https://huggingface.co/learn/llm-course" target="_blank" rel="noopener">
+        <div class="card-top"><span class="tag teal">kursus</span><span class="ref-src">Hugging Face</span></div>
+        <h3>Hugging Face LLM Course</h3>
+        <p>12 chapter gratis dan praktik langsung dengan library Transformers, cocok kalau kamu ingin paham arsitektur di balik LLM, bukan cuma pemakaiannya.</p>
+      </a>
+      <a class="card ref-card" href="https://huggingface.co/learn/agents-course" target="_blank" rel="noopener">
+        <div class="card-top"><span class="tag teal">kursus</span><span class="ref-src">Hugging Face</span></div>
+        <h3>Hugging Face Agents Course</h3>
+        <p>Course gratis dengan sertifikat yang fokus membangun AI agent dari nol — pendamping bagus untuk sub-topik "AI Agent & MCP" di Prompt Library.</p>
+      </a>
+      <a class="card ref-card" href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank" rel="noopener">
+        <div class="card-top"><span class="tag teal">kursus</span><span class="ref-src">Microsoft</span></div>
+        <h3>Generative AI for Beginners</h3>
+        <p>21 pelajaran open-source (lisensi MIT) dari prompt engineering, RAG, sampai agent — materinya aktif dirawat komunitas dan gratis penuh.</p>
+      </a>
+      <a class="card ref-card" href="https://academy.langchain.com/" target="_blank" rel="noopener">
+        <div class="card-top"><span class="tag teal">kursus</span><span class="ref-src">LangChain</span></div>
+        <h3>LangChain Academy</h3>
+        <p>Kursus resmi LangChain untuk membangun pipeline RAG dan agent memakai LangGraph — pelengkap teknis untuk sub-topik "RAG" dan "AI Agent".</p>
+      </a>
+      <a class="card ref-card" href="https://www.kaggle.com/learn" target="_blank" rel="noopener">
+        <div class="card-top"><span class="tag teal">kursus</span><span class="ref-src">Kaggle</span></div>
+        <h3>Kaggle Learn</h3>
+        <p>Micro-course gratis plus kompetisi nyata untuk mengasah skill data & machine learning — cocok kalau jalur kamu condong ke Data Analyst/ML.</p>
+      </a>
+    </div>
+
+    <h2 id="roadmap-eksternal" class="ref-h2">Roadmap & Peta Karier Eksternal</h2>
+    <p class="ref-desc">Untuk melihat gambaran karier AI yang lebih luas di luar konteks praktisi teknis yang jadi fokus platform ini.</p>
+    <div class="grid grid-2 ref-grid">
+      <a class="card ref-card" href="https://roadmap.sh/ai-engineer" target="_blank" rel="noopener">
+        <div class="card-top"><span class="tag">roadmap</span><span class="ref-src">roadmap.sh</span></div>
+        <h3>AI Engineer Roadmap</h3>
+        <p>Peta skill komunitas yang populer untuk jalur AI Engineer, dari fondasi pemrograman sampai produksi sistem berbasis LLM.</p>
+      </a>
+      <a class="card ref-card" href="https://roadmap.sh/ai-agents" target="_blank" rel="noopener">
+        <div class="card-top"><span class="tag">roadmap</span><span class="ref-src">roadmap.sh</span></div>
+        <h3>AI Agents Roadmap</h3>
+        <p>Peta belajar khusus untuk merancang, membangun, dan men-deploy AI agent — pelengkap node_02 di Roadmap andremedia.ai.</p>
+      </a>
+    </div>
+
+    <h2 id="rag-agent" class="ref-h2">RAG & Agent — Pendalaman</h2>
+    <p class="ref-desc">Setelah paham konsep dasar dari sub-topik "RAG" dan "AI Agent & MCP" di Prompt Library, sumber berikut membantu masuk ke level produksi.</p>
+    <div class="grid grid-2 ref-grid">
+      <a class="card ref-card" href="https://www.deeplearning.ai/short-courses/building-agentic-rag-with-llamaindex/" target="_blank" rel="noopener">
+        <div class="card-top"><span class="tag teal">lanjutan</span><span class="ref-src">DeepLearning.AI</span></div>
+        <h3>Building Agentic RAG with LlamaIndex</h3>
+        <p>Course singkat tentang RAG yang bisa merencanakan pencarian sendiri (agentic), bukan sekadar retrieval satu langkah statis.</p>
+      </a>
+      <a class="card ref-card" href="https://modelcontextprotocol.io/docs/getting-started/intro" target="_blank" rel="noopener">
+        <div class="card-top"><span class="tag teal">lanjutan</span><span class="ref-src">MCP</span></div>
+        <h3>MCP — Getting Started</h3>
+        <p>Titik masuk resmi untuk memahami cara kerja MCP server & client sebelum menghubungkan AI ke tools/database internal timmu.</p>
+      </a>
+    </div>
+
+    <h2 id="komunitas" class="ref-h2">Komunitas & Mengikuti Perkembangan Terbaru</h2>
+    <p class="ref-desc">AI bergerak cepat — sumber ini membantu kamu tetap update tanpa harus membaca berita AI tiap hari (lihat juga prompt "curation_habit_ai" di kategori 🎓 Pembelajaran).</p>
+    <div class="grid grid-2 ref-grid">
+      <a class="card ref-card" href="https://www.anthropic.com/news" target="_blank" rel="noopener">
+        <div class="card-top"><span class="tag">update</span><span class="ref-src">Anthropic</span></div>
+        <h3>Anthropic — News</h3>
+        <p>Pengumuman resmi rilis model, fitur, dan kebijakan Anthropic — sumber utama untuk validasi info seputar Claude.</p>
+      </a>
+      <a class="card ref-card" href="https://openai.com/news/" target="_blank" rel="noopener">
+        <div class="card-top"><span class="tag">update</span><span class="ref-src">OpenAI</span></div>
+        <h3>OpenAI — News</h3>
+        <p>Pengumuman resmi rilis model dan fitur dari OpenAI, pelengkap untuk membandingkan pendekatan antar vendor.</p>
+      </a>
+    </div>
+
+    <div class="cta-band" style="margin-top:56px;border-radius:var(--radius)">
+      <span class="eyebrow" style="justify-content:center">&gt; next_step</span>
+      <h2>Sudah tahu mau mulai dari mana?</h2>
+      <p style="max-width:520px;margin:0 auto 8px">Kembali ke Roadmap untuk menandai progres, atau buka Dashboard untuk melihat ringkasan belajarmu sejauh ini.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="{{ url_for('roadmap') }}" class="btn btn-primary">Buka Roadmap</a>
+        <a href="{{ url_for('dashboard') }}" class="btn btn-outline">Buka Dashboard</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

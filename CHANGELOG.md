@@ -10,6 +10,52 @@ MINOR untuk fitur baru, PATCH untuk perbaikan kecil/typo.
 
 ## [Unreleased]
 
+## [2.0.0] — 2026-07-21
+### Ditambahkan — "Update Final: Jalan Pintas Belajar AI Mendalam"
+- **Prompt Library diperluas dari 100 menjadi 200 prompt**: 100 prompt baru di kategori
+  🎓 **Pembelajaran** (`data-cat="belajar"`, prefix file `tutor_ai //`), dibagi ke **10
+  sub-topik x 10 prompt**: Fondasi AI, Teknik Prompting Inti, Prompting Lanjutan
+  (chain-of-thought, ReAct, self-consistency, meta-prompting, context engineering, dst),
+  RAG, AI Agent & MCP, Evaluasi & Anti-Halusinasi, Etika & Keamanan AI, Pembelajaran per
+  Peran (programmer/data/database/network/devops/QA/security/writer/PM/non-teknis),
+  Karier & Continuous Learning AI, dan Project Praktik berjenjang. Setiap prompt
+  dirancang sebagai "prompt tutor" yang mengubah AI jadi pembimbing pribadi (Socratic
+  teaching: analogi → penjelasan teknis → contoh → soal latihan → feedback), bukan
+  sekadar prompt tugas biasa.
+- Filter pill baru **🎓 Pembelajaran** di halaman `/prompts`, terhitung otomatis lewat
+  mekanisme jumlah live yang sudah ada. Command palette (`search-data.js`) disinkronkan
+  penuh ke 200 prompt.
+- **Halaman baru `/referensi`** — kurasi sumber belajar AI eksternal yang resmi & aktif
+  diperbarui (Anthropic Prompt Engineering Docs, Anthropic Academy, OpenAI Cookbook,
+  Model Context Protocol Docs, Google Cloud Generative AI Learning Path, DeepLearning.AI
+  Short Courses, Hugging Face LLM/Agents Course, Microsoft Generative AI for Beginners,
+  LangChain Academy, Kaggle Learn, roadmap.sh), dikelompokkan per kategori, plus blok
+  **"Jalur Kilat 30-60-90 Hari"** yang memetakan sumber eksternal ke node roadmap
+  andremedia.ai supaya belajar AI dari nol tetap terarah, bukan melompat-lompat.
+- **Halaman baru `/dashboard`** — ringkasan progres belajar (persentase roadmap, streak,
+  hasil Skill Check terakhir, jumlah istilah Kamus AI dikuasai, jumlah favorit, jumlah
+  catatan roadmap aktif, rekomendasi langkah berikutnya) dan **12 badge pencapaian**
+  (`static/js/badges.js`) yang terbuka otomatis dari aktivitas nyata (bukan gimmick):
+  Mulai Melangkah, Fondasi Kuat, Spesialis, Pembangun Sistem, Siap Produksi, Pelajar
+  Sejati, Konsisten 7/30 Hari, Kamus Master, Skill Checked, Kolektor, Pencatat Rajin.
+  Tersedia tombol reset semua data lokal dari satu tempat.
+- **Node roadmap baru — `node_04 // pendalaman & referensi`** (ongoing): 4 checklist
+  yang menghubungkan roadmap ke halaman `/referensi` dan ke prompt kategori 🎓
+  Pembelajaran, lengkap dengan catatan per node seperti node lain. Total modul roadmap
+  naik dari 19 menjadi 23 (`TOTAL_MODULES` di `main.js` & `dashboard.js` disesuaikan).
+- **Spaced repetition (Leitner box) di Kamus AI** — `flashcards.js` kini melacak "box"
+  tiap kartu (0-3) dengan interval 1/3/7 hari, ditampilkan sebagai indikator "perlu
+  diulang hari ini" di flashcard, tanpa mengubah tombol/alur yang sudah ada.
+- **10 istilah baru di Kamus AI**: Chain-of-Thought, ReAct, Self-Consistency, Prompt
+  Injection, Reranking, Chunking, Hybrid Search, LLM-as-Judge, Reflection (Agentic
+  Pattern), Groundedness — total naik dari 24 menjadi 34 istilah.
+- Navigasi (`base.html`) & footer diperbarui dengan link **Referensi** dan **Dashboard**;
+  beranda (`index.html`) memperbarui statistik ke 200 prompt, menambah baris roadmap
+  node_04, dan menambah kartu "Sumber resmi terkurasi" yang mengarah ke `/referensi`.
+- Penanda smoke test baru untuk `/referensi` dan `/dashboard`; `badges.js` dan
+  `dashboard.js` ditambahkan ke daftar static file wajib; batas minimum jumlah prompt
+  dinaikkan dari 100 ke 200 dan `data-mid` roadmap dari 18 ke 22.
+
 ## [1.5.0] — 2026-07-19
 ### Ditambahkan
 - Prompt Library diperluas dari 70 menjadi **100 prompt**: 30 prompt baru tersebar di

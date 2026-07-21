@@ -2,24 +2,33 @@
 
 Platform belajar AI terapan untuk praktisi teknis — engineer, programmer, data analyst,
 database expert, dan network integrator. Dibangun dengan **Python (Flask)**, multi-page,
-tanpa backend/database (murni frontend server-rendered).
+tanpa backend/database (murni frontend server-rendered). **v2.0.0** adalah update final
+yang menyatukan roadmap, 200 prompt (termasuk 100 prompt tutor AI khusus), referensi
+eksternal terkurasi, dan dashboard progres/badge jadi satu sistem belajar yang saling
+terhubung — "jalan pintas" untuk memahami AI secara mendalam tanpa tersesat di lautan
+konten.
 
 ## Struktur halaman
 
 - `/` — Beranda
-- `/roadmap` — Roadmap belajar 4 tahap (node_00 – node_03), dengan **checklist progress interaktif**,
-  tombol **"Lanjutkan belajar"**, **streak harian**, **catatan per node**, dan link cepat ke **prompt terkait**
+- `/roadmap` — Roadmap belajar 5 tahap (node_00 – node_04), dengan **checklist progress
+  interaktif**, tombol **"Lanjutkan belajar"**, **streak harian**, **catatan per node**,
+  link cepat ke **prompt terkait**, dan node baru `node_04` yang menghubungkan ke `/referensi`
 - `/courses` — Daftar course per node/peran (bisa difavoritkan)
 - `/tools` — Direktori tools AI (filter kategori + **pencarian teks live** + favorit)
-- `/prompts` — Prompt library siap salin (bisa difavoritkan)
-- `/prompt-builder` — **Baru:** susun prompt custom secara interaktif dengan preview langsung
+- `/prompts` — Prompt library siap salin, **200 prompt** (bisa difavoritkan)
+- `/prompt-builder` — susun prompt custom secara interaktif dengan preview langsung
 - `/workflows` — Workflow AI langkah-per-langkah
 - `/use-cases` — Use case per bidang teknis
 - `/projects` — Ide project latihan
 - `/monetize` — Cara memonetisasi skill AI
-- `/glossary` — Kamus istilah AI, dengan pencarian **dan mode flashcard interaktif**
+- `/glossary` — Kamus istilah AI (34 istilah), dengan pencarian **dan mode flashcard
+  dengan spaced repetition (Leitner box)**
 - `/skill-check` — Kuis interaktif penentu level, dengan progress bar, tombol kembali, dan riwayat hasil
 - `/tersimpan` — daftar tools/prompt/course yang sudah kamu favoritkan, dengan **export ke PDF/.txt/.json**
+- `/referensi` — **Baru:** kurasi sumber belajar AI eksternal resmi (Anthropic, OpenAI,
+  Hugging Face, Google, MCP, dst) + **"Jalur Kilat 30-60-90 Hari"**
+- `/dashboard` — **Baru:** ringkasan progres belajar lintas halaman + **12 badge pencapaian**
 
 ## Fitur interaktif
 
@@ -50,22 +59,38 @@ tanpa backend/database (murni frontend server-rendered).
 - **Navigasi mobile & scroll progress bar** — menu hamburger responsif dan indikator progres scroll
   tipis di bagian atas halaman.
 - **Notifikasi toast** — konfirmasi visual singkat untuk aksi seperti menambah favorit atau menyalin prompt.
-- **Prompt Library 100 prompt** — mencakup 11 kategori termasuk **AI/LLM Engineering** (evaluasi prompt,
-  desain RAG, optimasi biaya LLM, desain AI agent, mitigasi halusinasi, pertahanan prompt injection),
-  plus QA, Docs, Karier, Security, Coding, Data, Database, Network, DevOps, dan Umum. 34 di antaranya
-  adalah prompt **seri Lanjutan** — ditandai badge khusus — untuk kebutuhan yang lebih kompleks (ADR,
-  audit IAM, cutover jaringan, SLO/SLI, zero trust, data governance, dst).
+- **Prompt Library 200 prompt** — mencakup 12 kategori: 11 kategori peran/teknis (Coding, Data,
+  Database, Network, DevOps, Security, QA, Docs, Karier, Umum, AI/LLM Engineering) plus kategori
+  baru **🎓 Pembelajaran** (100 "prompt tutor" — bukan prompt tugas, tapi prompt yang mengubah AI
+  jadi pembimbing pribadi lewat pola analogi → penjelasan → contoh → latihan → feedback, dibagi 10
+  sub-topik: Fondasi AI, Teknik Prompting, Prompting Lanjutan, RAG, AI Agent & MCP, Evaluasi &
+  Anti-Halusinasi, Etika & Keamanan, Pembelajaran per Peran, Karier AI, Project Praktik). 34 prompt
+  di kategori non-pembelajaran ditandai badge **Lanjutan** untuk kebutuhan kompleks (ADR, audit
+  IAM, cutover jaringan, SLO/SLI, zero trust, data governance, dst).
 - **Filter pill dengan jumlah live** — tiap kategori di halaman `/prompts` menampilkan jumlah prompt-nya
   secara otomatis (dihitung dari DOM), jadi tidak akan pernah basi walau kontennya terus bertambah.
 - **Deep-link filter Prompts** (`/prompts?cat=coding&q=review`) — halaman Prompts otomatis
   memilih filter kategori/kata kunci dari parameter URL, dipakai oleh link "Prompt terkait" di
   Roadmap supaya lompatannya langsung terfilter, bukan cuma membuka halaman kosong.
 - **Tombol "🎲 Acak"** — loncat ke satu prompt acak dari hasil filter/pencarian yang sedang tampil,
-  lengkap dengan highlight visual dan notifikasi toast; membantu eksplorasi 100+ prompt yang tersedia.
-- **Command palette terindeks penuh** — seluruh 100 prompt (bukan cuma sebagian) kini muncul di
+  lengkap dengan highlight visual dan notifikasi toast; membantu eksplorasi 200 prompt yang tersedia.
+- **Command palette terindeks penuh** — seluruh 200 prompt (bukan cuma sebagian) kini muncul di
   hasil pencarian global (`Ctrl+K`), sinkron dengan isi halaman `/prompts`.
 - **Export favorit** — di halaman `/tersimpan`, unduh semua tools/prompt/course yang disimpan sebagai
   file **PDF**, **.txt**, atau **.json** (isi prompt lengkap ikut disertakan, bukan cuma judul).
+- **Halaman Referensi** (`/referensi`) — kurasi manual sumber belajar resmi (dokumentasi vendor,
+  course gratis, roadmap komunitas) yang dikelompokkan per kategori, plus **Jalur Kilat 30-60-90
+  Hari** yang memetakan sumber eksternal itu ke node roadmap di platform ini.
+- **Dashboard progres & badge** (`/dashboard`) — agregasi otomatis dari seluruh data localStorage
+  yang sudah ada (progress roadmap, streak, hasil Skill Check, kartu Kamus AI dikuasai, favorit,
+  catatan roadmap) ke satu ringkasan, plus **12 badge pencapaian** yang terbuka berdasarkan
+  aktivitas nyata (`static/js/badges.js`) dan tombol reset semua data lokal dari satu tempat.
+- **Spaced repetition di Kamus AI** — mode flashcard kini memakai sistem Leitner box sederhana
+  (interval 1/3/7 hari) untuk menjadwalkan istilah mana yang perlu diulang, ditampilkan sebagai
+  indikator "perlu diulang hari ini" tanpa mengubah alur kartu yang sudah ada.
+- **Roadmap 5 node** — node baru `node_04 // pendalaman & referensi` menutup roadmap dengan
+  menghubungkan ke `/referensi` dan prompt kategori 🎓 Pembelajaran, supaya belajar tidak berhenti
+  begitu 4 node sebelumnya selesai.
 
 ## Alur update yang aman (biar fitur lama tidak pernah hilang)
 
@@ -167,9 +192,11 @@ andremedia/
 │   ├── usecases.html
 │   ├── projects.html
 │   ├── monetize.html
-│   ├── glossary.html       # + mode flashcard
+│   ├── glossary.html       # + mode flashcard + spaced repetition
 │   ├── skillcheck.html     # + riwayat hasil
-│   └── tersimpan.html      # Baru: halaman favorit
+│   ├── tersimpan.html      # halaman favorit
+│   ├── referensi.html      # Baru v2.0: kurasi sumber belajar eksternal + jalur kilat
+│   └── dashboard.html      # Baru v2.0: ringkasan progres + badge pencapaian
 └── static/
     ├── css/style.css       # Design system (warna, tipografi, komponen)
     └── js/
@@ -177,10 +204,10 @@ andremedia/
         ├── filter.js           # Filter kategori + pencarian di halaman Tools
         ├── copy.js             # Tombol salin di halaman Prompts
         ├── glossary.js         # Pencarian mode-list di halaman Kamus AI
-        ├── flashcards.js       # Mode flashcard di halaman Kamus AI
+        ├── flashcards.js       # Mode flashcard + spaced repetition (Leitner box)
         ├── quiz.js             # Logika kuis Skill Check + riwayat
         ├── roadmap-progress.js # Checklist & progress bar Roadmap
-        ├── roadmap-companion.js # Baru: resume, streak, sisa modul, catatan & prompt terkait per node
+        ├── roadmap-companion.js # resume, streak, sisa modul, catatan & prompt terkait per node
         ├── prompt-builder.js   # Logika Prompt Builder
         ├── favorites.js        # Sistem favorit/bookmark (shared)
         ├── tersimpan.js        # Render halaman Tersimpan
@@ -188,7 +215,9 @@ andremedia/
         ├── command-palette.js  # Command palette (Ctrl+K)
         ├── mobile-nav.js       # Toggle menu mobile
         ├── scroll-progress.js  # Progress bar scroll
-        └── toast.js            # Notifikasi toast (shared)
+        ├── toast.js            # Notifikasi toast (shared)
+        ├── badges.js           # Baru v2.0: definisi & kalkulasi 12 badge pencapaian
+        └── dashboard.js        # Baru v2.0: render halaman /dashboard
 ```
 
 ## Konsep desain
@@ -200,15 +229,28 @@ andremedia/
 
 ## Konten
 
-Semua konten (roadmap, course, tools, prompt, workflow, use case, glossary, kuis) adalah
-**draf awal** yang bisa langsung diedit di masing-masing file `templates/*.html` — tidak ada
-database, jadi mengubah konten cukup dengan mengedit HTML/teks di template.
+Semua konten (roadmap, course, tools, prompt, workflow, use case, glossary, kuis, referensi)
+adalah **draf awal** yang bisa langsung diedit di masing-masing file `templates/*.html` — tidak
+ada database, jadi mengubah konten cukup dengan mengedit HTML/teks di template. Tautan di halaman
+`/referensi` diverifikasi manual saat ditulis (Juli 2026); cek berkala tetap disarankan karena URL
+eksternal bisa berubah seiring waktu.
+
+## Status v2.0.0
+
+Versi ini adalah **update final** yang menyatukan seluruh fitur sebelumnya (roadmap, favorit,
+command palette, prompt builder, skill check, glossary) dengan tiga lapisan baru: (1) 100 prompt
+pembelajaran khusus, (2) referensi eksternal terkurasi dengan jalur belajar 30-60-90 hari, dan
+(3) dashboard progres + badge yang menjahit semua data localStorage yang sudah ada jadi satu
+ringkasan. Tidak ada fitur lama yang dihapus — `python scripts/smoke_test.py` memverifikasi ini
+otomatis (196 pengecekan, lihat bagian "Alur update yang aman" di atas).
 
 ## Langkah lanjutan yang bisa ditambahkan
 
 - Autentikasi & sinkronisasi favorit/progress lintas perangkat (saat ini semua state — favorit,
-  progress roadmap, riwayat skill check, kartu dikuasai — tersimpan lokal di `localStorage` browser)
+  progress roadmap, riwayat skill check, kartu dikuasai, badge — tersimpan lokal di `localStorage`
+  browser, sehingga dashboard hanya menampilkan data dari perangkat yang sama)
 - CMS sederhana agar non-developer bisa mengubah konten tanpa edit kode
 - Integrasi API AI sungguhan di halaman Skill Check & Prompt Builder untuk hasil yang lebih personal
 - Analytics untuk melihat halaman/mata pelajaran yang paling banyak diakses
 - Endpoint `/api/search-index` di backend agar index command palette tidak perlu di-hardcode di JS
+- Job berkala (mis. GitHub Actions terjadwal) untuk mengecek tautan di `/referensi` masih hidup

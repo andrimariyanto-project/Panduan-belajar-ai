@@ -22,7 +22,7 @@
 
     <div class="hero-stats">
       <div><span class="num">4</span><span class="lbl">tahap roadmap</span></div>
-      <div><span class="num">100+</span><span class="lbl">prompt siap pakai</span></div>
+      <div><span class="num">200</span><span class="lbl">prompt siap pakai</span></div>
       <div><span class="num">25+</span><span class="lbl">tools terkurasi</span></div>
       <div><span class="num">13+</span><span class="lbl">ide project</span></div>
     </div>
@@ -78,6 +78,7 @@
       <li><span class="rn">01</span><span class="rt">AI sesuai peran kerja — programmer, data, database, network</span><span class="rd">3-4 minggu</span></li>
       <li><span class="rn">02</span><span class="rt">Dari prompt ke sistem — RAG, agent, automation</span><span class="rd">4-6 minggu</span></li>
       <li><span class="rn">03</span><span class="rt">Produksi & monetisasi — portofolio dan jasa</span><span class="rd">ongoing</span></li>
+      <li><span class="rn">04</span><span class="rt">Pendalaman & referensi — sumber resmi eksternal</span><span class="rd">ongoing</span></li>
     </ul>
     <a href="{{ url_for('roadmap') }}" class="btn btn-outline" style="margin-top:28px">Lihat roadmap lengkap</a>
   </div>
@@ -137,7 +138,7 @@
       <h2>Tidak perlu mulai dari nol. Pakai referensinya, lalu modifikasi.</h2>
       <p>Cari tools yang pas, salin prompt, lihat workflow-nya, baru pelajari cara kerjanya.</p>
     </div>
-    <div class="grid grid-3">
+    <div class="grid grid-4">
       <div class="card">
         <span class="tag">tools</span>
         <h3>Tools AI itu banyak</h3>
@@ -147,7 +148,7 @@
       <div class="card">
         <span class="tag teal">prompts</span>
         <h3>Prompt siap dipelajari</h3>
-        <p>Template yang tinggal disesuaikan, bukan ditelan mentah-mentah.</p>
+        <p>200 prompt siap pakai, termasuk 100 prompt 🎓 Pembelajaran khusus.</p>
         <div class="card-footer"><a href="{{ url_for('prompts') }}" class="role-link" style="color:var(--accent-2)">Salin prompt <span class="arrow">→</span></a></div>
       </div>
       <div class="card">
@@ -155,6 +156,12 @@
         <h3>Workflow nyata</h3>
         <p>Alur dari masalah sampai output, lengkap dengan langkah-langkahnya.</p>
         <div class="card-footer"><a href="{{ url_for('workflows') }}" class="role-link" style="color:var(--accent)">Lihat workflow <span class="arrow">→</span></a></div>
+      </div>
+      <div class="card">
+        <span class="tag teal">referensi</span>
+        <h3>Sumber resmi terkurasi</h3>
+        <p>Dokumentasi & course gratis dari Anthropic, OpenAI, Hugging Face, dan lainnya.</p>
+        <div class="card-footer"><a href="{{ url_for('referensi') }}" class="role-link" style="color:var(--accent-2)">Buka referensi <span class="arrow">→</span></a></div>
       </div>
     </div>
   </div>

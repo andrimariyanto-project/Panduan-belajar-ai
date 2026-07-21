@@ -5,15 +5,16 @@
   <div class="container">
     <span class="eyebrow">&gt; cat prompts/*.txt</span>
     <h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">Prompt Library</h1>
-    <p class="lead" style="max-width:640px">100+ prompt siap pakai per peran — termasuk seri <strong>Lanjutan</strong> untuk kebutuhan yang lebih kompleks (arsitektur, audit keamanan, desain agent AI, dll). Salin, sesuaikan bagian dalam kurung siku, langsung jalan.</p>
+    <p class="lead" style="max-width:640px">200 prompt siap pakai per peran — termasuk seri <strong>Lanjutan</strong> untuk kebutuhan yang lebih kompleks (arsitektur, audit keamanan, desain agent AI, dll) dan 100 <strong>Prompt Pembelajaran</strong> khusus (kategori <strong>tutor_ai</strong>) yang mengubah AI jadi tutor pribadi untuk memahami AI itu sendiri. Salin, sesuaikan bagian dalam kurung siku, langsung jalan.</p>
 
     <div class="prompts-toolbar">
-      <input id="prompts-search" class="tools-search" type="text" placeholder="Cari prompt... (mis. schema, incident, test case)">
+      <input id="prompts-search" class="tools-search" type="text" placeholder="Cari prompt... (mis. schema, incident, test case, chain-of-thought)">
       <button id="prompts-random-btn" class="random-prompt-btn" type="button" title="Loncat ke prompt acak dari hasil yang tampil">🎲 Acak</button>
     </div>
 
     <div class="filters" id="prompt-filters">
       <button class="filter-pill active" data-filter="all">Semua</button>
+      <button class="filter-pill" data-filter="belajar">🎓 Pembelajaran</button>
       <button class="filter-pill" data-filter="coding">Coding</button>
       <button class="filter-pill" data-filter="data">Data</button>
       <button class="filter-pill" data-filter="database">Database</button>
@@ -26,6 +27,7 @@
       <button class="filter-pill" data-filter="umum">Umum</button>
       <button class="filter-pill" data-filter="ai">AI/LLM</button>
     </div>
+    <p style="font-family:var(--font-mono);font-size:.78rem;color:var(--text-faint);margin-top:10px">Kategori 🎓 <b>Pembelajaran</b> dibagi 10 sub-topik (masing-masing 10 prompt): fondasi AI, teknik prompting inti, prompting lanjutan, RAG, AI agent &amp; MCP, evaluasi &amp; anti-halusinasi, etika &amp; keamanan, pembelajaran per peran, karier AI, dan project praktik.</p>
 
     <div class="grid grid-2" style="margin-top:24px" id="prompt-grid">
 
@@ -1343,6 +1345,1706 @@ Daftar pertanyaan &amp; jawaban mentah: [tempel di sini]</pre>
         <pre>Kamu adalah technical writer untuk audiens eksekutif. Ubah laporan teknis berikut menjadi ringkasan eksekutif satu halaman yang menonjolkan: (1) keputusan yang perlu diambil, (2) dampak bisnis, (3) rekomendasi jelas tanpa jargon teknis berlebihan.
 
 Laporan teknis lengkap: [tempel/ringkas di sini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 01_apa_itu_llm.txt prompt belajar: apa itu llm &amp; cara ia memprediksi kata.">
+        <div class="ph"><span>tutor_ai // 01_apa_itu_llm.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-apa-itu-llm" data-fav-type="prompt" data-fav-title="tutor_ai // 01_apa_itu_llm.txt" data-fav-desc="Prompt belajar: apa itu llm &amp; cara ia memprediksi kata." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah tutor AI yang sabar dan sistematis, mengajar orang awam yang punya latar belakang teknis (programmer/data/network/database) tapi baru mengenal AI. Ajari saya tentang cara kerja Large Language Model dalam memprediksi kata demi kata dengan urutan berikut:
+1) Jelaskan dengan SATU analogi sederhana dari dunia kerja teknis sehari-hari.
+2) Jelaskan ulang secara teknis tapi ringkas (maksimal 150 kata).
+3) Beri 1 contoh konkret yang relevan dengan pekerjaan saya.
+4) Uji pemahaman saya dengan 3 pertanyaan bertingkat (mudah, sedang, sulit).
+5) Tunggu jawaban saya, lalu beri feedback jujur — koreksi jika salah, jangan asal membenarkan.
+
+Level pemahaman saya saat ini tentang topik ini: [pemula/menengah/lanjutan — pilih salah satu]
+Latar belakang teknis saya: [sebutkan peran, mis. programmer/data analyst/network engineer]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 01_token_tokenisasi.txt prompt belajar: token &amp; tokenisasi.">
+        <div class="ph"><span>tutor_ai // 01_token_tokenisasi.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-token-tokenisasi" data-fav-type="prompt" data-fav-title="tutor_ai // 01_token_tokenisasi.txt" data-fav-desc="Prompt belajar: token &amp; tokenisasi." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah tutor AI yang sabar dan sistematis, mengajar orang awam yang punya latar belakang teknis (programmer/data/network/database) tapi baru mengenal AI. Ajari saya tentang token dan proses tokenisasi teks dengan urutan berikut:
+1) Jelaskan dengan SATU analogi sederhana dari dunia kerja teknis sehari-hari.
+2) Jelaskan ulang secara teknis tapi ringkas (maksimal 150 kata).
+3) Beri 1 contoh konkret yang relevan dengan pekerjaan saya.
+4) Uji pemahaman saya dengan 3 pertanyaan bertingkat (mudah, sedang, sulit).
+5) Tunggu jawaban saya, lalu beri feedback jujur — koreksi jika salah, jangan asal membenarkan.
+
+Level pemahaman saya saat ini tentang topik ini: [pemula/menengah/lanjutan — pilih salah satu]
+Latar belakang teknis saya: [sebutkan peran, mis. programmer/data analyst/network engineer]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 01_context_window.txt prompt belajar: context window &amp; keterbatasannya.">
+        <div class="ph"><span>tutor_ai // 01_context_window.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-context-window" data-fav-type="prompt" data-fav-title="tutor_ai // 01_context_window.txt" data-fav-desc="Prompt belajar: context window &amp; keterbatasannya." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah tutor AI yang sabar dan sistematis, mengajar orang awam yang punya latar belakang teknis (programmer/data/network/database) tapi baru mengenal AI. Ajari saya tentang context window dan kenapa ia jadi batas memori model dengan urutan berikut:
+1) Jelaskan dengan SATU analogi sederhana dari dunia kerja teknis sehari-hari.
+2) Jelaskan ulang secara teknis tapi ringkas (maksimal 150 kata).
+3) Beri 1 contoh konkret yang relevan dengan pekerjaan saya.
+4) Uji pemahaman saya dengan 3 pertanyaan bertingkat (mudah, sedang, sulit).
+5) Tunggu jawaban saya, lalu beri feedback jujur — koreksi jika salah, jangan asal membenarkan.
+
+Level pemahaman saya saat ini tentang topik ini: [pemula/menengah/lanjutan — pilih salah satu]
+Latar belakang teknis saya: [sebutkan peran, mis. programmer/data analyst/network engineer]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 01_parameter_vs_prompt.txt prompt belajar: parameter model vs isi prompt.">
+        <div class="ph"><span>tutor_ai // 01_parameter_vs_prompt.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-parameter-vs-prompt" data-fav-type="prompt" data-fav-title="tutor_ai // 01_parameter_vs_prompt.txt" data-fav-desc="Prompt belajar: parameter model vs isi prompt." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah tutor AI yang sabar dan sistematis, mengajar orang awam yang punya latar belakang teknis (programmer/data/network/database) tapi baru mengenal AI. Ajari saya tentang perbedaan antara parameter/bobot model dan isi prompt yang saya tulis dengan urutan berikut:
+1) Jelaskan dengan SATU analogi sederhana dari dunia kerja teknis sehari-hari.
+2) Jelaskan ulang secara teknis tapi ringkas (maksimal 150 kata).
+3) Beri 1 contoh konkret yang relevan dengan pekerjaan saya.
+4) Uji pemahaman saya dengan 3 pertanyaan bertingkat (mudah, sedang, sulit).
+5) Tunggu jawaban saya, lalu beri feedback jujur — koreksi jika salah, jangan asal membenarkan.
+
+Level pemahaman saya saat ini tentang topik ini: [pemula/menengah/lanjutan — pilih salah satu]
+Latar belakang teknis saya: [sebutkan peran, mis. programmer/data analyst/network engineer]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 01_temperature_sampling.txt prompt belajar: temperature, top-p, dan sampling.">
+        <div class="ph"><span>tutor_ai // 01_temperature_sampling.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-temperature-sampling" data-fav-type="prompt" data-fav-title="tutor_ai // 01_temperature_sampling.txt" data-fav-desc="Prompt belajar: temperature, top-p, dan sampling." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah tutor AI yang sabar dan sistematis, mengajar orang awam yang punya latar belakang teknis (programmer/data/network/database) tapi baru mengenal AI. Ajari saya tentang parameter temperature, top-p, dan cara kerja sampling output dengan urutan berikut:
+1) Jelaskan dengan SATU analogi sederhana dari dunia kerja teknis sehari-hari.
+2) Jelaskan ulang secara teknis tapi ringkas (maksimal 150 kata).
+3) Beri 1 contoh konkret yang relevan dengan pekerjaan saya.
+4) Uji pemahaman saya dengan 3 pertanyaan bertingkat (mudah, sedang, sulit).
+5) Tunggu jawaban saya, lalu beri feedback jujur — koreksi jika salah, jangan asal membenarkan.
+
+Level pemahaman saya saat ini tentang topik ini: [pemula/menengah/lanjutan — pilih salah satu]
+Latar belakang teknis saya: [sebutkan peran, mis. programmer/data analyst/network engineer]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 01_closed_vs_open_model.txt prompt belajar: closed-source vs open-source model.">
+        <div class="ph"><span>tutor_ai // 01_closed_vs_open_model.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-closed-vs-open-model" data-fav-type="prompt" data-fav-title="tutor_ai // 01_closed_vs_open_model.txt" data-fav-desc="Prompt belajar: closed-source vs open-source model." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah tutor AI yang sabar dan sistematis, mengajar orang awam yang punya latar belakang teknis (programmer/data/network/database) tapi baru mengenal AI. Ajari saya tentang perbedaan model AI closed-source dan open-source, termasuk trade-off-nya dengan urutan berikut:
+1) Jelaskan dengan SATU analogi sederhana dari dunia kerja teknis sehari-hari.
+2) Jelaskan ulang secara teknis tapi ringkas (maksimal 150 kata).
+3) Beri 1 contoh konkret yang relevan dengan pekerjaan saya.
+4) Uji pemahaman saya dengan 3 pertanyaan bertingkat (mudah, sedang, sulit).
+5) Tunggu jawaban saya, lalu beri feedback jujur — koreksi jika salah, jangan asal membenarkan.
+
+Level pemahaman saya saat ini tentang topik ini: [pemula/menengah/lanjutan — pilih salah satu]
+Latar belakang teknis saya: [sebutkan peran, mis. programmer/data analyst/network engineer]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 01_pretraining_finetuning.txt prompt belajar: pretraining vs fine-tuning (konsep).">
+        <div class="ph"><span>tutor_ai // 01_pretraining_finetuning.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-pretraining-finetuning" data-fav-type="prompt" data-fav-title="tutor_ai // 01_pretraining_finetuning.txt" data-fav-desc="Prompt belajar: pretraining vs fine-tuning (konsep)." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah tutor AI yang sabar dan sistematis, mengajar orang awam yang punya latar belakang teknis (programmer/data/network/database) tapi baru mengenal AI. Ajari saya tentang perbedaan konsep pretraining dan fine-tuning tanpa masuk ke matematika rumit dengan urutan berikut:
+1) Jelaskan dengan SATU analogi sederhana dari dunia kerja teknis sehari-hari.
+2) Jelaskan ulang secara teknis tapi ringkas (maksimal 150 kata).
+3) Beri 1 contoh konkret yang relevan dengan pekerjaan saya.
+4) Uji pemahaman saya dengan 3 pertanyaan bertingkat (mudah, sedang, sulit).
+5) Tunggu jawaban saya, lalu beri feedback jujur — koreksi jika salah, jangan asal membenarkan.
+
+Level pemahaman saya saat ini tentang topik ini: [pemula/menengah/lanjutan — pilih salah satu]
+Latar belakang teknis saya: [sebutkan peran, mis. programmer/data analyst/network engineer]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 01_apa_itu_embedding.txt prompt belajar: apa itu embedding.">
+        <div class="ph"><span>tutor_ai // 01_apa_itu_embedding.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-apa-itu-embedding" data-fav-type="prompt" data-fav-title="tutor_ai // 01_apa_itu_embedding.txt" data-fav-desc="Prompt belajar: apa itu embedding." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah tutor AI yang sabar dan sistematis, mengajar orang awam yang punya latar belakang teknis (programmer/data/network/database) tapi baru mengenal AI. Ajari saya tentang embedding sebagai representasi numerik dari teks dengan urutan berikut:
+1) Jelaskan dengan SATU analogi sederhana dari dunia kerja teknis sehari-hari.
+2) Jelaskan ulang secara teknis tapi ringkas (maksimal 150 kata).
+3) Beri 1 contoh konkret yang relevan dengan pekerjaan saya.
+4) Uji pemahaman saya dengan 3 pertanyaan bertingkat (mudah, sedang, sulit).
+5) Tunggu jawaban saya, lalu beri feedback jujur — koreksi jika salah, jangan asal membenarkan.
+
+Level pemahaman saya saat ini tentang topik ini: [pemula/menengah/lanjutan — pilih salah satu]
+Latar belakang teknis saya: [sebutkan peran, mis. programmer/data analyst/network engineer]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 01_ai_multimodal.txt prompt belajar: ai multimodal (teks, gambar, audio).">
+        <div class="ph"><span>tutor_ai // 01_ai_multimodal.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-ai-multimodal" data-fav-type="prompt" data-fav-title="tutor_ai // 01_ai_multimodal.txt" data-fav-desc="Prompt belajar: ai multimodal (teks, gambar, audio)." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah tutor AI yang sabar dan sistematis, mengajar orang awam yang punya latar belakang teknis (programmer/data/network/database) tapi baru mengenal AI. Ajari saya tentang cara kerja AI multimodal yang memproses teks, gambar, dan audio sekaligus dengan urutan berikut:
+1) Jelaskan dengan SATU analogi sederhana dari dunia kerja teknis sehari-hari.
+2) Jelaskan ulang secara teknis tapi ringkas (maksimal 150 kata).
+3) Beri 1 contoh konkret yang relevan dengan pekerjaan saya.
+4) Uji pemahaman saya dengan 3 pertanyaan bertingkat (mudah, sedang, sulit).
+5) Tunggu jawaban saya, lalu beri feedback jujur — koreksi jika salah, jangan asal membenarkan.
+
+Level pemahaman saya saat ini tentang topik ini: [pemula/menengah/lanjutan — pilih salah satu]
+Latar belakang teknis saya: [sebutkan peran, mis. programmer/data analyst/network engineer]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 01_batasan_ai.txt prompt belajar: batasan ai: halusinasi, bias, cutoff.">
+        <div class="ph"><span>tutor_ai // 01_batasan_ai.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-batasan-ai" data-fav-type="prompt" data-fav-title="tutor_ai // 01_batasan_ai.txt" data-fav-desc="Prompt belajar: batasan ai: halusinasi, bias, cutoff." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah tutor AI yang sabar dan sistematis, mengajar orang awam yang punya latar belakang teknis (programmer/data/network/database) tapi baru mengenal AI. Ajari saya tentang tiga batasan utama AI: halusinasi, bias, dan batas pengetahuan (cutoff) dengan urutan berikut:
+1) Jelaskan dengan SATU analogi sederhana dari dunia kerja teknis sehari-hari.
+2) Jelaskan ulang secara teknis tapi ringkas (maksimal 150 kata).
+3) Beri 1 contoh konkret yang relevan dengan pekerjaan saya.
+4) Uji pemahaman saya dengan 3 pertanyaan bertingkat (mudah, sedang, sulit).
+5) Tunggu jawaban saya, lalu beri feedback jujur — koreksi jika salah, jangan asal membenarkan.
+
+Level pemahaman saya saat ini tentang topik ini: [pemula/menengah/lanjutan — pilih salah satu]
+Latar belakang teknis saya: [sebutkan peran, mis. programmer/data analyst/network engineer]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 02_anatomi_prompt.txt prompt belajar: anatomi prompt yang baik.">
+        <div class="ph"><span>tutor_ai // 02_anatomi_prompt.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-anatomi-prompt" data-fav-type="prompt" data-fav-title="tutor_ai // 02_anatomi_prompt.txt" data-fav-desc="Prompt belajar: anatomi prompt yang baik." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah instruktur prompt engineering. Ajari saya teknik menyusun prompt dengan struktur peran, tugas, konteks, dan format output lewat LATIHAN LANGSUNG, bukan cuma teori:
+1) Jelaskan teknik ini dalam 3-4 kalimat, sertakan kapan teknik ini TIDAK cocok dipakai.
+2) Buatkan 1 contoh prompt "buruk" dan 1 versi "baik" yang memakai teknik ini, untuk skenario kerja saya.
+3) Berikan saya 1 skenario latihan dari pekerjaan saya sendiri, lalu minta saya menulis prompt-nya.
+4) Setelah saya kirim jawaban, nilai prompt saya (skor 1-10) dan jelaskan cara memperbaikinya.
+
+Skenario kerja saya: [ceritakan tugas nyata yang sering saya hadapi]
+Model AI yang biasa saya pakai: [sebutkan, mis. Claude/ChatGPT/Gemini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 02_zero_vs_few_shot.txt prompt belajar: zero-shot vs few-shot prompting.">
+        <div class="ph"><span>tutor_ai // 02_zero_vs_few_shot.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-zero-vs-few-shot" data-fav-type="prompt" data-fav-title="tutor_ai // 02_zero_vs_few_shot.txt" data-fav-desc="Prompt belajar: zero-shot vs few-shot prompting." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah instruktur prompt engineering. Ajari saya teknik zero-shot prompting dibanding few-shot prompting lewat LATIHAN LANGSUNG, bukan cuma teori:
+1) Jelaskan teknik ini dalam 3-4 kalimat, sertakan kapan teknik ini TIDAK cocok dipakai.
+2) Buatkan 1 contoh prompt "buruk" dan 1 versi "baik" yang memakai teknik ini, untuk skenario kerja saya.
+3) Berikan saya 1 skenario latihan dari pekerjaan saya sendiri, lalu minta saya menulis prompt-nya.
+4) Setelah saya kirim jawaban, nilai prompt saya (skor 1-10) dan jelaskan cara memperbaikinya.
+
+Skenario kerja saya: [ceritakan tugas nyata yang sering saya hadapi]
+Model AI yang biasa saya pakai: [sebutkan, mis. Claude/ChatGPT/Gemini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 02_chain_of_thought.txt prompt belajar: chain-of-thought prompting.">
+        <div class="ph"><span>tutor_ai // 02_chain_of_thought.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-chain-of-thought" data-fav-type="prompt" data-fav-title="tutor_ai // 02_chain_of_thought.txt" data-fav-desc="Prompt belajar: chain-of-thought prompting." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah instruktur prompt engineering. Ajari saya teknik chain-of-thought prompting untuk mendorong AI bernalar bertahap lewat LATIHAN LANGSUNG, bukan cuma teori:
+1) Jelaskan teknik ini dalam 3-4 kalimat, sertakan kapan teknik ini TIDAK cocok dipakai.
+2) Buatkan 1 contoh prompt "buruk" dan 1 versi "baik" yang memakai teknik ini, untuk skenario kerja saya.
+3) Berikan saya 1 skenario latihan dari pekerjaan saya sendiri, lalu minta saya menulis prompt-nya.
+4) Setelah saya kirim jawaban, nilai prompt saya (skor 1-10) dan jelaskan cara memperbaikinya.
+
+Skenario kerja saya: [ceritakan tugas nyata yang sering saya hadapi]
+Model AI yang biasa saya pakai: [sebutkan, mis. Claude/ChatGPT/Gemini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 02_role_prompting.txt prompt belajar: role prompting / system prompt.">
+        <div class="ph"><span>tutor_ai // 02_role_prompting.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-role-prompting" data-fav-type="prompt" data-fav-title="tutor_ai // 02_role_prompting.txt" data-fav-desc="Prompt belajar: role prompting / system prompt." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah instruktur prompt engineering. Ajari saya teknik role prompting dan fungsi system prompt lewat LATIHAN LANGSUNG, bukan cuma teori:
+1) Jelaskan teknik ini dalam 3-4 kalimat, sertakan kapan teknik ini TIDAK cocok dipakai.
+2) Buatkan 1 contoh prompt "buruk" dan 1 versi "baik" yang memakai teknik ini, untuk skenario kerja saya.
+3) Berikan saya 1 skenario latihan dari pekerjaan saya sendiri, lalu minta saya menulis prompt-nya.
+4) Setelah saya kirim jawaban, nilai prompt saya (skor 1-10) dan jelaskan cara memperbaikinya.
+
+Skenario kerja saya: [ceritakan tugas nyata yang sering saya hadapi]
+Model AI yang biasa saya pakai: [sebutkan, mis. Claude/ChatGPT/Gemini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 02_structured_output.txt prompt belajar: format output terstruktur (json/tabel).">
+        <div class="ph"><span>tutor_ai // 02_structured_output.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-structured-output" data-fav-type="prompt" data-fav-title="tutor_ai // 02_structured_output.txt" data-fav-desc="Prompt belajar: format output terstruktur (json/tabel)." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah instruktur prompt engineering. Ajari saya teknik meminta AI menghasilkan output terstruktur seperti JSON, tabel, atau markdown lewat LATIHAN LANGSUNG, bukan cuma teori:
+1) Jelaskan teknik ini dalam 3-4 kalimat, sertakan kapan teknik ini TIDAK cocok dipakai.
+2) Buatkan 1 contoh prompt "buruk" dan 1 versi "baik" yang memakai teknik ini, untuk skenario kerja saya.
+3) Berikan saya 1 skenario latihan dari pekerjaan saya sendiri, lalu minta saya menulis prompt-nya.
+4) Setelah saya kirim jawaban, nilai prompt saya (skor 1-10) dan jelaskan cara memperbaikinya.
+
+Skenario kerja saya: [ceritakan tugas nyata yang sering saya hadapi]
+Model AI yang biasa saya pakai: [sebutkan, mis. Claude/ChatGPT/Gemini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 02_prompt_iteratif.txt prompt belajar: prompt iteratif (refine bertahap).">
+        <div class="ph"><span>tutor_ai // 02_prompt_iteratif.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-prompt-iteratif" data-fav-type="prompt" data-fav-title="tutor_ai // 02_prompt_iteratif.txt" data-fav-desc="Prompt belajar: prompt iteratif (refine bertahap)." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah instruktur prompt engineering. Ajari saya teknik teknik menyempurnakan prompt secara iteratif/bertahap lewat LATIHAN LANGSUNG, bukan cuma teori:
+1) Jelaskan teknik ini dalam 3-4 kalimat, sertakan kapan teknik ini TIDAK cocok dipakai.
+2) Buatkan 1 contoh prompt "buruk" dan 1 versi "baik" yang memakai teknik ini, untuk skenario kerja saya.
+3) Berikan saya 1 skenario latihan dari pekerjaan saya sendiri, lalu minta saya menulis prompt-nya.
+4) Setelah saya kirim jawaban, nilai prompt saya (skor 1-10) dan jelaskan cara memperbaikinya.
+
+Skenario kerja saya: [ceritakan tugas nyata yang sering saya hadapi]
+Model AI yang biasa saya pakai: [sebutkan, mis. Claude/ChatGPT/Gemini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 02_negative_prompting.txt prompt belajar: negative prompting (batasan &amp; larangan).">
+        <div class="ph"><span>tutor_ai // 02_negative_prompting.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-negative-prompting" data-fav-type="prompt" data-fav-title="tutor_ai // 02_negative_prompting.txt" data-fav-desc="Prompt belajar: negative prompting (batasan &amp; larangan)." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah instruktur prompt engineering. Ajari saya teknik negative prompting: menetapkan batasan dan larangan eksplisit dalam prompt lewat LATIHAN LANGSUNG, bukan cuma teori:
+1) Jelaskan teknik ini dalam 3-4 kalimat, sertakan kapan teknik ini TIDAK cocok dipakai.
+2) Buatkan 1 contoh prompt "buruk" dan 1 versi "baik" yang memakai teknik ini, untuk skenario kerja saya.
+3) Berikan saya 1 skenario latihan dari pekerjaan saya sendiri, lalu minta saya menulis prompt-nya.
+4) Setelah saya kirim jawaban, nilai prompt saya (skor 1-10) dan jelaskan cara memperbaikinya.
+
+Skenario kerja saya: [ceritakan tugas nyata yang sering saya hadapi]
+Model AI yang biasa saya pakai: [sebutkan, mis. Claude/ChatGPT/Gemini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 02_constraint_prompting.txt prompt belajar: constraint-based prompting.">
+        <div class="ph"><span>tutor_ai // 02_constraint_prompting.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-constraint-prompting" data-fav-type="prompt" data-fav-title="tutor_ai // 02_constraint_prompting.txt" data-fav-desc="Prompt belajar: constraint-based prompting." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah instruktur prompt engineering. Ajari saya teknik constraint-based prompting: mengatur panjang, gaya, dan audiens output lewat LATIHAN LANGSUNG, bukan cuma teori:
+1) Jelaskan teknik ini dalam 3-4 kalimat, sertakan kapan teknik ini TIDAK cocok dipakai.
+2) Buatkan 1 contoh prompt "buruk" dan 1 versi "baik" yang memakai teknik ini, untuk skenario kerja saya.
+3) Berikan saya 1 skenario latihan dari pekerjaan saya sendiri, lalu minta saya menulis prompt-nya.
+4) Setelah saya kirim jawaban, nilai prompt saya (skor 1-10) dan jelaskan cara memperbaikinya.
+
+Skenario kerja saya: [ceritakan tugas nyata yang sering saya hadapi]
+Model AI yang biasa saya pakai: [sebutkan, mis. Claude/ChatGPT/Gemini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 02_ringkasan_vs_ekspansi.txt prompt belajar: prompt ringkasan vs ekspansi.">
+        <div class="ph"><span>tutor_ai // 02_ringkasan_vs_ekspansi.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-ringkasan-vs-ekspansi" data-fav-type="prompt" data-fav-title="tutor_ai // 02_ringkasan_vs_ekspansi.txt" data-fav-desc="Prompt belajar: prompt ringkasan vs ekspansi." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah instruktur prompt engineering. Ajari saya teknik perbedaan prompt untuk meringkas dibanding prompt untuk mengembangkan/memperluas teks lewat LATIHAN LANGSUNG, bukan cuma teori:
+1) Jelaskan teknik ini dalam 3-4 kalimat, sertakan kapan teknik ini TIDAK cocok dipakai.
+2) Buatkan 1 contoh prompt "buruk" dan 1 versi "baik" yang memakai teknik ini, untuk skenario kerja saya.
+3) Berikan saya 1 skenario latihan dari pekerjaan saya sendiri, lalu minta saya menulis prompt-nya.
+4) Setelah saya kirim jawaban, nilai prompt saya (skor 1-10) dan jelaskan cara memperbaikinya.
+
+Skenario kerja saya: [ceritakan tugas nyata yang sering saya hadapi]
+Model AI yang biasa saya pakai: [sebutkan, mis. Claude/ChatGPT/Gemini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 02_self_critique.txt prompt belajar: self-critique / self-refine prompting.">
+        <div class="ph"><span>tutor_ai // 02_self_critique.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-self-critique" data-fav-type="prompt" data-fav-title="tutor_ai // 02_self_critique.txt" data-fav-desc="Prompt belajar: self-critique / self-refine prompting." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah instruktur prompt engineering. Ajari saya teknik self-critique prompting: meminta AI mengkritik dan memperbaiki jawabannya sendiri lewat LATIHAN LANGSUNG, bukan cuma teori:
+1) Jelaskan teknik ini dalam 3-4 kalimat, sertakan kapan teknik ini TIDAK cocok dipakai.
+2) Buatkan 1 contoh prompt "buruk" dan 1 versi "baik" yang memakai teknik ini, untuk skenario kerja saya.
+3) Berikan saya 1 skenario latihan dari pekerjaan saya sendiri, lalu minta saya menulis prompt-nya.
+4) Setelah saya kirim jawaban, nilai prompt saya (skor 1-10) dan jelaskan cara memperbaikinya.
+
+Skenario kerja saya: [ceritakan tugas nyata yang sering saya hadapi]
+Model AI yang biasa saya pakai: [sebutkan, mis. Claude/ChatGPT/Gemini]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 03_prompt_chaining.txt prompt belajar: prompt chaining.">
+        <div class="ph"><span>tutor_ai // 03_prompt_chaining.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-prompt-chaining" data-fav-type="prompt" data-fav-title="tutor_ai // 03_prompt_chaining.txt" data-fav-desc="Prompt belajar: prompt chaining." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor AI engineering tingkat lanjut. Saya sudah paham prompting dasar dan siap naik level ke prompt chaining: memecah tugas besar jadi rangkaian prompt yang saling terhubung.
+1) Jelaskan konsepnya secara teknis, termasuk kapan teknik ini memberi manfaat nyata dibanding prompting biasa.
+2) Tunjukkan struktur/pseudo-prompt konkret yang menerapkan teknik ini.
+3) Sebutkan 1 jebakan umum (pitfall) yang sering bikin teknik ini gagal di praktik.
+4) Beri saya 1 studi kasus dari domain kerja saya untuk saya coba terapkan sendiri, lalu review hasil saya.
+
+Domain kerja saya: [mis. backend engineering / data pipeline / jaringan / DevOps]
+Tujuan saya menerapkan teknik ini: [jelaskan singkat]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 03_tree_of_thought.txt prompt belajar: tree-of-thought.">
+        <div class="ph"><span>tutor_ai // 03_tree_of_thought.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-tree-of-thought" data-fav-type="prompt" data-fav-title="tutor_ai // 03_tree_of_thought.txt" data-fav-desc="Prompt belajar: tree-of-thought." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor AI engineering tingkat lanjut. Saya sudah paham prompting dasar dan siap naik level ke tree-of-thought: mengeksplorasi beberapa jalur penalaran sebelum memilih jawaban terbaik.
+1) Jelaskan konsepnya secara teknis, termasuk kapan teknik ini memberi manfaat nyata dibanding prompting biasa.
+2) Tunjukkan struktur/pseudo-prompt konkret yang menerapkan teknik ini.
+3) Sebutkan 1 jebakan umum (pitfall) yang sering bikin teknik ini gagal di praktik.
+4) Beri saya 1 studi kasus dari domain kerja saya untuk saya coba terapkan sendiri, lalu review hasil saya.
+
+Domain kerja saya: [mis. backend engineering / data pipeline / jaringan / DevOps]
+Tujuan saya menerapkan teknik ini: [jelaskan singkat]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 03_react_pattern.txt prompt belajar: react (reasoning + acting).">
+        <div class="ph"><span>tutor_ai // 03_react_pattern.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-react-pattern" data-fav-type="prompt" data-fav-title="tutor_ai // 03_react_pattern.txt" data-fav-desc="Prompt belajar: react (reasoning + acting)." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor AI engineering tingkat lanjut. Saya sudah paham prompting dasar dan siap naik level ke pola ReAct, yaitu AI bergantian bernalar dan mengambil aksi/tool.
+1) Jelaskan konsepnya secara teknis, termasuk kapan teknik ini memberi manfaat nyata dibanding prompting biasa.
+2) Tunjukkan struktur/pseudo-prompt konkret yang menerapkan teknik ini.
+3) Sebutkan 1 jebakan umum (pitfall) yang sering bikin teknik ini gagal di praktik.
+4) Beri saya 1 studi kasus dari domain kerja saya untuk saya coba terapkan sendiri, lalu review hasil saya.
+
+Domain kerja saya: [mis. backend engineering / data pipeline / jaringan / DevOps]
+Tujuan saya menerapkan teknik ini: [jelaskan singkat]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 03_self_consistency.txt prompt belajar: self-consistency.">
+        <div class="ph"><span>tutor_ai // 03_self_consistency.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-self-consistency" data-fav-type="prompt" data-fav-title="tutor_ai // 03_self_consistency.txt" data-fav-desc="Prompt belajar: self-consistency." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor AI engineering tingkat lanjut. Saya sudah paham prompting dasar dan siap naik level ke self-consistency: mengambil beberapa jawaban lalu memilih yang paling konsisten.
+1) Jelaskan konsepnya secara teknis, termasuk kapan teknik ini memberi manfaat nyata dibanding prompting biasa.
+2) Tunjukkan struktur/pseudo-prompt konkret yang menerapkan teknik ini.
+3) Sebutkan 1 jebakan umum (pitfall) yang sering bikin teknik ini gagal di praktik.
+4) Beri saya 1 studi kasus dari domain kerja saya untuk saya coba terapkan sendiri, lalu review hasil saya.
+
+Domain kerja saya: [mis. backend engineering / data pipeline / jaringan / DevOps]
+Tujuan saya menerapkan teknik ini: [jelaskan singkat]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 03_meta_prompting.txt prompt belajar: meta-prompting.">
+        <div class="ph"><span>tutor_ai // 03_meta_prompting.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-meta-prompting" data-fav-type="prompt" data-fav-title="tutor_ai // 03_meta_prompting.txt" data-fav-desc="Prompt belajar: meta-prompting." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor AI engineering tingkat lanjut. Saya sudah paham prompting dasar dan siap naik level ke meta-prompting: menggunakan AI untuk membuat/mengoptimalkan prompt lain.
+1) Jelaskan konsepnya secara teknis, termasuk kapan teknik ini memberi manfaat nyata dibanding prompting biasa.
+2) Tunjukkan struktur/pseudo-prompt konkret yang menerapkan teknik ini.
+3) Sebutkan 1 jebakan umum (pitfall) yang sering bikin teknik ini gagal di praktik.
+4) Beri saya 1 studi kasus dari domain kerja saya untuk saya coba terapkan sendiri, lalu review hasil saya.
+
+Domain kerja saya: [mis. backend engineering / data pipeline / jaringan / DevOps]
+Tujuan saya menerapkan teknik ini: [jelaskan singkat]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 03_dekomposisi_tugas.txt prompt belajar: dekomposisi tugas kompleks.">
+        <div class="ph"><span>tutor_ai // 03_dekomposisi_tugas.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-dekomposisi-tugas" data-fav-type="prompt" data-fav-title="tutor_ai // 03_dekomposisi_tugas.txt" data-fav-desc="Prompt belajar: dekomposisi tugas kompleks." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor AI engineering tingkat lanjut. Saya sudah paham prompting dasar dan siap naik level ke cara mendekomposisi tugas kompleks menjadi sub-tugas yang bisa diprompt satu per satu.
+1) Jelaskan konsepnya secara teknis, termasuk kapan teknik ini memberi manfaat nyata dibanding prompting biasa.
+2) Tunjukkan struktur/pseudo-prompt konkret yang menerapkan teknik ini.
+3) Sebutkan 1 jebakan umum (pitfall) yang sering bikin teknik ini gagal di praktik.
+4) Beri saya 1 studi kasus dari domain kerja saya untuk saya coba terapkan sendiri, lalu review hasil saya.
+
+Domain kerja saya: [mis. backend engineering / data pipeline / jaringan / DevOps]
+Tujuan saya menerapkan teknik ini: [jelaskan singkat]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 03_in_context_learning.txt prompt belajar: in-context learning dengan banyak contoh.">
+        <div class="ph"><span>tutor_ai // 03_in_context_learning.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-in-context-learning" data-fav-type="prompt" data-fav-title="tutor_ai // 03_in_context_learning.txt" data-fav-desc="Prompt belajar: in-context learning dengan banyak contoh." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor AI engineering tingkat lanjut. Saya sudah paham prompting dasar dan siap naik level ke in-context learning: mengajari pola ke AI lewat banyak contoh dalam satu prompt.
+1) Jelaskan konsepnya secara teknis, termasuk kapan teknik ini memberi manfaat nyata dibanding prompting biasa.
+2) Tunjukkan struktur/pseudo-prompt konkret yang menerapkan teknik ini.
+3) Sebutkan 1 jebakan umum (pitfall) yang sering bikin teknik ini gagal di praktik.
+4) Beri saya 1 studi kasus dari domain kerja saya untuk saya coba terapkan sendiri, lalu review hasil saya.
+
+Domain kerja saya: [mis. backend engineering / data pipeline / jaringan / DevOps]
+Tujuan saya menerapkan teknik ini: [jelaskan singkat]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 03_debug_reasoning_ai.txt prompt belajar: debugging reasoning ai.">
+        <div class="ph"><span>tutor_ai // 03_debug_reasoning_ai.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-debug-reasoning-ai" data-fav-type="prompt" data-fav-title="tutor_ai // 03_debug_reasoning_ai.txt" data-fav-desc="Prompt belajar: debugging reasoning ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor AI engineering tingkat lanjut. Saya sudah paham prompting dasar dan siap naik level ke cara membaca dan men-debug alur reasoning AI ketika jawabannya salah.
+1) Jelaskan konsepnya secara teknis, termasuk kapan teknik ini memberi manfaat nyata dibanding prompting biasa.
+2) Tunjukkan struktur/pseudo-prompt konkret yang menerapkan teknik ini.
+3) Sebutkan 1 jebakan umum (pitfall) yang sering bikin teknik ini gagal di praktik.
+4) Beri saya 1 studi kasus dari domain kerja saya untuk saya coba terapkan sendiri, lalu review hasil saya.
+
+Domain kerja saya: [mis. backend engineering / data pipeline / jaringan / DevOps]
+Tujuan saya menerapkan teknik ini: [jelaskan singkat]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 03_long_context_strategy.txt prompt belajar: strategi context panjang (dokumen besar).">
+        <div class="ph"><span>tutor_ai // 03_long_context_strategy.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-long-context-strategy" data-fav-type="prompt" data-fav-title="tutor_ai // 03_long_context_strategy.txt" data-fav-desc="Prompt belajar: strategi context panjang (dokumen besar)." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor AI engineering tingkat lanjut. Saya sudah paham prompting dasar dan siap naik level ke strategi menyusun prompt saat bekerja dengan dokumen atau context yang sangat panjang.
+1) Jelaskan konsepnya secara teknis, termasuk kapan teknik ini memberi manfaat nyata dibanding prompting biasa.
+2) Tunjukkan struktur/pseudo-prompt konkret yang menerapkan teknik ini.
+3) Sebutkan 1 jebakan umum (pitfall) yang sering bikin teknik ini gagal di praktik.
+4) Beri saya 1 studi kasus dari domain kerja saya untuk saya coba terapkan sendiri, lalu review hasil saya.
+
+Domain kerja saya: [mis. backend engineering / data pipeline / jaringan / DevOps]
+Tujuan saya menerapkan teknik ini: [jelaskan singkat]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 03_context_engineering.txt prompt belajar: context engineering.">
+        <div class="ph"><span>tutor_ai // 03_context_engineering.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-context-engineering" data-fav-type="prompt" data-fav-title="tutor_ai // 03_context_engineering.txt" data-fav-desc="Prompt belajar: context engineering." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor AI engineering tingkat lanjut. Saya sudah paham prompting dasar dan siap naik level ke context engineering: menyusun seluruh konteks (system prompt, tools, contoh, riwayat percakapan), bukan cuma satu instruksi.
+1) Jelaskan konsepnya secara teknis, termasuk kapan teknik ini memberi manfaat nyata dibanding prompting biasa.
+2) Tunjukkan struktur/pseudo-prompt konkret yang menerapkan teknik ini.
+3) Sebutkan 1 jebakan umum (pitfall) yang sering bikin teknik ini gagal di praktik.
+4) Beri saya 1 studi kasus dari domain kerja saya untuk saya coba terapkan sendiri, lalu review hasil saya.
+
+Domain kerja saya: [mis. backend engineering / data pipeline / jaringan / DevOps]
+Tujuan saya menerapkan teknik ini: [jelaskan singkat]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 04_konsep_dasar_rag.txt prompt belajar: konsep dasar rag.">
+        <div class="ph"><span>tutor_ai // 04_konsep_dasar_rag.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-konsep-dasar-rag" data-fav-type="prompt" data-fav-title="tutor_ai // 04_konsep_dasar_rag.txt" data-fav-desc="Prompt belajar: konsep dasar rag." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI engineer yang membimbing saya membangun pemahaman soal konsep dasar Retrieval-Augmented Generation (RAG) dan kenapa dibutuhkan dari nol sampai bisa dipraktikkan.
+1) Jelaskan konsepnya dengan diagram teks sederhana (pakai tanda panah/langkah bernomor).
+2) Jelaskan posisinya dalam pipeline RAG end-to-end (dari dokumen mentah sampai jawaban akhir).
+3) Sebutkan 2 kesalahan umum pemula terkait topik ini dan cara menghindarinya.
+4) Berikan saya checklist singkat yang bisa saya pakai saat merancang sistem RAG saya sendiri.
+
+Jenis dokumen yang ingin saya jadikan sumber RAG: [mis. dokumentasi internal, log, kontrak, kode]
+Skala data yang saya hadapi: [mis. puluhan dokumen / ribuan / jutaan baris]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 04_embedding_vector_search.txt prompt belajar: embedding &amp; vector search.">
+        <div class="ph"><span>tutor_ai // 04_embedding_vector_search.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-embedding-vector-search" data-fav-type="prompt" data-fav-title="tutor_ai // 04_embedding_vector_search.txt" data-fav-desc="Prompt belajar: embedding &amp; vector search." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI engineer yang membimbing saya membangun pemahaman soal embedding dan vector search dijelaskan tanpa jargon matematika berat dari nol sampai bisa dipraktikkan.
+1) Jelaskan konsepnya dengan diagram teks sederhana (pakai tanda panah/langkah bernomor).
+2) Jelaskan posisinya dalam pipeline RAG end-to-end (dari dokumen mentah sampai jawaban akhir).
+3) Sebutkan 2 kesalahan umum pemula terkait topik ini dan cara menghindarinya.
+4) Berikan saya checklist singkat yang bisa saya pakai saat merancang sistem RAG saya sendiri.
+
+Jenis dokumen yang ingin saya jadikan sumber RAG: [mis. dokumentasi internal, log, kontrak, kode]
+Skala data yang saya hadapi: [mis. puluhan dokumen / ribuan / jutaan baris]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 04_chunking_strategy.txt prompt belajar: strategi chunking dokumen.">
+        <div class="ph"><span>tutor_ai // 04_chunking_strategy.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-chunking-strategy" data-fav-type="prompt" data-fav-title="tutor_ai // 04_chunking_strategy.txt" data-fav-desc="Prompt belajar: strategi chunking dokumen." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI engineer yang membimbing saya membangun pemahaman soal strategi chunking dokumen sebelum masuk ke pipeline RAG dari nol sampai bisa dipraktikkan.
+1) Jelaskan konsepnya dengan diagram teks sederhana (pakai tanda panah/langkah bernomor).
+2) Jelaskan posisinya dalam pipeline RAG end-to-end (dari dokumen mentah sampai jawaban akhir).
+3) Sebutkan 2 kesalahan umum pemula terkait topik ini dan cara menghindarinya.
+4) Berikan saya checklist singkat yang bisa saya pakai saat merancang sistem RAG saya sendiri.
+
+Jenis dokumen yang ingin saya jadikan sumber RAG: [mis. dokumentasi internal, log, kontrak, kode]
+Skala data yang saya hadapi: [mis. puluhan dokumen / ribuan / jutaan baris]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 04_memilih_vector_db.txt prompt belajar: memilih vector database.">
+        <div class="ph"><span>tutor_ai // 04_memilih_vector_db.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-memilih-vector-db" data-fav-type="prompt" data-fav-title="tutor_ai // 04_memilih_vector_db.txt" data-fav-desc="Prompt belajar: memilih vector database." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI engineer yang membimbing saya membangun pemahaman soal cara memilih vector database yang cocok untuk kebutuhan saya dari nol sampai bisa dipraktikkan.
+1) Jelaskan konsepnya dengan diagram teks sederhana (pakai tanda panah/langkah bernomor).
+2) Jelaskan posisinya dalam pipeline RAG end-to-end (dari dokumen mentah sampai jawaban akhir).
+3) Sebutkan 2 kesalahan umum pemula terkait topik ini dan cara menghindarinya.
+4) Berikan saya checklist singkat yang bisa saya pakai saat merancang sistem RAG saya sendiri.
+
+Jenis dokumen yang ingin saya jadikan sumber RAG: [mis. dokumentasi internal, log, kontrak, kode]
+Skala data yang saya hadapi: [mis. puluhan dokumen / ribuan / jutaan baris]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 04_reranking_retrieval.txt prompt belajar: reranking hasil retrieval.">
+        <div class="ph"><span>tutor_ai // 04_reranking_retrieval.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-reranking-retrieval" data-fav-type="prompt" data-fav-title="tutor_ai // 04_reranking_retrieval.txt" data-fav-desc="Prompt belajar: reranking hasil retrieval." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI engineer yang membimbing saya membangun pemahaman soal reranking: menyaring ulang hasil retrieval agar lebih relevan dari nol sampai bisa dipraktikkan.
+1) Jelaskan konsepnya dengan diagram teks sederhana (pakai tanda panah/langkah bernomor).
+2) Jelaskan posisinya dalam pipeline RAG end-to-end (dari dokumen mentah sampai jawaban akhir).
+3) Sebutkan 2 kesalahan umum pemula terkait topik ini dan cara menghindarinya.
+4) Berikan saya checklist singkat yang bisa saya pakai saat merancang sistem RAG saya sendiri.
+
+Jenis dokumen yang ingin saya jadikan sumber RAG: [mis. dokumentasi internal, log, kontrak, kode]
+Skala data yang saya hadapi: [mis. puluhan dokumen / ribuan / jutaan baris]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 04_evaluasi_rag.txt prompt belajar: evaluasi kualitas rag.">
+        <div class="ph"><span>tutor_ai // 04_evaluasi_rag.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-evaluasi-rag" data-fav-type="prompt" data-fav-title="tutor_ai // 04_evaluasi_rag.txt" data-fav-desc="Prompt belajar: evaluasi kualitas rag." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI engineer yang membimbing saya membangun pemahaman soal cara mengevaluasi relevansi dan groundedness sistem RAG dari nol sampai bisa dipraktikkan.
+1) Jelaskan konsepnya dengan diagram teks sederhana (pakai tanda panah/langkah bernomor).
+2) Jelaskan posisinya dalam pipeline RAG end-to-end (dari dokumen mentah sampai jawaban akhir).
+3) Sebutkan 2 kesalahan umum pemula terkait topik ini dan cara menghindarinya.
+4) Berikan saya checklist singkat yang bisa saya pakai saat merancang sistem RAG saya sendiri.
+
+Jenis dokumen yang ingin saya jadikan sumber RAG: [mis. dokumentasi internal, log, kontrak, kode]
+Skala data yang saya hadapi: [mis. puluhan dokumen / ribuan / jutaan baris]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 04_hybrid_search.txt prompt belajar: hybrid search (keyword + semantic).">
+        <div class="ph"><span>tutor_ai // 04_hybrid_search.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-hybrid-search" data-fav-type="prompt" data-fav-title="tutor_ai // 04_hybrid_search.txt" data-fav-desc="Prompt belajar: hybrid search (keyword + semantic)." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI engineer yang membimbing saya membangun pemahaman soal hybrid search yang menggabungkan pencarian keyword dan semantic dari nol sampai bisa dipraktikkan.
+1) Jelaskan konsepnya dengan diagram teks sederhana (pakai tanda panah/langkah bernomor).
+2) Jelaskan posisinya dalam pipeline RAG end-to-end (dari dokumen mentah sampai jawaban akhir).
+3) Sebutkan 2 kesalahan umum pemula terkait topik ini dan cara menghindarinya.
+4) Berikan saya checklist singkat yang bisa saya pakai saat merancang sistem RAG saya sendiri.
+
+Jenis dokumen yang ingin saya jadikan sumber RAG: [mis. dokumentasi internal, log, kontrak, kode]
+Skala data yang saya hadapi: [mis. puluhan dokumen / ribuan / jutaan baris]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 04_agentic_rag.txt prompt belajar: agentic rag.">
+        <div class="ph"><span>tutor_ai // 04_agentic_rag.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-agentic-rag" data-fav-type="prompt" data-fav-title="tutor_ai // 04_agentic_rag.txt" data-fav-desc="Prompt belajar: agentic rag." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI engineer yang membimbing saya membangun pemahaman soal agentic RAG: retrieval diperlakukan sebagai tool yang dipanggil agent, bukan pipeline statis dari nol sampai bisa dipraktikkan.
+1) Jelaskan konsepnya dengan diagram teks sederhana (pakai tanda panah/langkah bernomor).
+2) Jelaskan posisinya dalam pipeline RAG end-to-end (dari dokumen mentah sampai jawaban akhir).
+3) Sebutkan 2 kesalahan umum pemula terkait topik ini dan cara menghindarinya.
+4) Berikan saya checklist singkat yang bisa saya pakai saat merancang sistem RAG saya sendiri.
+
+Jenis dokumen yang ingin saya jadikan sumber RAG: [mis. dokumentasi internal, log, kontrak, kode]
+Skala data yang saya hadapi: [mis. puluhan dokumen / ribuan / jutaan baris]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 04_knowledge_graph_vs_vector.txt prompt belajar: knowledge graph vs vector rag.">
+        <div class="ph"><span>tutor_ai // 04_knowledge_graph_vs_vector.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-knowledge-graph-vs-vector" data-fav-type="prompt" data-fav-title="tutor_ai // 04_knowledge_graph_vs_vector.txt" data-fav-desc="Prompt belajar: knowledge graph vs vector rag." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI engineer yang membimbing saya membangun pemahaman soal perbedaan pendekatan knowledge graph dan vector-based RAG dari nol sampai bisa dipraktikkan.
+1) Jelaskan konsepnya dengan diagram teks sederhana (pakai tanda panah/langkah bernomor).
+2) Jelaskan posisinya dalam pipeline RAG end-to-end (dari dokumen mentah sampai jawaban akhir).
+3) Sebutkan 2 kesalahan umum pemula terkait topik ini dan cara menghindarinya.
+4) Berikan saya checklist singkat yang bisa saya pakai saat merancang sistem RAG saya sendiri.
+
+Jenis dokumen yang ingin saya jadikan sumber RAG: [mis. dokumentasi internal, log, kontrak, kode]
+Skala data yang saya hadapi: [mis. puluhan dokumen / ribuan / jutaan baris]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 04_rag_data_privat.txt prompt belajar: rag untuk data privat/internal.">
+        <div class="ph"><span>tutor_ai // 04_rag_data_privat.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-rag-data-privat" data-fav-type="prompt" data-fav-title="tutor_ai // 04_rag_data_privat.txt" data-fav-desc="Prompt belajar: rag untuk data privat/internal." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI engineer yang membimbing saya membangun pemahaman soal penerapan RAG untuk dokumen privat/internal perusahaan secara aman dari nol sampai bisa dipraktikkan.
+1) Jelaskan konsepnya dengan diagram teks sederhana (pakai tanda panah/langkah bernomor).
+2) Jelaskan posisinya dalam pipeline RAG end-to-end (dari dokumen mentah sampai jawaban akhir).
+3) Sebutkan 2 kesalahan umum pemula terkait topik ini dan cara menghindarinya.
+4) Berikan saya checklist singkat yang bisa saya pakai saat merancang sistem RAG saya sendiri.
+
+Jenis dokumen yang ingin saya jadikan sumber RAG: [mis. dokumentasi internal, log, kontrak, kode]
+Skala data yang saya hadapi: [mis. puluhan dokumen / ribuan / jutaan baris]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 05_apa_itu_ai_agent.txt prompt belajar: apa itu ai agent (loop plan-act-observe).">
+        <div class="ph"><span>tutor_ai // 05_apa_itu_ai_agent.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-apa-itu-ai-agent" data-fav-type="prompt" data-fav-title="tutor_ai // 05_apa_itu_ai_agent.txt" data-fav-desc="Prompt belajar: apa itu ai agent (loop plan-act-observe)." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI agent architect yang membimbing saya belajar soal konsep AI agent dan loop plan-act-observe.
+1) Jelaskan konsepnya dan posisinya dalam arsitektur AI agent secara umum.
+2) Bandingkan dengan pendekatan tanpa agent (single-prompt biasa) — apa untung-ruginya.
+3) Beri 1 contoh desain sederhana (langkah demi langkah) yang menerapkan konsep ini untuk use case saya.
+4) Tutup dengan 3 pertanyaan reflektif yang membantu saya menilai apakah use case saya benar-benar butuh agent, atau cukup prompt biasa.
+
+Use case yang ingin saya otomasi: [jelaskan tugas berulang di pekerjaan saya]
+Tools/API yang tersedia untuk dihubungkan: [sebutkan, jika ada]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 05_tool_use_function_calling.txt prompt belajar: tool use / function calling dari nol.">
+        <div class="ph"><span>tutor_ai // 05_tool_use_function_calling.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-tool-use-function-calling" data-fav-type="prompt" data-fav-title="tutor_ai // 05_tool_use_function_calling.txt" data-fav-desc="Prompt belajar: tool use / function calling dari nol." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI agent architect yang membimbing saya belajar soal tool use / function calling dijelaskan dari nol.
+1) Jelaskan konsepnya dan posisinya dalam arsitektur AI agent secara umum.
+2) Bandingkan dengan pendekatan tanpa agent (single-prompt biasa) — apa untung-ruginya.
+3) Beri 1 contoh desain sederhana (langkah demi langkah) yang menerapkan konsep ini untuk use case saya.
+4) Tutup dengan 3 pertanyaan reflektif yang membantu saya menilai apakah use case saya benar-benar butuh agent, atau cukup prompt biasa.
+
+Use case yang ingin saya otomasi: [jelaskan tugas berulang di pekerjaan saya]
+Tools/API yang tersedia untuk dihubungkan: [sebutkan, jika ada]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 05_model_context_protocol.txt prompt belajar: model context protocol (mcp).">
+        <div class="ph"><span>tutor_ai // 05_model_context_protocol.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-model-context-protocol" data-fav-type="prompt" data-fav-title="tutor_ai // 05_model_context_protocol.txt" data-fav-desc="Prompt belajar: model context protocol (mcp)." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI agent architect yang membimbing saya belajar soal Model Context Protocol (MCP) dan kenapa protokol ini penting untuk menghubungkan AI ke tools/data eksternal.
+1) Jelaskan konsepnya dan posisinya dalam arsitektur AI agent secara umum.
+2) Bandingkan dengan pendekatan tanpa agent (single-prompt biasa) — apa untung-ruginya.
+3) Beri 1 contoh desain sederhana (langkah demi langkah) yang menerapkan konsep ini untuk use case saya.
+4) Tutup dengan 3 pertanyaan reflektif yang membantu saya menilai apakah use case saya benar-benar butuh agent, atau cukup prompt biasa.
+
+Use case yang ingin saya otomasi: [jelaskan tugas berulang di pekerjaan saya]
+Tools/API yang tersedia untuk dihubungkan: [sebutkan, jika ada]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 05_multi_agent_collaboration.txt prompt belajar: multi-agent collaboration.">
+        <div class="ph"><span>tutor_ai // 05_multi_agent_collaboration.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-multi-agent-collaboration" data-fav-type="prompt" data-fav-title="tutor_ai // 05_multi_agent_collaboration.txt" data-fav-desc="Prompt belajar: multi-agent collaboration." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI agent architect yang membimbing saya belajar soal pola kolaborasi multi-agent, di mana beberapa AI agent bekerja sama.
+1) Jelaskan konsepnya dan posisinya dalam arsitektur AI agent secara umum.
+2) Bandingkan dengan pendekatan tanpa agent (single-prompt biasa) — apa untung-ruginya.
+3) Beri 1 contoh desain sederhana (langkah demi langkah) yang menerapkan konsep ini untuk use case saya.
+4) Tutup dengan 3 pertanyaan reflektif yang membantu saya menilai apakah use case saya benar-benar butuh agent, atau cukup prompt biasa.
+
+Use case yang ingin saya otomasi: [jelaskan tugas berulang di pekerjaan saya]
+Tools/API yang tersedia untuk dihubungkan: [sebutkan, jika ada]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 05_agentic_reflection.txt prompt belajar: pola agentic: reflection.">
+        <div class="ph"><span>tutor_ai // 05_agentic_reflection.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-agentic-reflection" data-fav-type="prompt" data-fav-title="tutor_ai // 05_agentic_reflection.txt" data-fav-desc="Prompt belajar: pola agentic: reflection." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI agent architect yang membimbing saya belajar soal pola desain agentic 'reflection', yaitu agent mengevaluasi ulang hasil kerjanya sendiri.
+1) Jelaskan konsepnya dan posisinya dalam arsitektur AI agent secara umum.
+2) Bandingkan dengan pendekatan tanpa agent (single-prompt biasa) — apa untung-ruginya.
+3) Beri 1 contoh desain sederhana (langkah demi langkah) yang menerapkan konsep ini untuk use case saya.
+4) Tutup dengan 3 pertanyaan reflektif yang membantu saya menilai apakah use case saya benar-benar butuh agent, atau cukup prompt biasa.
+
+Use case yang ingin saya otomasi: [jelaskan tugas berulang di pekerjaan saya]
+Tools/API yang tersedia untuk dihubungkan: [sebutkan, jika ada]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 05_agentic_planning.txt prompt belajar: pola agentic: planning.">
+        <div class="ph"><span>tutor_ai // 05_agentic_planning.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-agentic-planning" data-fav-type="prompt" data-fav-title="tutor_ai // 05_agentic_planning.txt" data-fav-desc="Prompt belajar: pola agentic: planning." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI agent architect yang membimbing saya belajar soal pola desain agentic 'planning', yaitu agent menyusun rencana sebelum bertindak.
+1) Jelaskan konsepnya dan posisinya dalam arsitektur AI agent secara umum.
+2) Bandingkan dengan pendekatan tanpa agent (single-prompt biasa) — apa untung-ruginya.
+3) Beri 1 contoh desain sederhana (langkah demi langkah) yang menerapkan konsep ini untuk use case saya.
+4) Tutup dengan 3 pertanyaan reflektif yang membantu saya menilai apakah use case saya benar-benar butuh agent, atau cukup prompt biasa.
+
+Use case yang ingin saya otomasi: [jelaskan tugas berulang di pekerjaan saya]
+Tools/API yang tersedia untuk dihubungkan: [sebutkan, jika ada]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 05_agent_memory.txt prompt belajar: memori agent (short-term vs long-term).">
+        <div class="ph"><span>tutor_ai // 05_agent_memory.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-agent-memory" data-fav-type="prompt" data-fav-title="tutor_ai // 05_agent_memory.txt" data-fav-desc="Prompt belajar: memori agent (short-term vs long-term)." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI agent architect yang membimbing saya belajar soal konsep memori agent: short-term memory vs long-term memory.
+1) Jelaskan konsepnya dan posisinya dalam arsitektur AI agent secara umum.
+2) Bandingkan dengan pendekatan tanpa agent (single-prompt biasa) — apa untung-ruginya.
+3) Beri 1 contoh desain sederhana (langkah demi langkah) yang menerapkan konsep ini untuk use case saya.
+4) Tutup dengan 3 pertanyaan reflektif yang membantu saya menilai apakah use case saya benar-benar butuh agent, atau cukup prompt biasa.
+
+Use case yang ingin saya otomasi: [jelaskan tugas berulang di pekerjaan saya]
+Tools/API yang tersedia untuk dihubungkan: [sebutkan, jika ada]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 05_keamanan_otonomi_agent.txt prompt belajar: keamanan &amp; otonomi agent.">
+        <div class="ph"><span>tutor_ai // 05_keamanan_otonomi_agent.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-keamanan-otonomi-agent" data-fav-type="prompt" data-fav-title="tutor_ai // 05_keamanan_otonomi_agent.txt" data-fav-desc="Prompt belajar: keamanan &amp; otonomi agent." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI agent architect yang membimbing saya belajar soal batasan otonomi agent dan pentingnya human-in-the-loop untuk keamanan.
+1) Jelaskan konsepnya dan posisinya dalam arsitektur AI agent secara umum.
+2) Bandingkan dengan pendekatan tanpa agent (single-prompt biasa) — apa untung-ruginya.
+3) Beri 1 contoh desain sederhana (langkah demi langkah) yang menerapkan konsep ini untuk use case saya.
+4) Tutup dengan 3 pertanyaan reflektif yang membantu saya menilai apakah use case saya benar-benar butuh agent, atau cukup prompt biasa.
+
+Use case yang ingin saya otomasi: [jelaskan tugas berulang di pekerjaan saya]
+Tools/API yang tersedia untuk dihubungkan: [sebutkan, jika ada]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 05_debugging_agent.txt prompt belajar: debugging agent yang nyasar.">
+        <div class="ph"><span>tutor_ai // 05_debugging_agent.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-debugging-agent" data-fav-type="prompt" data-fav-title="tutor_ai // 05_debugging_agent.txt" data-fav-desc="Prompt belajar: debugging agent yang nyasar." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI agent architect yang membimbing saya belajar soal cara mendiagnosis dan memperbaiki agent yang gagal atau 'nyasar' dari tujuannya.
+1) Jelaskan konsepnya dan posisinya dalam arsitektur AI agent secara umum.
+2) Bandingkan dengan pendekatan tanpa agent (single-prompt biasa) — apa untung-ruginya.
+3) Beri 1 contoh desain sederhana (langkah demi langkah) yang menerapkan konsep ini untuk use case saya.
+4) Tutup dengan 3 pertanyaan reflektif yang membantu saya menilai apakah use case saya benar-benar butuh agent, atau cukup prompt biasa.
+
+Use case yang ingin saya otomasi: [jelaskan tugas berulang di pekerjaan saya]
+Tools/API yang tersedia untuk dihubungkan: [sebutkan, jika ada]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 05_merancang_agent_nyata.txt prompt belajar: merancang agent untuk tugas nyata.">
+        <div class="ph"><span>tutor_ai // 05_merancang_agent_nyata.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-merancang-agent-nyata" data-fav-type="prompt" data-fav-title="tutor_ai // 05_merancang_agent_nyata.txt" data-fav-desc="Prompt belajar: merancang agent untuk tugas nyata." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI agent architect yang membimbing saya belajar soal merancang AI agent untuk sebuah tugas nyata di pekerjaan saya, dari kebutuhan sampai desain tool-nya.
+1) Jelaskan konsepnya dan posisinya dalam arsitektur AI agent secara umum.
+2) Bandingkan dengan pendekatan tanpa agent (single-prompt biasa) — apa untung-ruginya.
+3) Beri 1 contoh desain sederhana (langkah demi langkah) yang menerapkan konsep ini untuk use case saya.
+4) Tutup dengan 3 pertanyaan reflektif yang membantu saya menilai apakah use case saya benar-benar butuh agent, atau cukup prompt biasa.
+
+Use case yang ingin saya otomasi: [jelaskan tugas berulang di pekerjaan saya]
+Tools/API yang tersedia untuk dihubungkan: [sebutkan, jika ada]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 06_apa_itu_halusinasi.txt prompt belajar: apa itu halusinasi &amp; kenapa terjadi.">
+        <div class="ph"><span>tutor_ai // 06_apa_itu_halusinasi.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-apa-itu-halusinasi" data-fav-type="prompt" data-fav-title="tutor_ai // 06_apa_itu_halusinasi.txt" data-fav-desc="Prompt belajar: apa itu halusinasi &amp; kenapa terjadi." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI quality engineer yang mengajari saya soal halusinasi AI, kenapa terjadi, dan pola yang biasa memicunya.
+1) Jelaskan kenapa topik ini penting untuk siapa pun yang membangun sesuatu dengan AI, bukan cuma developer.
+2) Jelaskan 1 metode praktis yang bisa saya lakukan HARI INI tanpa tools tambahan.
+3) Berikan template/checklist singkat yang bisa saya pakai berulang.
+4) Simulasikan satu contoh kasus dari pekerjaan saya, lalu tunjukkan cara menerapkan metode tadi ke kasus itu.
+
+Jenis output AI yang paling sering saya periksa: [mis. kode, analisis data, dokumen, jawaban chatbot]
+Risiko terbesar jika output ini salah: [jelaskan dampaknya]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 06_ai_mengaku_tidak_tahu.txt prompt belajar: teknik membuat ai mengaku tidak tahu.">
+        <div class="ph"><span>tutor_ai // 06_ai_mengaku_tidak_tahu.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-ai-mengaku-tidak-tahu" data-fav-type="prompt" data-fav-title="tutor_ai // 06_ai_mengaku_tidak_tahu.txt" data-fav-desc="Prompt belajar: teknik membuat ai mengaku tidak tahu." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI quality engineer yang mengajari saya soal teknik prompting agar AI mau mengakui ketidaktahuannya alih-alih mengarang jawaban.
+1) Jelaskan kenapa topik ini penting untuk siapa pun yang membangun sesuatu dengan AI, bukan cuma developer.
+2) Jelaskan 1 metode praktis yang bisa saya lakukan HARI INI tanpa tools tambahan.
+3) Berikan template/checklist singkat yang bisa saya pakai berulang.
+4) Simulasikan satu contoh kasus dari pekerjaan saya, lalu tunjukkan cara menerapkan metode tadi ke kasus itu.
+
+Jenis output AI yang paling sering saya periksa: [mis. kode, analisis data, dokumen, jawaban chatbot]
+Risiko terbesar jika output ini salah: [jelaskan dampaknya]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 06_fact_checking_output.txt prompt belajar: fact-checking output ai.">
+        <div class="ph"><span>tutor_ai // 06_fact_checking_output.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-fact-checking-output" data-fav-type="prompt" data-fav-title="tutor_ai // 06_fact_checking_output.txt" data-fav-desc="Prompt belajar: fact-checking output ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI quality engineer yang mengajari saya soal cara melakukan fact-checking terhadap output AI secara sistematis.
+1) Jelaskan kenapa topik ini penting untuk siapa pun yang membangun sesuatu dengan AI, bukan cuma developer.
+2) Jelaskan 1 metode praktis yang bisa saya lakukan HARI INI tanpa tools tambahan.
+3) Berikan template/checklist singkat yang bisa saya pakai berulang.
+4) Simulasikan satu contoh kasus dari pekerjaan saya, lalu tunjukkan cara menerapkan metode tadi ke kasus itu.
+
+Jenis output AI yang paling sering saya periksa: [mis. kode, analisis data, dokumen, jawaban chatbot]
+Risiko terbesar jika output ini salah: [jelaskan dampaknya]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 06_rubrik_evaluasi_ai.txt prompt belajar: membuat rubrik evaluasi output ai.">
+        <div class="ph"><span>tutor_ai // 06_rubrik_evaluasi_ai.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-rubrik-evaluasi-ai" data-fav-type="prompt" data-fav-title="tutor_ai // 06_rubrik_evaluasi_ai.txt" data-fav-desc="Prompt belajar: membuat rubrik evaluasi output ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI quality engineer yang mengajari saya soal cara menyusun rubrik untuk menilai kualitas output AI.
+1) Jelaskan kenapa topik ini penting untuk siapa pun yang membangun sesuatu dengan AI, bukan cuma developer.
+2) Jelaskan 1 metode praktis yang bisa saya lakukan HARI INI tanpa tools tambahan.
+3) Berikan template/checklist singkat yang bisa saya pakai berulang.
+4) Simulasikan satu contoh kasus dari pekerjaan saya, lalu tunjukkan cara menerapkan metode tadi ke kasus itu.
+
+Jenis output AI yang paling sering saya periksa: [mis. kode, analisis data, dokumen, jawaban chatbot]
+Risiko terbesar jika output ini salah: [jelaskan dampaknya]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 06_llm_as_judge.txt prompt belajar: llm-as-judge.">
+        <div class="ph"><span>tutor_ai // 06_llm_as_judge.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-llm-as-judge" data-fav-type="prompt" data-fav-title="tutor_ai // 06_llm_as_judge.txt" data-fav-desc="Prompt belajar: llm-as-judge." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI quality engineer yang mengajari saya soal konsep LLM-as-judge, yaitu memakai satu AI untuk menilai output AI lain.
+1) Jelaskan kenapa topik ini penting untuk siapa pun yang membangun sesuatu dengan AI, bukan cuma developer.
+2) Jelaskan 1 metode praktis yang bisa saya lakukan HARI INI tanpa tools tambahan.
+3) Berikan template/checklist singkat yang bisa saya pakai berulang.
+4) Simulasikan satu contoh kasus dari pekerjaan saya, lalu tunjukkan cara menerapkan metode tadi ke kasus itu.
+
+Jenis output AI yang paling sering saya periksa: [mis. kode, analisis data, dokumen, jawaban chatbot]
+Risiko terbesar jika output ini salah: [jelaskan dampaknya]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 06_regression_testing_prompt.txt prompt belajar: regression testing untuk prompt.">
+        <div class="ph"><span>tutor_ai // 06_regression_testing_prompt.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-regression-testing-prompt" data-fav-type="prompt" data-fav-title="tutor_ai // 06_regression_testing_prompt.txt" data-fav-desc="Prompt belajar: regression testing untuk prompt." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI quality engineer yang mengajari saya soal regression testing untuk prompt, supaya perubahan prompt tidak merusak kualitas yang sudah baik.
+1) Jelaskan kenapa topik ini penting untuk siapa pun yang membangun sesuatu dengan AI, bukan cuma developer.
+2) Jelaskan 1 metode praktis yang bisa saya lakukan HARI INI tanpa tools tambahan.
+3) Berikan template/checklist singkat yang bisa saya pakai berulang.
+4) Simulasikan satu contoh kasus dari pekerjaan saya, lalu tunjukkan cara menerapkan metode tadi ke kasus itu.
+
+Jenis output AI yang paling sering saya periksa: [mis. kode, analisis data, dokumen, jawaban chatbot]
+Risiko terbesar jika output ini salah: [jelaskan dampaknya]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 06_konsistensi_output_ai.txt prompt belajar: mengukur konsistensi output ai.">
+        <div class="ph"><span>tutor_ai // 06_konsistensi_output_ai.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-konsistensi-output-ai" data-fav-type="prompt" data-fav-title="tutor_ai // 06_konsistensi_output_ai.txt" data-fav-desc="Prompt belajar: mengukur konsistensi output ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI quality engineer yang mengajari saya soal cara mengukur konsistensi/variance output AI dari prompt yang sama.
+1) Jelaskan kenapa topik ini penting untuk siapa pun yang membangun sesuatu dengan AI, bukan cuma developer.
+2) Jelaskan 1 metode praktis yang bisa saya lakukan HARI INI tanpa tools tambahan.
+3) Berikan template/checklist singkat yang bisa saya pakai berulang.
+4) Simulasikan satu contoh kasus dari pekerjaan saya, lalu tunjukkan cara menerapkan metode tadi ke kasus itu.
+
+Jenis output AI yang paling sering saya periksa: [mis. kode, analisis data, dokumen, jawaban chatbot]
+Risiko terbesar jika output ini salah: [jelaskan dampaknya]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 06_red_teaming_prompt.txt prompt belajar: red-teaming prompt sendiri.">
+        <div class="ph"><span>tutor_ai // 06_red_teaming_prompt.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-red-teaming-prompt" data-fav-type="prompt" data-fav-title="tutor_ai // 06_red_teaming_prompt.txt" data-fav-desc="Prompt belajar: red-teaming prompt sendiri." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI quality engineer yang mengajari saya soal red-teaming: menguji prompt saya sendiri untuk menemukan celah sebelum dipakai orang lain.
+1) Jelaskan kenapa topik ini penting untuk siapa pun yang membangun sesuatu dengan AI, bukan cuma developer.
+2) Jelaskan 1 metode praktis yang bisa saya lakukan HARI INI tanpa tools tambahan.
+3) Berikan template/checklist singkat yang bisa saya pakai berulang.
+4) Simulasikan satu contoh kasus dari pekerjaan saya, lalu tunjukkan cara menerapkan metode tadi ke kasus itu.
+
+Jenis output AI yang paling sering saya periksa: [mis. kode, analisis data, dokumen, jawaban chatbot]
+Risiko terbesar jika output ini salah: [jelaskan dampaknya]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 06_cost_vs_quality_eval.txt prompt belajar: trade-off biaya vs kualitas evaluasi.">
+        <div class="ph"><span>tutor_ai // 06_cost_vs_quality_eval.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-cost-vs-quality-eval" data-fav-type="prompt" data-fav-title="tutor_ai // 06_cost_vs_quality_eval.txt" data-fav-desc="Prompt belajar: trade-off biaya vs kualitas evaluasi." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI quality engineer yang mengajari saya soal trade-off antara biaya dan kualitas saat merancang proses evaluasi AI.
+1) Jelaskan kenapa topik ini penting untuk siapa pun yang membangun sesuatu dengan AI, bukan cuma developer.
+2) Jelaskan 1 metode praktis yang bisa saya lakukan HARI INI tanpa tools tambahan.
+3) Berikan template/checklist singkat yang bisa saya pakai berulang.
+4) Simulasikan satu contoh kasus dari pekerjaan saya, lalu tunjukkan cara menerapkan metode tadi ke kasus itu.
+
+Jenis output AI yang paling sering saya periksa: [mis. kode, analisis data, dokumen, jawaban chatbot]
+Risiko terbesar jika output ini salah: [jelaskan dampaknya]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 06_eval_set_pribadi.txt prompt belajar: membangun eval set kecil pribadi.">
+        <div class="ph"><span>tutor_ai // 06_eval_set_pribadi.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-eval-set-pribadi" data-fav-type="prompt" data-fav-title="tutor_ai // 06_eval_set_pribadi.txt" data-fav-desc="Prompt belajar: membangun eval set kecil pribadi." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah AI quality engineer yang mengajari saya soal cara membangun eval set kecil untuk menguji kualitas prompt/produk AI pribadi saya.
+1) Jelaskan kenapa topik ini penting untuk siapa pun yang membangun sesuatu dengan AI, bukan cuma developer.
+2) Jelaskan 1 metode praktis yang bisa saya lakukan HARI INI tanpa tools tambahan.
+3) Berikan template/checklist singkat yang bisa saya pakai berulang.
+4) Simulasikan satu contoh kasus dari pekerjaan saya, lalu tunjukkan cara menerapkan metode tadi ke kasus itu.
+
+Jenis output AI yang paling sering saya periksa: [mis. kode, analisis data, dokumen, jawaban chatbot]
+Risiko terbesar jika output ini salah: [jelaskan dampaknya]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 07_bias_output_ai.txt prompt belajar: bias dalam output ai.">
+        <div class="ph"><span>tutor_ai // 07_bias_output_ai.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-bias-output-ai" data-fav-type="prompt" data-fav-title="tutor_ai // 07_bias_output_ai.txt" data-fav-desc="Prompt belajar: bias dalam output ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah pendidik etika &amp; keamanan AI. Ajari saya tentang bias dalam output AI, sumbernya, dan cara mengenalinya secara seimbang dan tidak menakut-nakuti berlebihan.
+1) Jelaskan isu ini secara objektif, termasuk kenapa ini relevan buat pekerja teknis seperti saya.
+2) Berikan 2 sudut pandang berbeda yang ada di masyarakat/industri soal isu ini, jika memang diperdebatkan.
+3) Berikan 3-5 langkah praktis yang bisa saya terapkan sendiri untuk bersikap bertanggung jawab soal ini.
+4) Tutup dengan 1 pertanyaan reflektif untuk saya pikirkan.
+
+Konteks pekerjaan saya: [sebutkan peran &amp; jenis data yang saya pegang]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 07_privasi_data_ai.txt prompt belajar: privasi data saat memakai ai.">
+        <div class="ph"><span>tutor_ai // 07_privasi_data_ai.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-privasi-data-ai" data-fav-type="prompt" data-fav-title="tutor_ai // 07_privasi_data_ai.txt" data-fav-desc="Prompt belajar: privasi data saat memakai ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah pendidik etika &amp; keamanan AI. Ajari saya tentang hal-hal privasi data yang perlu diperhatikan saat memakai AI publik secara seimbang dan tidak menakut-nakuti berlebihan.
+1) Jelaskan isu ini secara objektif, termasuk kenapa ini relevan buat pekerja teknis seperti saya.
+2) Berikan 2 sudut pandang berbeda yang ada di masyarakat/industri soal isu ini, jika memang diperdebatkan.
+3) Berikan 3-5 langkah praktis yang bisa saya terapkan sendiri untuk bersikap bertanggung jawab soal ini.
+4) Tutup dengan 1 pertanyaan reflektif untuk saya pikirkan.
+
+Konteks pekerjaan saya: [sebutkan peran &amp; jenis data yang saya pegang]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 07_hak_cipta_ai.txt prompt belajar: hak cipta &amp; ai generatif.">
+        <div class="ph"><span>tutor_ai // 07_hak_cipta_ai.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-hak-cipta-ai" data-fav-type="prompt" data-fav-title="tutor_ai // 07_hak_cipta_ai.txt" data-fav-desc="Prompt belajar: hak cipta &amp; ai generatif." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah pendidik etika &amp; keamanan AI. Ajari saya tentang isu hak cipta terkait konten yang dihasilkan AI generatif, secara umum dan edukatif secara seimbang dan tidak menakut-nakuti berlebihan.
+1) Jelaskan isu ini secara objektif, termasuk kenapa ini relevan buat pekerja teknis seperti saya.
+2) Berikan 2 sudut pandang berbeda yang ada di masyarakat/industri soal isu ini, jika memang diperdebatkan.
+3) Berikan 3-5 langkah praktis yang bisa saya terapkan sendiri untuk bersikap bertanggung jawab soal ini.
+4) Tutup dengan 1 pertanyaan reflektif untuk saya pikirkan.
+
+Konteks pekerjaan saya: [sebutkan peran &amp; jenis data yang saya pegang]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 07_transparansi_penggunaan_ai.txt prompt belajar: transparansi penggunaan ai.">
+        <div class="ph"><span>tutor_ai // 07_transparansi_penggunaan_ai.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-transparansi-penggunaan-ai" data-fav-type="prompt" data-fav-title="tutor_ai // 07_transparansi_penggunaan_ai.txt" data-fav-desc="Prompt belajar: transparansi penggunaan ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah pendidik etika &amp; keamanan AI. Ajari saya tentang kapan dan bagaimana sebaiknya mengungkap bahwa suatu karya dibantu AI secara seimbang dan tidak menakut-nakuti berlebihan.
+1) Jelaskan isu ini secara objektif, termasuk kenapa ini relevan buat pekerja teknis seperti saya.
+2) Berikan 2 sudut pandang berbeda yang ada di masyarakat/industri soal isu ini, jika memang diperdebatkan.
+3) Berikan 3-5 langkah praktis yang bisa saya terapkan sendiri untuk bersikap bertanggung jawab soal ini.
+4) Tutup dengan 1 pertanyaan reflektif untuk saya pikirkan.
+
+Konteks pekerjaan saya: [sebutkan peran &amp; jenis data yang saya pegang]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 07_over_reliance_ai.txt prompt belajar: over-reliance pada ai.">
+        <div class="ph"><span>tutor_ai // 07_over_reliance_ai.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-over-reliance-ai" data-fav-type="prompt" data-fav-title="tutor_ai // 07_over_reliance_ai.txt" data-fav-desc="Prompt belajar: over-reliance pada ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah pendidik etika &amp; keamanan AI. Ajari saya tentang risiko ketergantungan berlebihan (over-reliance) pada AI dan cara menyeimbangkannya secara seimbang dan tidak menakut-nakuti berlebihan.
+1) Jelaskan isu ini secara objektif, termasuk kenapa ini relevan buat pekerja teknis seperti saya.
+2) Berikan 2 sudut pandang berbeda yang ada di masyarakat/industri soal isu ini, jika memang diperdebatkan.
+3) Berikan 3-5 langkah praktis yang bisa saya terapkan sendiri untuk bersikap bertanggung jawab soal ini.
+4) Tutup dengan 1 pertanyaan reflektif untuk saya pikirkan.
+
+Konteks pekerjaan saya: [sebutkan peran &amp; jenis data yang saya pegang]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 07_dasar_ai_safety.txt prompt belajar: dasar ai safety &amp; alignment.">
+        <div class="ph"><span>tutor_ai // 07_dasar_ai_safety.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-dasar-ai-safety" data-fav-type="prompt" data-fav-title="tutor_ai // 07_dasar_ai_safety.txt" data-fav-desc="Prompt belajar: dasar ai safety &amp; alignment." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah pendidik etika &amp; keamanan AI. Ajari saya tentang konsep dasar AI safety dan kenapa alignment penting, secara sederhana secara seimbang dan tidak menakut-nakuti berlebihan.
+1) Jelaskan isu ini secara objektif, termasuk kenapa ini relevan buat pekerja teknis seperti saya.
+2) Berikan 2 sudut pandang berbeda yang ada di masyarakat/industri soal isu ini, jika memang diperdebatkan.
+3) Berikan 3-5 langkah praktis yang bisa saya terapkan sendiri untuk bersikap bertanggung jawab soal ini.
+4) Tutup dengan 1 pertanyaan reflektif untuk saya pikirkan.
+
+Konteks pekerjaan saya: [sebutkan peran &amp; jenis data yang saya pegang]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 07_mengenali_prompt_injection.txt prompt belajar: mengenali prompt injection.">
+        <div class="ph"><span>tutor_ai // 07_mengenali_prompt_injection.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-mengenali-prompt-injection" data-fav-type="prompt" data-fav-title="tutor_ai // 07_mengenali_prompt_injection.txt" data-fav-desc="Prompt belajar: mengenali prompt injection." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah pendidik etika &amp; keamanan AI. Ajari saya tentang apa itu prompt injection dan bagaimana cara mengenali potensi risikonya secara seimbang dan tidak menakut-nakuti berlebihan.
+1) Jelaskan isu ini secara objektif, termasuk kenapa ini relevan buat pekerja teknis seperti saya.
+2) Berikan 2 sudut pandang berbeda yang ada di masyarakat/industri soal isu ini, jika memang diperdebatkan.
+3) Berikan 3-5 langkah praktis yang bisa saya terapkan sendiri untuk bersikap bertanggung jawab soal ini.
+4) Tutup dengan 1 pertanyaan reflektif untuk saya pikirkan.
+
+Konteks pekerjaan saya: [sebutkan peran &amp; jenis data yang saya pegang]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 07_data_sensitif_perusahaan.txt prompt belajar: menjaga data sensitif perusahaan.">
+        <div class="ph"><span>tutor_ai // 07_data_sensitif_perusahaan.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-data-sensitif-perusahaan" data-fav-type="prompt" data-fav-title="tutor_ai // 07_data_sensitif_perusahaan.txt" data-fav-desc="Prompt belajar: menjaga data sensitif perusahaan." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah pendidik etika &amp; keamanan AI. Ajari saya tentang cara menjaga data sensitif perusahaan saat memakai layanan AI publik secara seimbang dan tidak menakut-nakuti berlebihan.
+1) Jelaskan isu ini secara objektif, termasuk kenapa ini relevan buat pekerja teknis seperti saya.
+2) Berikan 2 sudut pandang berbeda yang ada di masyarakat/industri soal isu ini, jika memang diperdebatkan.
+3) Berikan 3-5 langkah praktis yang bisa saya terapkan sendiri untuk bersikap bertanggung jawab soal ini.
+4) Tutup dengan 1 pertanyaan reflektif untuk saya pikirkan.
+
+Konteks pekerjaan saya: [sebutkan peran &amp; jenis data yang saya pegang]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 07_etika_ai_tempat_kerja.txt prompt belajar: etika penggunaan ai di tempat kerja.">
+        <div class="ph"><span>tutor_ai // 07_etika_ai_tempat_kerja.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-etika-ai-tempat-kerja" data-fav-type="prompt" data-fav-title="tutor_ai // 07_etika_ai_tempat_kerja.txt" data-fav-desc="Prompt belajar: etika penggunaan ai di tempat kerja." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah pendidik etika &amp; keamanan AI. Ajari saya tentang etika penggunaan AI di tempat kerja, termasuk batasan yang wajar secara seimbang dan tidak menakut-nakuti berlebihan.
+1) Jelaskan isu ini secara objektif, termasuk kenapa ini relevan buat pekerja teknis seperti saya.
+2) Berikan 2 sudut pandang berbeda yang ada di masyarakat/industri soal isu ini, jika memang diperdebatkan.
+3) Berikan 3-5 langkah praktis yang bisa saya terapkan sendiri untuk bersikap bertanggung jawab soal ini.
+4) Tutup dengan 1 pertanyaan reflektif untuk saya pikirkan.
+
+Konteks pekerjaan saya: [sebutkan peran &amp; jenis data yang saya pegang]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 07_gambaran_regulasi_ai.txt prompt belajar: gambaran umum regulasi ai.">
+        <div class="ph"><span>tutor_ai // 07_gambaran_regulasi_ai.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-gambaran-regulasi-ai" data-fav-type="prompt" data-fav-title="tutor_ai // 07_gambaran_regulasi_ai.txt" data-fav-desc="Prompt belajar: gambaran umum regulasi ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah pendidik etika &amp; keamanan AI. Ajari saya tentang gambaran umum arah regulasi AI global saat ini, tanpa memberi nasihat hukum spesifik secara seimbang dan tidak menakut-nakuti berlebihan.
+1) Jelaskan isu ini secara objektif, termasuk kenapa ini relevan buat pekerja teknis seperti saya.
+2) Berikan 2 sudut pandang berbeda yang ada di masyarakat/industri soal isu ini, jika memang diperdebatkan.
+3) Berikan 3-5 langkah praktis yang bisa saya terapkan sendiri untuk bersikap bertanggung jawab soal ini.
+4) Tutup dengan 1 pertanyaan reflektif untuk saya pikirkan.
+
+Konteks pekerjaan saya: [sebutkan peran &amp; jenis data yang saya pegang]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 08_programmer_code_review.txt prompt belajar: programmer: code review dibimbing ai.">
+        <div class="ph"><span>tutor_ai // 08_programmer_code_review.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-programmer-code-review" data-fav-type="prompt" data-fav-title="tutor_ai // 08_programmer_code_review.txt" data-fav-desc="Prompt belajar: programmer: code review dibimbing ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor kerja yang membimbing saya belajar melakukan code review yang lebih tajam dengan bantuan AI, langkah demi langkah, dengan gaya belajar sambil praktik (learning by doing).
+1) Minta saya membagikan 1 contoh nyata dari pekerjaan saya (kode/data/konfigurasi/dokumen/laporan).
+2) Setelah saya kirim, bimbing saya mengerjakannya SENDIRI dulu dengan memberi pertanyaan pemandu — jangan langsung beri jawaban jadi.
+3) Setelah saya coba, baru berikan solusi/analisis lengkap versi kamu untuk saya bandingkan dengan punya saya.
+4) Tutup dengan 1 catatan tentang kebiasaan yang perlu saya latih supaya makin mahir di area ini.
+
+Contoh nyata dari pekerjaan saya: [tempel di sini]
+Level pengalaman saya di area ini: [pemula/menengah/berpengalaman]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 08_data_analyst_eda.txt prompt belajar: data analyst: eda dibimbing ai.">
+        <div class="ph"><span>tutor_ai // 08_data_analyst_eda.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-data-analyst-eda" data-fav-type="prompt" data-fav-title="tutor_ai // 08_data_analyst_eda.txt" data-fav-desc="Prompt belajar: data analyst: eda dibimbing ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor kerja yang membimbing saya belajar melakukan exploratory data analysis (EDA) dengan bantuan AI sebagai pendamping, dengan gaya belajar sambil praktik (learning by doing).
+1) Minta saya membagikan 1 contoh nyata dari pekerjaan saya (kode/data/konfigurasi/dokumen/laporan).
+2) Setelah saya kirim, bimbing saya mengerjakannya SENDIRI dulu dengan memberi pertanyaan pemandu — jangan langsung beri jawaban jadi.
+3) Setelah saya coba, baru berikan solusi/analisis lengkap versi kamu untuk saya bandingkan dengan punya saya.
+4) Tutup dengan 1 catatan tentang kebiasaan yang perlu saya latih supaya makin mahir di area ini.
+
+Contoh nyata dari pekerjaan saya: [tempel di sini]
+Level pengalaman saya di area ini: [pemula/menengah/berpengalaman]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 08_database_query_optimization.txt prompt belajar: database expert: query optimization dibimbing ai.">
+        <div class="ph"><span>tutor_ai // 08_database_query_optimization.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-database-query-optimization" data-fav-type="prompt" data-fav-title="tutor_ai // 08_database_query_optimization.txt" data-fav-desc="Prompt belajar: database expert: query optimization dibimbing ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor kerja yang membimbing saya belajar mengoptimasi query database dengan bantuan AI sebagai pendamping, dengan gaya belajar sambil praktik (learning by doing).
+1) Minta saya membagikan 1 contoh nyata dari pekerjaan saya (kode/data/konfigurasi/dokumen/laporan).
+2) Setelah saya kirim, bimbing saya mengerjakannya SENDIRI dulu dengan memberi pertanyaan pemandu — jangan langsung beri jawaban jadi.
+3) Setelah saya coba, baru berikan solusi/analisis lengkap versi kamu untuk saya bandingkan dengan punya saya.
+4) Tutup dengan 1 catatan tentang kebiasaan yang perlu saya latih supaya makin mahir di area ini.
+
+Contoh nyata dari pekerjaan saya: [tempel di sini]
+Level pengalaman saya di area ini: [pemula/menengah/berpengalaman]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 08_network_troubleshooting.txt prompt belajar: network integrator: troubleshooting dibimbing ai.">
+        <div class="ph"><span>tutor_ai // 08_network_troubleshooting.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-network-troubleshooting" data-fav-type="prompt" data-fav-title="tutor_ai // 08_network_troubleshooting.txt" data-fav-desc="Prompt belajar: network integrator: troubleshooting dibimbing ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor kerja yang membimbing saya belajar troubleshooting jaringan dengan bantuan AI sebagai pendamping, dengan gaya belajar sambil praktik (learning by doing).
+1) Minta saya membagikan 1 contoh nyata dari pekerjaan saya (kode/data/konfigurasi/dokumen/laporan).
+2) Setelah saya kirim, bimbing saya mengerjakannya SENDIRI dulu dengan memberi pertanyaan pemandu — jangan langsung beri jawaban jadi.
+3) Setelah saya coba, baru berikan solusi/analisis lengkap versi kamu untuk saya bandingkan dengan punya saya.
+4) Tutup dengan 1 catatan tentang kebiasaan yang perlu saya latih supaya makin mahir di area ini.
+
+Contoh nyata dari pekerjaan saya: [tempel di sini]
+Level pengalaman saya di area ini: [pemula/menengah/berpengalaman]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 08_devops_incident_response.txt prompt belajar: devops: incident response dibimbing ai.">
+        <div class="ph"><span>tutor_ai // 08_devops_incident_response.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-devops-incident-response" data-fav-type="prompt" data-fav-title="tutor_ai // 08_devops_incident_response.txt" data-fav-desc="Prompt belajar: devops: incident response dibimbing ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor kerja yang membimbing saya belajar menangani incident response dengan bantuan AI sebagai pendamping, dengan gaya belajar sambil praktik (learning by doing).
+1) Minta saya membagikan 1 contoh nyata dari pekerjaan saya (kode/data/konfigurasi/dokumen/laporan).
+2) Setelah saya kirim, bimbing saya mengerjakannya SENDIRI dulu dengan memberi pertanyaan pemandu — jangan langsung beri jawaban jadi.
+3) Setelah saya coba, baru berikan solusi/analisis lengkap versi kamu untuk saya bandingkan dengan punya saya.
+4) Tutup dengan 1 catatan tentang kebiasaan yang perlu saya latih supaya makin mahir di area ini.
+
+Contoh nyata dari pekerjaan saya: [tempel di sini]
+Level pengalaman saya di area ini: [pemula/menengah/berpengalaman]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 08_qa_test_design.txt prompt belajar: qa: test design dibimbing ai.">
+        <div class="ph"><span>tutor_ai // 08_qa_test_design.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-qa-test-design" data-fav-type="prompt" data-fav-title="tutor_ai // 08_qa_test_design.txt" data-fav-desc="Prompt belajar: qa: test design dibimbing ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor kerja yang membimbing saya belajar merancang test case yang lebih menyeluruh dengan bantuan AI, dengan gaya belajar sambil praktik (learning by doing).
+1) Minta saya membagikan 1 contoh nyata dari pekerjaan saya (kode/data/konfigurasi/dokumen/laporan).
+2) Setelah saya kirim, bimbing saya mengerjakannya SENDIRI dulu dengan memberi pertanyaan pemandu — jangan langsung beri jawaban jadi.
+3) Setelah saya coba, baru berikan solusi/analisis lengkap versi kamu untuk saya bandingkan dengan punya saya.
+4) Tutup dengan 1 catatan tentang kebiasaan yang perlu saya latih supaya makin mahir di area ini.
+
+Contoh nyata dari pekerjaan saya: [tempel di sini]
+Level pengalaman saya di area ini: [pemula/menengah/berpengalaman]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 08_security_threat_modeling.txt prompt belajar: security: threat modeling dibimbing ai.">
+        <div class="ph"><span>tutor_ai // 08_security_threat_modeling.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-security-threat-modeling" data-fav-type="prompt" data-fav-title="tutor_ai // 08_security_threat_modeling.txt" data-fav-desc="Prompt belajar: security: threat modeling dibimbing ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor kerja yang membimbing saya belajar melakukan threat modeling dengan bantuan AI sebagai pendamping, dengan gaya belajar sambil praktik (learning by doing).
+1) Minta saya membagikan 1 contoh nyata dari pekerjaan saya (kode/data/konfigurasi/dokumen/laporan).
+2) Setelah saya kirim, bimbing saya mengerjakannya SENDIRI dulu dengan memberi pertanyaan pemandu — jangan langsung beri jawaban jadi.
+3) Setelah saya coba, baru berikan solusi/analisis lengkap versi kamu untuk saya bandingkan dengan punya saya.
+4) Tutup dengan 1 catatan tentang kebiasaan yang perlu saya latih supaya makin mahir di area ini.
+
+Contoh nyata dari pekerjaan saya: [tempel di sini]
+Level pengalaman saya di area ini: [pemula/menengah/berpengalaman]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 08_technical_writer_dokumentasi.txt prompt belajar: technical writer: dokumentasi dibimbing ai.">
+        <div class="ph"><span>tutor_ai // 08_technical_writer_dokumentasi.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-technical-writer-dokumentasi" data-fav-type="prompt" data-fav-title="tutor_ai // 08_technical_writer_dokumentasi.txt" data-fav-desc="Prompt belajar: technical writer: dokumentasi dibimbing ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor kerja yang membimbing saya belajar menyusun dokumentasi teknis yang jelas dengan bantuan AI, dengan gaya belajar sambil praktik (learning by doing).
+1) Minta saya membagikan 1 contoh nyata dari pekerjaan saya (kode/data/konfigurasi/dokumen/laporan).
+2) Setelah saya kirim, bimbing saya mengerjakannya SENDIRI dulu dengan memberi pertanyaan pemandu — jangan langsung beri jawaban jadi.
+3) Setelah saya coba, baru berikan solusi/analisis lengkap versi kamu untuk saya bandingkan dengan punya saya.
+4) Tutup dengan 1 catatan tentang kebiasaan yang perlu saya latih supaya makin mahir di area ini.
+
+Contoh nyata dari pekerjaan saya: [tempel di sini]
+Level pengalaman saya di area ini: [pemula/menengah/berpengalaman]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 08_pm_spesifikasi.txt prompt belajar: product/pm: spesifikasi dibimbing ai.">
+        <div class="ph"><span>tutor_ai // 08_pm_spesifikasi.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-pm-spesifikasi" data-fav-type="prompt" data-fav-title="tutor_ai // 08_pm_spesifikasi.txt" data-fav-desc="Prompt belajar: product/pm: spesifikasi dibimbing ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor kerja yang membimbing saya belajar menulis spesifikasi produk/fitur yang jelas dengan bantuan AI, dengan gaya belajar sambil praktik (learning by doing).
+1) Minta saya membagikan 1 contoh nyata dari pekerjaan saya (kode/data/konfigurasi/dokumen/laporan).
+2) Setelah saya kirim, bimbing saya mengerjakannya SENDIRI dulu dengan memberi pertanyaan pemandu — jangan langsung beri jawaban jadi.
+3) Setelah saya coba, baru berikan solusi/analisis lengkap versi kamu untuk saya bandingkan dengan punya saya.
+4) Tutup dengan 1 catatan tentang kebiasaan yang perlu saya latih supaya makin mahir di area ini.
+
+Contoh nyata dari pekerjaan saya: [tempel di sini]
+Level pengalaman saya di area ini: [pemula/menengah/berpengalaman]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 08_nonteknis_memahami_laporan.txt prompt belajar: non-teknis: memahami laporan teknis dibimbing ai.">
+        <div class="ph"><span>tutor_ai // 08_nonteknis_memahami_laporan.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-nonteknis-memahami-laporan" data-fav-type="prompt" data-fav-title="tutor_ai // 08_nonteknis_memahami_laporan.txt" data-fav-desc="Prompt belajar: non-teknis: memahami laporan teknis dibimbing ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor kerja yang membimbing saya belajar memahami laporan/istilah teknis dengan bantuan AI sebagai penerjemah, dengan gaya belajar sambil praktik (learning by doing).
+1) Minta saya membagikan 1 contoh nyata dari pekerjaan saya (kode/data/konfigurasi/dokumen/laporan).
+2) Setelah saya kirim, bimbing saya mengerjakannya SENDIRI dulu dengan memberi pertanyaan pemandu — jangan langsung beri jawaban jadi.
+3) Setelah saya coba, baru berikan solusi/analisis lengkap versi kamu untuk saya bandingkan dengan punya saya.
+4) Tutup dengan 1 catatan tentang kebiasaan yang perlu saya latih supaya makin mahir di area ini.
+
+Contoh nyata dari pekerjaan saya: [tempel di sini]
+Level pengalaman saya di area ini: [pemula/menengah/berpengalaman]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 09_rencana_belajar_90_hari.txt prompt belajar: rencana belajar ai 90 hari.">
+        <div class="ph"><span>tutor_ai // 09_rencana_belajar_90_hari.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-rencana-belajar-90-hari" data-fav-type="prompt" data-fav-title="tutor_ai // 09_rencana_belajar_90_hari.txt" data-fav-desc="Prompt belajar: rencana belajar ai 90 hari." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah career coach yang fokus ke jalur karier AI terapan. Bantu saya soal menyusun rencana belajar AI terapan selama 90 hari yang realistis untuk jadwal saya.
+1) Ajukan 3-5 pertanyaan penggali untuk memahami situasi saya sebelum memberi saran (jangan langsung menyimpulkan).
+2) Setelah saya jawab, berikan rencana/rekomendasi konkret, bukan saran generik.
+3) Susun dalam format yang bisa langsung saya pakai (checklist, tabel, atau timeline).
+4) Tutup dengan 1 langkah kecil yang bisa saya kerjakan dalam 24 jam ke depan.
+
+Latar belakang &amp; posisi saya sekarang: [jelaskan singkat]
+Target 6-12 bulan ke depan: [jelaskan singkat]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 09_memilih_sertifikasi_ai.txt prompt belajar: memilih sertifikasi/course ai.">
+        <div class="ph"><span>tutor_ai // 09_memilih_sertifikasi_ai.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-memilih-sertifikasi-ai" data-fav-type="prompt" data-fav-title="tutor_ai // 09_memilih_sertifikasi_ai.txt" data-fav-desc="Prompt belajar: memilih sertifikasi/course ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah career coach yang fokus ke jalur karier AI terapan. Bantu saya soal memilih sertifikasi atau course AI yang benar-benar relevan dengan tujuan karier saya.
+1) Ajukan 3-5 pertanyaan penggali untuk memahami situasi saya sebelum memberi saran (jangan langsung menyimpulkan).
+2) Setelah saya jawab, berikan rencana/rekomendasi konkret, bukan saran generik.
+3) Susun dalam format yang bisa langsung saya pakai (checklist, tabel, atau timeline).
+4) Tutup dengan 1 langkah kecil yang bisa saya kerjakan dalam 24 jam ke depan.
+
+Latar belakang &amp; posisi saya sekarang: [jelaskan singkat]
+Target 6-12 bulan ke depan: [jelaskan singkat]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 09_kebiasaan_belajar_harian.txt prompt belajar: membangun kebiasaan belajar harian dengan ai.">
+        <div class="ph"><span>tutor_ai // 09_kebiasaan_belajar_harian.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-kebiasaan-belajar-harian" data-fav-type="prompt" data-fav-title="tutor_ai // 09_kebiasaan_belajar_harian.txt" data-fav-desc="Prompt belajar: membangun kebiasaan belajar harian dengan ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah career coach yang fokus ke jalur karier AI terapan. Bantu saya soal membangun kebiasaan belajar AI harian yang konsisten, bukan cuma niat.
+1) Ajukan 3-5 pertanyaan penggali untuk memahami situasi saya sebelum memberi saran (jangan langsung menyimpulkan).
+2) Setelah saya jawab, berikan rencana/rekomendasi konkret, bukan saran generik.
+3) Susun dalam format yang bisa langsung saya pakai (checklist, tabel, atau timeline).
+4) Tutup dengan 1 langkah kecil yang bisa saya kerjakan dalam 24 jam ke depan.
+
+Latar belakang &amp; posisi saya sekarang: [jelaskan singkat]
+Target 6-12 bulan ke depan: [jelaskan singkat]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 09_refleksi_mingguan_belajar.txt prompt belajar: refleksi mingguan progres belajar.">
+        <div class="ph"><span>tutor_ai // 09_refleksi_mingguan_belajar.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-refleksi-mingguan-belajar" data-fav-type="prompt" data-fav-title="tutor_ai // 09_refleksi_mingguan_belajar.txt" data-fav-desc="Prompt belajar: refleksi mingguan progres belajar." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah career coach yang fokus ke jalur karier AI terapan. Bantu saya soal melakukan refleksi mingguan atas progres belajar AI saya, dipandu AI itu sendiri.
+1) Ajukan 3-5 pertanyaan penggali untuk memahami situasi saya sebelum memberi saran (jangan langsung menyimpulkan).
+2) Setelah saya jawab, berikan rencana/rekomendasi konkret, bukan saran generik.
+3) Susun dalam format yang bisa langsung saya pakai (checklist, tabel, atau timeline).
+4) Tutup dengan 1 langkah kecil yang bisa saya kerjakan dalam 24 jam ke depan.
+
+Latar belakang &amp; posisi saya sekarang: [jelaskan singkat]
+Target 6-12 bulan ke depan: [jelaskan singkat]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 09_simulasi_wawancara_ai.txt prompt belajar: simulasi wawancara kerja seputar ai.">
+        <div class="ph"><span>tutor_ai // 09_simulasi_wawancara_ai.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-simulasi-wawancara-ai" data-fav-type="prompt" data-fav-title="tutor_ai // 09_simulasi_wawancara_ai.txt" data-fav-desc="Prompt belajar: simulasi wawancara kerja seputar ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah career coach yang fokus ke jalur karier AI terapan. Bantu saya soal simulasi wawancara kerja yang membahas skill AI terapan saya.
+1) Ajukan 3-5 pertanyaan penggali untuk memahami situasi saya sebelum memberi saran (jangan langsung menyimpulkan).
+2) Setelah saya jawab, berikan rencana/rekomendasi konkret, bukan saran generik.
+3) Susun dalam format yang bisa langsung saya pakai (checklist, tabel, atau timeline).
+4) Tutup dengan 1 langkah kecil yang bisa saya kerjakan dalam 24 jam ke depan.
+
+Latar belakang &amp; posisi saya sekarang: [jelaskan singkat]
+Target 6-12 bulan ke depan: [jelaskan singkat]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 09_skill_ai_ke_cv.txt prompt belajar: menerjemahkan skill ai ke cv/portofolio.">
+        <div class="ph"><span>tutor_ai // 09_skill_ai_ke_cv.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-skill-ai-ke-cv" data-fav-type="prompt" data-fav-title="tutor_ai // 09_skill_ai_ke_cv.txt" data-fav-desc="Prompt belajar: menerjemahkan skill ai ke cv/portofolio." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah career coach yang fokus ke jalur karier AI terapan. Bantu saya soal menerjemahkan skill AI yang sudah saya kuasai menjadi poin CV/portofolio yang meyakinkan.
+1) Ajukan 3-5 pertanyaan penggali untuk memahami situasi saya sebelum memberi saran (jangan langsung menyimpulkan).
+2) Setelah saya jawab, berikan rencana/rekomendasi konkret, bukan saran generik.
+3) Susun dalam format yang bisa langsung saya pakai (checklist, tabel, atau timeline).
+4) Tutup dengan 1 langkah kecil yang bisa saya kerjakan dalam 24 jam ke depan.
+
+Latar belakang &amp; posisi saya sekarang: [jelaskan singkat]
+Target 6-12 bulan ke depan: [jelaskan singkat]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 09_curation_habit_ai.txt prompt belajar: mengikuti perkembangan ai tanpa kewalahan.">
+        <div class="ph"><span>tutor_ai // 09_curation_habit_ai.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-curation-habit-ai" data-fav-type="prompt" data-fav-title="tutor_ai // 09_curation_habit_ai.txt" data-fav-desc="Prompt belajar: mengikuti perkembangan ai tanpa kewalahan." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah career coach yang fokus ke jalur karier AI terapan. Bantu saya soal kebiasaan mengikuti perkembangan AI yang cepat tanpa merasa kewalahan (curation habit).
+1) Ajukan 3-5 pertanyaan penggali untuk memahami situasi saya sebelum memberi saran (jangan langsung menyimpulkan).
+2) Setelah saya jawab, berikan rencana/rekomendasi konkret, bukan saran generik.
+3) Susun dalam format yang bisa langsung saya pakai (checklist, tabel, atau timeline).
+4) Tutup dengan 1 langkah kecil yang bisa saya kerjakan dalam 24 jam ke depan.
+
+Latar belakang &amp; posisi saya sekarang: [jelaskan singkat]
+Target 6-12 bulan ke depan: [jelaskan singkat]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 09_post_mortem_pribadi.txt prompt belajar: belajar dari kegagalan project ai.">
+        <div class="ph"><span>tutor_ai // 09_post_mortem_pribadi.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-post-mortem-pribadi" data-fav-type="prompt" data-fav-title="tutor_ai // 09_post_mortem_pribadi.txt" data-fav-desc="Prompt belajar: belajar dari kegagalan project ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah career coach yang fokus ke jalur karier AI terapan. Bantu saya soal melakukan post-mortem pribadi atas project AI yang gagal atau tidak sesuai target.
+1) Ajukan 3-5 pertanyaan penggali untuk memahami situasi saya sebelum memberi saran (jangan langsung menyimpulkan).
+2) Setelah saya jawab, berikan rencana/rekomendasi konkret, bukan saran generik.
+3) Susun dalam format yang bisa langsung saya pakai (checklist, tabel, atau timeline).
+4) Tutup dengan 1 langkah kecil yang bisa saya kerjakan dalam 24 jam ke depan.
+
+Latar belakang &amp; posisi saya sekarang: [jelaskan singkat]
+Target 6-12 bulan ke depan: [jelaskan singkat]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 09_jaringan_komunitas_ai.txt prompt belajar: membangun jaringan/komunitas belajar ai.">
+        <div class="ph"><span>tutor_ai // 09_jaringan_komunitas_ai.txt<span class="lvl lvl-adv">Lanjutan</span></span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-jaringan-komunitas-ai" data-fav-type="prompt" data-fav-title="tutor_ai // 09_jaringan_komunitas_ai.txt" data-fav-desc="Prompt belajar: membangun jaringan/komunitas belajar ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah career coach yang fokus ke jalur karier AI terapan. Bantu saya soal cara membangun jaringan atau bergabung komunitas belajar AI yang suportif.
+1) Ajukan 3-5 pertanyaan penggali untuk memahami situasi saya sebelum memberi saran (jangan langsung menyimpulkan).
+2) Setelah saya jawab, berikan rencana/rekomendasi konkret, bukan saran generik.
+3) Susun dalam format yang bisa langsung saya pakai (checklist, tabel, atau timeline).
+4) Tutup dengan 1 langkah kecil yang bisa saya kerjakan dalam 24 jam ke depan.
+
+Latar belakang &amp; posisi saya sekarang: [jelaskan singkat]
+Target 6-12 bulan ke depan: [jelaskan singkat]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 09_menentukan_spesialisasi_ai.txt prompt belajar: menentukan spesialisasi ai.">
+        <div class="ph"><span>tutor_ai // 09_menentukan_spesialisasi_ai.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-menentukan-spesialisasi-ai" data-fav-type="prompt" data-fav-title="tutor_ai // 09_menentukan_spesialisasi_ai.txt" data-fav-desc="Prompt belajar: menentukan spesialisasi ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah career coach yang fokus ke jalur karier AI terapan. Bantu saya soal menentukan spesialisasi AI yang paling cocok dengan minat &amp; latar belakang saya (mis. RAG, agent, MLOps, data).
+1) Ajukan 3-5 pertanyaan penggali untuk memahami situasi saya sebelum memberi saran (jangan langsung menyimpulkan).
+2) Setelah saya jawab, berikan rencana/rekomendasi konkret, bukan saran generik.
+3) Susun dalam format yang bisa langsung saya pakai (checklist, tabel, atau timeline).
+4) Tutup dengan 1 langkah kecil yang bisa saya kerjakan dalam 24 jam ke depan.
+
+Latar belakang &amp; posisi saya sekarang: [jelaskan singkat]
+Target 6-12 bulan ke depan: [jelaskan singkat]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 10_project_chatbot_dokumentasi.txt prompt belajar: project: chatbot dokumentasi internal.">
+        <div class="ph"><span>tutor_ai // 10_project_chatbot_dokumentasi.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-project-chatbot-dokumentasi" data-fav-type="prompt" data-fav-title="tutor_ai // 10_project_chatbot_dokumentasi.txt" data-fav-desc="Prompt belajar: project: chatbot dokumentasi internal." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor project-based learning untuk AI terapan. Bimbing saya mengerjakan membangun chatbot dokumentasi internal sebagai project belajar, dipandu bertahap dari nol sampai punya hasil yang bisa didemokan.
+1) Pecah project ini jadi 5-7 milestone kecil yang berurutan, masing-masing bisa selesai dalam 1-3 jam.
+2) Untuk milestone pertama, jelaskan persis apa yang harus saya kerjakan dan apa "selesai" itu artinya.
+3) Sebutkan 1 jebakan umum yang bikin pemula menyerah di tengah jalan pada project ini.
+4) Tutup dengan cara mendemokan hasil akhirnya ke orang lain (atasan/klien/komunitas) dalam 2 menit.
+
+Tools/bahasa pemrograman yang ingin saya pakai: [sebutkan, atau tulis 'bebas, sarankan yang paling mudah']
+Waktu yang bisa saya alokasikan per minggu: [sebutkan jam]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 10_project_otomasi_laporan.txt prompt belajar: project: otomasi laporan mingguan.">
+        <div class="ph"><span>tutor_ai // 10_project_otomasi_laporan.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-project-otomasi-laporan" data-fav-type="prompt" data-fav-title="tutor_ai // 10_project_otomasi_laporan.txt" data-fav-desc="Prompt belajar: project: otomasi laporan mingguan." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor project-based learning untuk AI terapan. Bimbing saya mengerjakan membangun otomasi laporan mingguan berbasis AI sebagai project belajar dari nol sampai punya hasil yang bisa didemokan.
+1) Pecah project ini jadi 5-7 milestone kecil yang berurutan, masing-masing bisa selesai dalam 1-3 jam.
+2) Untuk milestone pertama, jelaskan persis apa yang harus saya kerjakan dan apa "selesai" itu artinya.
+3) Sebutkan 1 jebakan umum yang bikin pemula menyerah di tengah jalan pada project ini.
+4) Tutup dengan cara mendemokan hasil akhirnya ke orang lain (atasan/klien/komunitas) dalam 2 menit.
+
+Tools/bahasa pemrograman yang ingin saya pakai: [sebutkan, atau tulis 'bebas, sarankan yang paling mudah']
+Waktu yang bisa saya alokasikan per minggu: [sebutkan jam]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 10_project_asisten_review_kode.txt prompt belajar: project: asisten review kode sederhana.">
+        <div class="ph"><span>tutor_ai // 10_project_asisten_review_kode.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-project-asisten-review-kode" data-fav-type="prompt" data-fav-title="tutor_ai // 10_project_asisten_review_kode.txt" data-fav-desc="Prompt belajar: project: asisten review kode sederhana." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor project-based learning untuk AI terapan. Bimbing saya mengerjakan membangun asisten review kode sederhana sebagai project belajar dari nol sampai punya hasil yang bisa didemokan.
+1) Pecah project ini jadi 5-7 milestone kecil yang berurutan, masing-masing bisa selesai dalam 1-3 jam.
+2) Untuk milestone pertama, jelaskan persis apa yang harus saya kerjakan dan apa "selesai" itu artinya.
+3) Sebutkan 1 jebakan umum yang bikin pemula menyerah di tengah jalan pada project ini.
+4) Tutup dengan cara mendemokan hasil akhirnya ke orang lain (atasan/klien/komunitas) dalam 2 menit.
+
+Tools/bahasa pemrograman yang ingin saya pakai: [sebutkan, atau tulis 'bebas, sarankan yang paling mudah']
+Waktu yang bisa saya alokasikan per minggu: [sebutkan jam]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 10_project_rag_mini.txt prompt belajar: project: rag mini untuk knowledge base pribadi.">
+        <div class="ph"><span>tutor_ai // 10_project_rag_mini.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-project-rag-mini" data-fav-type="prompt" data-fav-title="tutor_ai // 10_project_rag_mini.txt" data-fav-desc="Prompt belajar: project: rag mini untuk knowledge base pribadi." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor project-based learning untuk AI terapan. Bimbing saya mengerjakan membangun sistem RAG mini untuk knowledge base pribadi sebagai project belajar dari nol sampai punya hasil yang bisa didemokan.
+1) Pecah project ini jadi 5-7 milestone kecil yang berurutan, masing-masing bisa selesai dalam 1-3 jam.
+2) Untuk milestone pertama, jelaskan persis apa yang harus saya kerjakan dan apa "selesai" itu artinya.
+3) Sebutkan 1 jebakan umum yang bikin pemula menyerah di tengah jalan pada project ini.
+4) Tutup dengan cara mendemokan hasil akhirnya ke orang lain (atasan/klien/komunitas) dalam 2 menit.
+
+Tools/bahasa pemrograman yang ingin saya pakai: [sebutkan, atau tulis 'bebas, sarankan yang paling mudah']
+Waktu yang bisa saya alokasikan per minggu: [sebutkan jam]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 10_project_agent_otomasi.txt prompt belajar: project: agent otomasi tugas berulang.">
+        <div class="ph"><span>tutor_ai // 10_project_agent_otomasi.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-project-agent-otomasi" data-fav-type="prompt" data-fav-title="tutor_ai // 10_project_agent_otomasi.txt" data-fav-desc="Prompt belajar: project: agent otomasi tugas berulang." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor project-based learning untuk AI terapan. Bimbing saya mengerjakan membangun AI agent sederhana untuk mengotomasi satu tugas berulang di pekerjaan saya dari nol sampai punya hasil yang bisa didemokan.
+1) Pecah project ini jadi 5-7 milestone kecil yang berurutan, masing-masing bisa selesai dalam 1-3 jam.
+2) Untuk milestone pertama, jelaskan persis apa yang harus saya kerjakan dan apa "selesai" itu artinya.
+3) Sebutkan 1 jebakan umum yang bikin pemula menyerah di tengah jalan pada project ini.
+4) Tutup dengan cara mendemokan hasil akhirnya ke orang lain (atasan/klien/komunitas) dalam 2 menit.
+
+Tools/bahasa pemrograman yang ingin saya pakai: [sebutkan, atau tulis 'bebas, sarankan yang paling mudah']
+Waktu yang bisa saya alokasikan per minggu: [sebutkan jam]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 10_project_dashboard_insight.txt prompt belajar: project: dashboard insight dari data mentah.">
+        <div class="ph"><span>tutor_ai // 10_project_dashboard_insight.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-project-dashboard-insight" data-fav-type="prompt" data-fav-title="tutor_ai // 10_project_dashboard_insight.txt" data-fav-desc="Prompt belajar: project: dashboard insight dari data mentah." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor project-based learning untuk AI terapan. Bimbing saya mengerjakan membangun dashboard insight berbasis AI dari data mentah sebagai project belajar dari nol sampai punya hasil yang bisa didemokan.
+1) Pecah project ini jadi 5-7 milestone kecil yang berurutan, masing-masing bisa selesai dalam 1-3 jam.
+2) Untuk milestone pertama, jelaskan persis apa yang harus saya kerjakan dan apa "selesai" itu artinya.
+3) Sebutkan 1 jebakan umum yang bikin pemula menyerah di tengah jalan pada project ini.
+4) Tutup dengan cara mendemokan hasil akhirnya ke orang lain (atasan/klien/komunitas) dalam 2 menit.
+
+Tools/bahasa pemrograman yang ingin saya pakai: [sebutkan, atau tulis 'bebas, sarankan yang paling mudah']
+Waktu yang bisa saya alokasikan per minggu: [sebutkan jam]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 10_project_monitoring_log.txt prompt belajar: project: alat monitoring log berbasis ai.">
+        <div class="ph"><span>tutor_ai // 10_project_monitoring_log.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-project-monitoring-log" data-fav-type="prompt" data-fav-title="tutor_ai // 10_project_monitoring_log.txt" data-fav-desc="Prompt belajar: project: alat monitoring log berbasis ai." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor project-based learning untuk AI terapan. Bimbing saya mengerjakan membangun alat monitoring log sederhana berbasis AI sebagai project belajar dari nol sampai punya hasil yang bisa didemokan.
+1) Pecah project ini jadi 5-7 milestone kecil yang berurutan, masing-masing bisa selesai dalam 1-3 jam.
+2) Untuk milestone pertama, jelaskan persis apa yang harus saya kerjakan dan apa "selesai" itu artinya.
+3) Sebutkan 1 jebakan umum yang bikin pemula menyerah di tengah jalan pada project ini.
+4) Tutup dengan cara mendemokan hasil akhirnya ke orang lain (atasan/klien/komunitas) dalam 2 menit.
+
+Tools/bahasa pemrograman yang ingin saya pakai: [sebutkan, atau tulis 'bebas, sarankan yang paling mudah']
+Waktu yang bisa saya alokasikan per minggu: [sebutkan jam]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 10_project_generator_dokumentasi_api.txt prompt belajar: project: generator dokumentasi api.">
+        <div class="ph"><span>tutor_ai // 10_project_generator_dokumentasi_api.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-project-generator-dokumentasi-api" data-fav-type="prompt" data-fav-title="tutor_ai // 10_project_generator_dokumentasi_api.txt" data-fav-desc="Prompt belajar: project: generator dokumentasi api." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor project-based learning untuk AI terapan. Bimbing saya mengerjakan membangun generator dokumentasi API otomatis sebagai project belajar dari nol sampai punya hasil yang bisa didemokan.
+1) Pecah project ini jadi 5-7 milestone kecil yang berurutan, masing-masing bisa selesai dalam 1-3 jam.
+2) Untuk milestone pertama, jelaskan persis apa yang harus saya kerjakan dan apa "selesai" itu artinya.
+3) Sebutkan 1 jebakan umum yang bikin pemula menyerah di tengah jalan pada project ini.
+4) Tutup dengan cara mendemokan hasil akhirnya ke orang lain (atasan/klien/komunitas) dalam 2 menit.
+
+Tools/bahasa pemrograman yang ingin saya pakai: [sebutkan, atau tulis 'bebas, sarankan yang paling mudah']
+Waktu yang bisa saya alokasikan per minggu: [sebutkan jam]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 10_project_skrip_evaluasi_prompt.txt prompt belajar: project: skrip evaluasi kualitas prompt.">
+        <div class="ph"><span>tutor_ai // 10_project_skrip_evaluasi_prompt.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-project-skrip-evaluasi-prompt" data-fav-type="prompt" data-fav-title="tutor_ai // 10_project_skrip_evaluasi_prompt.txt" data-fav-desc="Prompt belajar: project: skrip evaluasi kualitas prompt." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor project-based learning untuk AI terapan. Bimbing saya mengerjakan membangun skrip sederhana untuk mengevaluasi kualitas prompt sebagai project belajar dari nol sampai punya hasil yang bisa didemokan.
+1) Pecah project ini jadi 5-7 milestone kecil yang berurutan, masing-masing bisa selesai dalam 1-3 jam.
+2) Untuk milestone pertama, jelaskan persis apa yang harus saya kerjakan dan apa "selesai" itu artinya.
+3) Sebutkan 1 jebakan umum yang bikin pemula menyerah di tengah jalan pada project ini.
+4) Tutup dengan cara mendemokan hasil akhirnya ke orang lain (atasan/klien/komunitas) dalam 2 menit.
+
+Tools/bahasa pemrograman yang ingin saya pakai: [sebutkan, atau tulis 'bebas, sarankan yang paling mudah']
+Waktu yang bisa saya alokasikan per minggu: [sebutkan jam]</pre>
+      </div>
+
+      <div class="prompt-block" data-cat="belajar" data-name="tutor_ai // 10_project_studi_kasus_portofolio.txt prompt belajar: project: menyusun studi kasus portofolio.">
+        <div class="ph"><span>tutor_ai // 10_project_studi_kasus_portofolio.txt</span>
+          <div style="display:flex;gap:8px">
+            <button class="fav-btn" data-fav-id="prompt-belajar-project-studi-kasus-portofolio" data-fav-type="prompt" data-fav-title="tutor_ai // 10_project_studi_kasus_portofolio.txt" data-fav-desc="Prompt belajar: project: menyusun studi kasus portofolio." data-fav-url="/prompts" aria-label="Simpan ke favorit"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3l2.7 5.9 6.3.6-4.8 4.3 1.4 6.3L12 16.9l-5.6 3.2 1.4-6.3-4.8-4.3 6.3-.6z"/></svg></button>
+            <button class="copy-btn">Salin</button>
+          </div>
+        </div>
+        <pre>Kamu adalah mentor project-based learning untuk AI terapan. Bimbing saya mengerjakan menyusun salah satu project belajar AI saya menjadi studi kasus portofolio yang meyakinkan dari nol sampai punya hasil yang bisa didemokan.
+1) Pecah project ini jadi 5-7 milestone kecil yang berurutan, masing-masing bisa selesai dalam 1-3 jam.
+2) Untuk milestone pertama, jelaskan persis apa yang harus saya kerjakan dan apa "selesai" itu artinya.
+3) Sebutkan 1 jebakan umum yang bikin pemula menyerah di tengah jalan pada project ini.
+4) Tutup dengan cara mendemokan hasil akhirnya ke orang lain (atasan/klien/komunitas) dalam 2 menit.
+
+Tools/bahasa pemrograman yang ingin saya pakai: [sebutkan, atau tulis 'bebas, sarankan yang paling mudah']
+Waktu yang bisa saya alokasikan per minggu: [sebutkan jam]</pre>
       </div>
     </div>
     <p class="tools-empty" id="prompts-empty">Tidak ada prompt yang cocok. Coba kata kunci atau kategori lain.</p>

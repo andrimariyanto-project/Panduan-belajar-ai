@@ -92,6 +92,22 @@ CHECKS = {
         'id="export-txt"',
         'id="export-json"',
     ],
+    "/referensi": [
+        'class="ref-toc"',
+        'id="resmi"',
+        'id="kursus"',
+        'id="roadmap-eksternal"',
+        'id="rag-agent"',
+        'id="komunitas"',
+        'ref-card',
+    ],
+    "/dashboard": [
+        'id="dash-stats"',
+        'id="badge-grid"',
+        'id="dash-roadmap-pct"',
+        'id="dash-badges"',
+        'id="dash-reset"',
+    ],
 }
 
 # Penanda global yang wajib ada di SEMUA halaman (lewat base.html).
@@ -126,15 +142,17 @@ STATIC_FILES = [
     "/static/js/prompt-builder.js",
     "/static/js/tersimpan.js",
     "/static/js/export.js",
+    "/static/js/badges.js",
+    "/static/js/dashboard.js",
 ]
 
 # Jumlah minimum item yang wajib ada — kalau berkurang berarti ada
 # konten yang tidak sengaja terhapus.
 MIN_COUNTS = {
     "/tools": ('class="card"', 12),
-    "/prompts": ('class="prompt-block"', 100),
+    "/prompts": ('class="prompt-block"', 200),
     "/courses": ('class="card"', 10),
-    "/roadmap": ("data-mid=", 18),
+    "/roadmap": ("data-mid=", 22),
 }
 
 

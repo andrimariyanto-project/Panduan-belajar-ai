@@ -74,5 +74,15 @@ def tersimpan():
     return render_template("tersimpan.html", active="tersimpan")
 
 
+@app.route("/referensi")
+def referensi():
+    return render_template("referensi.html", active="referensi")
+
+
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html", active="dashboard")
+
+
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

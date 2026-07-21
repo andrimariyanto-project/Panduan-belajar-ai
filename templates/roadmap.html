@@ -124,12 +124,39 @@
         </div>
       </div>
 
+      <div class="trace-node" data-node="04">
+        <span class="node-label">node_04 // pendalaman & referensi — ongoing <span class="node-done-badge">selesai</span></span>
+        <h3>Jalan Pintas Belajar Berkelanjutan</h3>
+        <p>Node opsional tapi berdampak besar: menghubungkan roadmap ini ke sumber resmi eksternal supaya pemahamanmu tidak berhenti di platform ini saja.</p>
+        <div class="modules">
+          <label><input type="checkbox" data-mid="04-0"><span>Selesaikan minimal 1 course resmi dari halaman Referensi</span></label>
+          <label><input type="checkbox" data-mid="04-1"><span>Baca dokumentasi resmi prompt engineering (Anthropic/OpenAI)</span></label>
+          <label><input type="checkbox" data-mid="04-2"><span>Coba minimal 5 prompt dari kategori 🎓 Pembelajaran</span></label>
+          <label><input type="checkbox" data-mid="04-3"><span>Ikuti 1 sumber update AI resmi untuk dipantau rutin</span></label>
+        </div>
+        <div class="node-actions">
+          <div class="node-links">
+            <span class="node-links-label">Prompt terkait:</span>
+            <a href="{{ url_for('prompts') }}?cat=belajar" class="node-prompt-link">🎓 Pembelajaran</a>
+            <a href="{{ url_for('referensi') }}" class="node-prompt-link">Referensi</a>
+          </div>
+          <button class="node-notes-toggle" type="button" data-node-toggle="04">📝 Catatan</button>
+        </div>
+        <div class="node-notes" data-node-notes="04" hidden>
+          <textarea class="node-notes-area" data-mid-notes="04" placeholder="Catatan pribadi untuk node ini... tersimpan otomatis."></textarea>
+          <span class="node-notes-saved" data-notes-saved="04"></span>
+        </div>
+      </div>
+
     </div>
 
     <div class="cta-band" style="margin-top:64px;border-radius:var(--radius)">
       <span class="eyebrow" style="justify-content:center">&gt; next_step</span>
       <h2>Belum yakin mulai dari node mana?</h2>
-      <a href="{{ url_for('skillcheck') }}" class="btn btn-primary">Cek level lewat Skill Check</a>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="{{ url_for('skillcheck') }}" class="btn btn-primary">Cek level lewat Skill Check</a>
+        <a href="{{ url_for('dashboard') }}" class="btn btn-outline">Lihat Dashboard progres</a>
+      </div>
     </div>
   </div>
 </section>

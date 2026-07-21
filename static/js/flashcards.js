@@ -7,12 +7,42 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!listEl || !flashWrap) return;
 
   const KEY = 'andre_glossary_mastered_v1';
+  const LEITNER_KEY = 'andre_glossary_leitner_v1'; // { [id]: { box: 0-3, due: 'YYYY-MM-DD' } }
+  const BOX_INTERVAL_DAYS = [0, 1, 3, 7]; // box 0=hari ini, 1=+1 hari, 2=+3 hari, 3=+7 hari (box 3 = dianggap dikuasai)
 
   const deckSource = Array.from(listEl.querySelectorAll('.entry')).map((entry, i) => ({
     id: 'g-' + i,
     term: entry.querySelector('dt').textContent.trim(),
     def: entry.querySelector('dd').textContent.trim(),
   }));
+
+  function todayStr() {
+    return new Date().toISOString().slice(0, 10);
+  }
+  function getLeitner() {
+    try {
+      return JSON.parse(localStorage.getItem(LEITNER_KEY)) || {};
+    } catch (e) {
+      return {};
+    }
+  }
+  function saveLeitner(state) {
+    localStorage.setItem(LEITNER_KEY, JSON.stringify(state));
+  }
+  function addDays(dateStr, days) {
+    const d = new Date(dateStr + 'T00:00:00');
+    d.setDate(d.getDate() + days);
+    return d.toISOString().slice(0, 10);
+  }
+  function dueTodayCount() {
+    const state = getLeitner();
+    const today = todayStr();
+    return deckSource.filter((item) => {
+      const entry = state[item.id];
+      if (!entry) return true; // kartu belum pernah direview = perlu direview
+      return entry.due <= today;
+    }).length;
+  }
 
   let deck = deckSource.slice();
   let idx = 0;
@@ -47,7 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
     defEl.textContent = item.def;
     cardEl.classList.toggle('flipped', flipped);
     const mastered = getMastered();
-    progressEl.textContent = `Kartu ${idx + 1} / ${deck.length} · dikuasai ${mastered.length}/${deckSource.length}`;
+    const due = dueTodayCount();
+    progressEl.textContent = `Kartu ${idx + 1} / ${deck.length} · dikuasai ${mastered.length}/${deckSource.length} · perlu diulang hari ini: ${due}`;
   }
 
   function go(delta) {
@@ -76,16 +107,34 @@ document.addEventListener('DOMContentLoaded', () => {
   shuffleBtn.addEventListener('click', shuffle);
 
   masteredBtn.addEventListener('click', () => {
-    const mastered = getMastered();
     const item = deck[idx];
-    if (!mastered.includes(item.id)) mastered.push(item.id);
-    saveMastered(mastered);
-    if (window.andreToast) window.andreToast('Ditandai sudah hafal', 'success');
+    const leitner = getLeitner();
+    const current = leitner[item.id] || { box: 0 };
+    const nextBox = Math.min(current.box + 1, BOX_INTERVAL_DAYS.length - 1);
+    leitner[item.id] = { box: nextBox, due: addDays(todayStr(), BOX_INTERVAL_DAYS[nextBox]) };
+    saveLeitner(leitner);
+
+    const mastered = getMastered();
+    if (nextBox >= BOX_INTERVAL_DAYS.length - 1 && !mastered.includes(item.id)) {
+      mastered.push(item.id);
+      saveMastered(mastered);
+    }
+    if (window.andreToast) {
+      window.andreToast(
+        nextBox >= BOX_INTERVAL_DAYS.length - 1 ? 'Ditandai sudah hafal' : `Bagus — diulang lagi dalam ${BOX_INTERVAL_DAYS[nextBox]} hari`,
+        'success'
+      );
+    }
     go(1);
   });
 
   againBtn.addEventListener('click', () => {
-    const mastered = getMastered().filter((id) => id !== deck[idx].id);
+    const item = deck[idx];
+    const leitner = getLeitner();
+    leitner[item.id] = { box: 0, due: todayStr() };
+    saveLeitner(leitner);
+
+    const mastered = getMastered().filter((id) => id !== item.id);
     saveMastered(mastered);
     go(1);
   });
