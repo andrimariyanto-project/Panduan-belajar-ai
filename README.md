@@ -2,18 +2,17 @@
 
 Platform belajar AI terapan untuk praktisi teknis — engineer, programmer, data analyst,
 database expert, dan network integrator. Dibangun dengan **Python (Flask)**, multi-page,
-tanpa backend/database (murni frontend server-rendered). **v2.0.0** adalah update final
-yang menyatukan roadmap, 200 prompt (termasuk 100 prompt tutor AI khusus), referensi
-eksternal terkurasi, dan dashboard progres/badge jadi satu sistem belajar yang saling
-terhubung — "jalan pintas" untuk memahami AI secara mendalam tanpa tersesat di lautan
-konten.
+tanpa backend/database (murni frontend server-rendered). **v2.1.0** menambahkan lapisan
+*validasi pemahaman* di atas fondasi v2.0.0 (200 prompt, Referensi, Dashboard): micro-quiz
+per node roadmap, halaman Cek Pemahaman bergaya teknik Feynman, dan sertifikat PDF —
+supaya belajar di sini bukan cuma checklist pasif, tapi benar-benar teruji.
 
 ## Struktur halaman
 
 - `/` — Beranda
 - `/roadmap` — Roadmap belajar 5 tahap (node_00 – node_04), dengan **checklist progress
   interaktif**, tombol **"Lanjutkan belajar"**, **streak harian**, **catatan per node**,
-  link cepat ke **prompt terkait**, dan node baru `node_04` yang menghubungkan ke `/referensi`
+  link cepat ke **prompt terkait**, dan **micro-quiz "Cek Pemahaman"** (3 soal/node)
 - `/courses` — Daftar course per node/peran (bisa difavoritkan)
 - `/tools` — Direktori tools AI (filter kategori + **pencarian teks live** + favorit)
 - `/prompts` — Prompt library siap salin, **200 prompt** (bisa difavoritkan)
@@ -25,10 +24,13 @@ konten.
 - `/glossary` — Kamus istilah AI (34 istilah), dengan pencarian **dan mode flashcard
   dengan spaced repetition (Leitner box)**
 - `/skill-check` — Kuis interaktif penentu level, dengan progress bar, tombol kembali, dan riwayat hasil
+- `/cek-pemahaman` — **Baru:** teknik Feynman — jelaskan konsep AI dengan bahasamu sendiri,
+  nilai keyakinanmu sendiri, tersimpan sebagai riwayat konsep terverifikasi
 - `/tersimpan` — daftar tools/prompt/course yang sudah kamu favoritkan, dengan **export ke PDF/.txt/.json**
-- `/referensi` — **Baru:** kurasi sumber belajar AI eksternal resmi (Anthropic, OpenAI,
-  Hugging Face, Google, MCP, dst) + **"Jalur Kilat 30-60-90 Hari"**
-- `/dashboard` — **Baru:** ringkasan progres belajar lintas halaman + **12 badge pencapaian**
+- `/referensi` — kurasi sumber belajar AI eksternal resmi (Anthropic, OpenAI, Hugging
+  Face, Google, MCP, dst) + **"Jalur Kilat 30-60-90 Hari"**
+- `/dashboard` — ringkasan progres belajar lintas halaman + **14 badge pencapaian** +
+  **unduh Sertifikat/Learning Passport PDF**
 
 ## Fitur interaktif
 
@@ -83,7 +85,7 @@ konten.
   Hari** yang memetakan sumber eksternal itu ke node roadmap di platform ini.
 - **Dashboard progres & badge** (`/dashboard`) — agregasi otomatis dari seluruh data localStorage
   yang sudah ada (progress roadmap, streak, hasil Skill Check, kartu Kamus AI dikuasai, favorit,
-  catatan roadmap) ke satu ringkasan, plus **12 badge pencapaian** yang terbuka berdasarkan
+  catatan roadmap) ke satu ringkasan, plus **14 badge pencapaian** yang terbuka berdasarkan
   aktivitas nyata (`static/js/badges.js`) dan tombol reset semua data lokal dari satu tempat.
 - **Spaced repetition di Kamus AI** — mode flashcard kini memakai sistem Leitner box sederhana
   (interval 1/3/7 hari) untuk menjadwalkan istilah mana yang perlu diulang, ditampilkan sebagai
@@ -91,6 +93,17 @@ konten.
 - **Roadmap 5 node** — node baru `node_04 // pendalaman & referensi` menutup roadmap dengan
   menghubungkan ke `/referensi` dan prompt kategori 🎓 Pembelajaran, supaya belajar tidak berhenti
   begitu 4 node sebelumnya selesai.
+- **Micro-quiz "Cek Pemahaman" per node roadmap** — 3 soal pilihan ganda per node (15 soal
+  total), dirender inline lewat tombol **🧪 Cek Pemahaman**, tanpa reload halaman. Hasil
+  (skor & status lolos) tersimpan dan ditampilkan langsung di tombolnya sendiri — validasi
+  pemahaman lewat *active recall*, bukan cuma checklist manual.
+- **Halaman Cek Pemahaman** (`/cek-pemahaman`) — penerapan teknik Feynman: tulis penjelasan
+  konsep AI dengan bahasamu sendiri, nilai keyakinanmu (1-5), simpan sebagai riwayat konsep
+  terverifikasi yang bisa dilihat/dihapus kapan saja.
+- **Sertifikat / Learning Passport (PDF)** di `/dashboard` — satu tombol merangkum seluruh
+  progres (roadmap, streak, Cek Pemahaman node, konsep Feynman, Skill Check, Kamus AI,
+  badge) jadi PDF landscape yang bisa diunduh kapan saja, judulnya otomatis berubah jadi
+  "Sertifikat Penyelesaian Roadmap" begitu progress mencapai 100%.
 
 ## Alur update yang aman (biar fitur lama tidak pernah hilang)
 
@@ -196,7 +209,8 @@ andremedia/
 │   ├── skillcheck.html     # + riwayat hasil
 │   ├── tersimpan.html      # halaman favorit
 │   ├── referensi.html      # Baru v2.0: kurasi sumber belajar eksternal + jalur kilat
-│   └── dashboard.html      # Baru v2.0: ringkasan progres + badge pencapaian
+│   ├── dashboard.html      # ringkasan progres + badge pencapaian + sertifikat PDF
+│   └── cek_pemahaman.html  # Baru v2.1: teknik Feynman self-explanation
 └── static/
     ├── css/style.css       # Design system (warna, tipografi, komponen)
     └── js/
@@ -216,8 +230,11 @@ andremedia/
         ├── mobile-nav.js       # Toggle menu mobile
         ├── scroll-progress.js  # Progress bar scroll
         ├── toast.js            # Notifikasi toast (shared)
-        ├── badges.js           # Baru v2.0: definisi & kalkulasi 12 badge pencapaian
-        └── dashboard.js        # Baru v2.0: render halaman /dashboard
+        ├── badges.js           # definisi & kalkulasi 14 badge pencapaian
+        ├── dashboard.js        # render halaman /dashboard
+        ├── node-quiz.js        # Baru v2.1: micro-quiz "Cek Pemahaman" per node roadmap
+        ├── understanding-check.js # Baru v2.1: teknik Feynman di /cek-pemahaman
+        └── certificate.js      # Baru v2.1: generate PDF Sertifikat/Learning Passport
 ```
 
 ## Konsep desain

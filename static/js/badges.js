@@ -53,8 +53,12 @@
     const quizHistory = readJSON('andre_skillcheck_history_v1', []);
     const mastered = readJSON('andre_glossary_mastered_v1', []);
     const favorites = readJSON('andre_favorites_v1', []);
+    const nodeQuizResults = readJSON('andre_node_quiz_v1', {});
+    const understandingChecks = readJSON('andre_understanding_checks_v1', []);
     const doneCount = Object.values(progress).filter(Boolean).length;
     const notesCount = Object.values(notes).filter((v) => (v || '').trim().length > 0).length;
+    const nodeQuizPassedCount = Object.values(nodeQuizResults).filter((r) => r && r.passed).length;
+    const nodeQuizTotalNodes = 5; // 00-04
 
     return {
       progress,
@@ -64,6 +68,10 @@
       masteredCount: mastered.length,
       favoritesCount: favorites.length,
       notesCount,
+      nodeQuizResults,
+      nodeQuizPassedCount,
+      nodeQuizTotalNodes,
+      understandingChecksCount: understandingChecks.length,
     };
   }
 
@@ -81,6 +89,8 @@
     { id: 'skillcheck', icon: '✅', name: 'Skill Checked', desc: 'sudah ambil Skill Check', test: (s) => s.quizHistory.length >= 1 },
     { id: 'kolektor', icon: '🌟', name: 'Kolektor', desc: '≥ 10 item favorit', test: (s) => s.favoritesCount >= 10 },
     { id: 'pencatat', icon: '📝', name: 'Pencatat Rajin', desc: 'catatan di ≥ 2 node', test: (s) => s.notesCount >= 2 },
+    { id: 'terverifikasi', icon: '🧪', name: 'Pemahaman Terverifikasi', desc: 'lolos Cek Pemahaman di semua node', test: (s) => s.nodeQuizPassedCount >= s.nodeQuizTotalNodes },
+    { id: 'feynman', icon: '💡', name: 'Feynman Explainer', desc: '≥ 5 konsep dijelaskan sendiri', test: (s) => s.understandingChecksCount >= 5 },
   ];
 
   function getBadgeStatus() {

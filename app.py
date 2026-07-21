@@ -84,5 +84,10 @@ def dashboard():
     return render_template("dashboard.html", active="dashboard")
 
 
+@app.route("/cek-pemahaman")
+def cek_pemahaman():
+    return render_template("cek_pemahaman.html", active="cek_pemahaman")
+
+
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

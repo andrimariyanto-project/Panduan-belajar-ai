@@ -40,11 +40,13 @@
             <a href="{{ url_for('prompts') }}?cat=ai" class="node-prompt-link">AI/LLM</a>
           </div>
           <button class="node-notes-toggle" type="button" data-node-toggle="00">📝 Catatan</button>
+          <button class="node-notes-toggle node-quiz-toggle" type="button" data-node-quiz-toggle="00">🧪 Cek Pemahaman</button>
         </div>
         <div class="node-notes" data-node-notes="00" hidden>
           <textarea class="node-notes-area" data-mid-notes="00" placeholder="Catatan pribadi untuk node ini (mis. istilah yang masih membingungkan, hal yang mau dicoba)... tersimpan otomatis."></textarea>
           <span class="node-notes-saved" data-notes-saved="00"></span>
         </div>
+        <div class="node-quiz" data-node-quiz-panel="00" hidden></div>
       </div>
 
       <div class="trace-node" data-node="01">
@@ -68,11 +70,13 @@
             <a href="{{ url_for('prompts') }}?cat=devops" class="node-prompt-link">DevOps</a>
           </div>
           <button class="node-notes-toggle" type="button" data-node-toggle="01">📝 Catatan</button>
+          <button class="node-notes-toggle node-quiz-toggle" type="button" data-node-quiz-toggle="01">🧪 Cek Pemahaman</button>
         </div>
         <div class="node-notes" data-node-notes="01" hidden>
           <textarea class="node-notes-area" data-mid-notes="01" placeholder="Catatan pribadi untuk node ini... tersimpan otomatis."></textarea>
           <span class="node-notes-saved" data-notes-saved="01"></span>
         </div>
+        <div class="node-quiz" data-node-quiz-panel="01" hidden></div>
       </div>
 
       <div class="trace-node" data-node="02">
@@ -93,11 +97,13 @@
             <a href="{{ url_for('prompts') }}?cat=devops" class="node-prompt-link">DevOps</a>
           </div>
           <button class="node-notes-toggle" type="button" data-node-toggle="02">📝 Catatan</button>
+          <button class="node-notes-toggle node-quiz-toggle" type="button" data-node-quiz-toggle="02">🧪 Cek Pemahaman</button>
         </div>
         <div class="node-notes" data-node-notes="02" hidden>
           <textarea class="node-notes-area" data-mid-notes="02" placeholder="Catatan pribadi untuk node ini... tersimpan otomatis."></textarea>
           <span class="node-notes-saved" data-notes-saved="02"></span>
         </div>
+        <div class="node-quiz" data-node-quiz-panel="02" hidden></div>
       </div>
 
       <div class="trace-node" data-node="03">
@@ -117,11 +123,13 @@
             <a href="{{ url_for('prompts') }}?cat=writing" class="node-prompt-link">Docs</a>
           </div>
           <button class="node-notes-toggle" type="button" data-node-toggle="03">📝 Catatan</button>
+          <button class="node-notes-toggle node-quiz-toggle" type="button" data-node-quiz-toggle="03">🧪 Cek Pemahaman</button>
         </div>
         <div class="node-notes" data-node-notes="03" hidden>
           <textarea class="node-notes-area" data-mid-notes="03" placeholder="Catatan pribadi untuk node ini... tersimpan otomatis."></textarea>
           <span class="node-notes-saved" data-notes-saved="03"></span>
         </div>
+        <div class="node-quiz" data-node-quiz-panel="03" hidden></div>
       </div>
 
       <div class="trace-node" data-node="04">
@@ -141,14 +149,121 @@
             <a href="{{ url_for('referensi') }}" class="node-prompt-link">Referensi</a>
           </div>
           <button class="node-notes-toggle" type="button" data-node-toggle="04">📝 Catatan</button>
+          <button class="node-notes-toggle node-quiz-toggle" type="button" data-node-quiz-toggle="04">🧪 Cek Pemahaman</button>
         </div>
         <div class="node-notes" data-node-notes="04" hidden>
           <textarea class="node-notes-area" data-mid-notes="04" placeholder="Catatan pribadi untuk node ini... tersimpan otomatis."></textarea>
           <span class="node-notes-saved" data-notes-saved="04"></span>
         </div>
+        <div class="node-quiz" data-node-quiz-panel="04" hidden></div>
       </div>
 
     </div>
+
+    <script id="node-quiz-data" type="application/json">
+    {
+      "00": [
+        {"q": "Apa itu \"context window\" pada model AI?", "options": [
+          {"t": "Jumlah maksimum token yang bisa diproses model dalam satu waktu", "correct": true},
+          {"t": "Kecepatan model dalam menjawab pertanyaan", "correct": false},
+          {"t": "Jumlah total parameter di dalam model", "correct": false},
+          {"t": "Nama fitur keamanan pada aplikasi AI", "correct": false}
+        ]},
+        {"q": "Kenapa AI kadang \"berhalusinasi\" (memberi jawaban salah tapi meyakinkan)?", "options": [
+          {"t": "Karena model memprediksi kata yang paling mungkin, bukan mengecek fakta ke database", "correct": true},
+          {"t": "Karena ada bug pada software AI", "correct": false},
+          {"t": "Karena koneksi internet pengguna lambat", "correct": false},
+          {"t": "Karena pengguna salah mengetik", "correct": false}
+        ]},
+        {"q": "Apa perbedaan utama model closed-source dan open-weight?", "options": [
+          {"t": "Open-weight bisa dijalankan/dimodifikasi sendiri karena parameternya dipublikasikan", "correct": true},
+          {"t": "Model closed-source selalu gratis dipakai", "correct": false},
+          {"t": "Model open-weight selalu lebih pintar dari closed-source", "correct": false},
+          {"t": "Tidak ada perbedaan berarti antara keduanya", "correct": false}
+        ]}
+      ],
+      "01": [
+        {"q": "Saat minta AI melakukan code review, hal paling penting disertakan dalam prompt?", "options": [
+          {"t": "Konteks kode (bahasa/framework) dan kriteria yang ingin ditinjau", "correct": true},
+          {"t": "Jumlah baris kode saja", "correct": false},
+          {"t": "Nama file tanpa isi kodenya", "correct": false},
+          {"t": "Tanggal kode terakhir diubah", "correct": false}
+        ]},
+        {"q": "Saat memakai AI untuk EDA (exploratory data analysis), langkah paling aman adalah?", "options": [
+          {"t": "Tetap memverifikasi hasil analisis AI terhadap data asli", "correct": true},
+          {"t": "Langsung memakai kesimpulan AI tanpa dicek", "correct": false},
+          {"t": "Menghapus data mentah setelah AI selesai analisis", "correct": false},
+          {"t": "Meminta AI menebak data tanpa diberi sampel", "correct": false}
+        ]},
+        {"q": "Kenapa AI perlu tahu skema database saat membantu optimasi query?", "options": [
+          {"t": "Tanpa skema, AI menebak struktur tabel & indeks sehingga rekomendasinya bisa salah", "correct": true},
+          {"t": "Skema database tidak berpengaruh ke rekomendasi AI", "correct": false},
+          {"t": "AI otomatis tahu semua skema database di dunia", "correct": false},
+          {"t": "Skema hanya dibutuhkan untuk mengganti nama tabel", "correct": false}
+        ]}
+      ],
+      "02": [
+        {"q": "Apa fungsi utama RAG (Retrieval-Augmented Generation)?", "options": [
+          {"t": "Menggabungkan pencarian dokumen relevan dengan generasi jawaban AI agar lebih akurat", "correct": true},
+          {"t": "Mempercepat kecepatan mengetik prompt", "correct": false},
+          {"t": "Mengubah teks jadi gambar secara otomatis", "correct": false},
+          {"t": "Menghapus data lama dari model", "correct": false}
+        ]},
+        {"q": "Apa yang dimaksud \"tool use / function calling\" pada AI agent?", "options": [
+          {"t": "Kemampuan model memanggil fungsi/API eksternal untuk mengambil data atau menjalankan aksi", "correct": true},
+          {"t": "Kemampuan model mengganti tema tampilan chat", "correct": false},
+          {"t": "Kemampuan model menyimpan riwayat chat selamanya", "correct": false},
+          {"t": "Kemampuan model berjalan tanpa listrik", "correct": false}
+        ]},
+        {"q": "Kenapa evaluasi sistematis (eval) penting sebelum AI dipakai di produksi?", "options": [
+          {"t": "Supaya kualitas & konsistensi output terukur, bukan hanya berdasarkan kesan sekilas", "correct": true},
+          {"t": "Supaya tampilan aplikasi terlihat lebih modern", "correct": false},
+          {"t": "Supaya biaya hosting otomatis lebih murah", "correct": false},
+          {"t": "Eval tidak berpengaruh ke kualitas produksi", "correct": false}
+        ]}
+      ],
+      "03": [
+        {"q": "Apa yang paling meyakinkan calon klien soal skill AI kamu?", "options": [
+          {"t": "Studi kasus/bukti hasil nyata, bukan sekadar klaim \"saya bisa pakai AI\"", "correct": true},
+          {"t": "Jumlah sertifikat online yang dipunya", "correct": false},
+          {"t": "Banyaknya istilah teknis yang disebutkan", "correct": false},
+          {"t": "Harga jasa yang paling murah", "correct": false}
+        ]},
+        {"q": "Saat menyusun harga jasa automasi AI, hal penting yang perlu didefinisikan di awal?", "options": [
+          {"t": "Scope pekerjaan yang jelas — apa yang termasuk dan tidak termasuk", "correct": true},
+          {"t": "Warna logo perusahaan klien", "correct": false},
+          {"t": "Jumlah karyawan klien", "correct": false},
+          {"t": "Merek laptop yang dipakai klien", "correct": false}
+        ]},
+        {"q": "Presentasi hasil AI ke stakeholder non-teknis sebaiknya fokus ke?", "options": [
+          {"t": "Dampak/hasil bisnis, bukan detail teknis implementasi", "correct": true},
+          {"t": "Penjelasan arsitektur model secara mendalam", "correct": false},
+          {"t": "Daftar lengkap library yang dipakai", "correct": false},
+          {"t": "Kode sumber lengkap project", "correct": false}
+        ]}
+      ],
+      "04": [
+        {"q": "Kenapa penting mengecek dokumentasi resmi vendor AI, bukan cuma blog pihak ketiga?", "options": [
+          {"t": "Dokumentasi resmi paling akurat dan cepat diperbarui sesuai perubahan model terbaru", "correct": true},
+          {"t": "Blog pihak ketiga selalu salah total", "correct": false},
+          {"t": "Dokumentasi resmi selalu lebih pendek untuk dibaca", "correct": false},
+          {"t": "Tidak ada bedanya, keduanya sama saja", "correct": false}
+        ]},
+        {"q": "Apa manfaat mengikuti course terstruktur dibanding hanya membaca artikel acak?", "options": [
+          {"t": "Materinya berurutan dan teruji, sehingga lebih efektif dibanding belajar tercerai-berai", "correct": true},
+          {"t": "Course selalu lebih murah dari artikel gratis", "correct": false},
+          {"t": "Artikel acak selalu lebih update", "correct": false},
+          {"t": "Course tidak butuh waktu sama sekali", "correct": false}
+        ]},
+        {"q": "Kenapa disarankan memantau minimal 1 sumber update AI resmi secara rutin?", "options": [
+          {"t": "Karena AI berkembang cepat, sumber resmi membantu memfilter info yang benar-benar penting", "correct": true},
+          {"t": "Supaya bisa ikut semua tren tanpa terkecuali", "correct": false},
+          {"t": "Karena sumber resmi selalu mengeluarkan berita tiap jam", "correct": false},
+          {"t": "Ini tidak berpengaruh ke proses belajar", "correct": false}
+        ]}
+      ]
+    }
+    </script>
 
     <div class="cta-band" style="margin-top:64px;border-radius:var(--radius)">
       <span class="eyebrow" style="justify-content:center">&gt; next_step</span>
@@ -164,4 +279,5 @@
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/roadmap-progress.js') }}"></script>
 <script src="{{ url_for('static', filename='js/roadmap-companion.js') }}"></script>
+<script src="{{ url_for('static', filename='js/node-quiz.js') }}"></script>
 {% endblock %}

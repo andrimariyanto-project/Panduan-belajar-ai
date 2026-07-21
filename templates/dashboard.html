@@ -11,11 +11,24 @@
       <div class="dash-stat"><div class="num" id="dash-roadmap-pct">0%</div><div class="label">Progress Roadmap</div><div class="sub" id="dash-roadmap-sub">0 / 0 modul</div></div>
       <div class="dash-stat"><div class="num" id="dash-streak">0🔥</div><div class="label">Streak Belajar</div><div class="sub" id="dash-streak-sub">hari beruntun</div></div>
       <div class="dash-stat"><div class="num" id="dash-quiz">—</div><div class="label">Skill Check Terakhir</div><div class="sub" id="dash-quiz-sub">belum pernah dicoba</div></div>
+      <div class="dash-stat"><div class="num" id="dash-node-quiz">0 / 5</div><div class="label">Cek Pemahaman Node</div><div class="sub" id="dash-node-quiz-sub">node lolos verifikasi</div></div>
+      <div class="dash-stat"><div class="num" id="dash-understanding">0</div><div class="label">Konsep Terverifikasi</div><div class="sub">via teknik Feynman</div></div>
       <div class="dash-stat"><div class="num" id="dash-cards">0</div><div class="label">Istilah Dikuasai</div><div class="sub" id="dash-cards-sub">dari Kamus AI</div></div>
       <div class="dash-stat"><div class="num" id="dash-fav">0</div><div class="label">Item Tersimpan</div><div class="sub" id="dash-fav-sub">tools, prompt & course</div></div>
-      <div class="dash-stat"><div class="num" id="dash-badges">0 / 12</div><div class="label">Badge Terbuka</div><div class="sub">lihat detail di bawah</div></div>
+      <div class="dash-stat"><div class="num" id="dash-badges">0 / 14</div><div class="label">Badge Terbuka</div><div class="sub">lihat detail di bawah</div></div>
       <div class="dash-stat"><div class="num" id="dash-notes">0</div><div class="label">Catatan Roadmap</div><div class="sub">node dengan catatan aktif</div></div>
       <div class="dash-stat"><div class="num" id="dash-next">—</div><div class="label">Langkah Berikutnya</div><div class="sub" id="dash-next-sub">rekomendasi otomatis</div></div>
+    </div>
+
+    <div class="dash-section">
+      <h2>🎓 Sertifikat / Learning Passport</h2>
+      <p class="ref-desc" style="margin-top:-8px">Unduh ringkasan progres belajarmu sebagai PDF — cocok dilampirkan ke portofolio atau sekadar bukti konsistensi untuk diri sendiri. Bisa diunduh kapan saja, tidak perlu menunggu 100% selesai.</p>
+      <div class="cert-box">
+        <label class="uc-label" for="cert-name" style="margin-top:0">Nama untuk ditampilkan di sertifikat</label>
+        <input id="cert-name" type="text" placeholder="Nama kamu (opsional, boleh dikosongkan)">
+        <button type="button" class="btn btn-primary" id="cert-download" style="margin-top:14px">Unduh Sertifikat PDF</button>
+        <p class="uc-hint" id="cert-hint"></p>
+      </div>
     </div>
 
     <div class="dash-section">
@@ -34,5 +47,6 @@
 {% endblock %}
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/badges.js') }}"></script>
+<script src="{{ url_for('static', filename='js/certificate.js') }}"></script>
 <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
 {% endblock %}

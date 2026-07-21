@@ -1077,3 +1077,81 @@ footer .fine{
   padding:6px 12px; cursor:pointer; margin-top:24px;
 }
 .dash-reset:hover{ color:var(--danger); border-color:var(--danger); }
+
+/* ---------- Node quiz "Cek Pemahaman" ---------- */
+.node-quiz{
+  margin-top:14px; padding:18px; background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius);
+}
+.node-quiz-progress{
+  font-family:var(--font-mono); font-size:.74rem; color:var(--text-faint); margin-bottom:10px;
+}
+.node-quiz-q{ font-size:.98rem; margin-bottom:14px; color:var(--text); }
+.node-quiz-opts{ display:flex; flex-direction:column; gap:8px; }
+.node-quiz-opt{
+  text-align:left; padding:11px 14px; background:var(--surface-2); border:1px solid var(--border);
+  border-radius:var(--radius-sm); color:var(--text-muted); font-size:.88rem; cursor:pointer;
+  transition:border-color .15s, color .15s;
+}
+.node-quiz-opt:hover:not(:disabled){ border-color:var(--accent-2-dim); color:var(--text); }
+.node-quiz-opt:disabled{ cursor:default; }
+.node-quiz-opt.quiz-correct{ border-color:var(--accent-2); color:var(--accent-2); }
+.node-quiz-opt.quiz-wrong{ border-color:var(--danger); color:var(--danger); }
+.node-quiz-result{ text-align:center; padding:8px 0; }
+.node-quiz-score{ font-family:var(--font-mono); font-size:1.4rem; color:var(--accent); margin-bottom:6px; }
+.node-quiz-result.passed .node-quiz-score{ color:var(--accent-2); }
+.node-quiz-result p{ color:var(--text-muted); font-size:.88rem; margin-bottom:14px; }
+.node-quiz-empty{ color:var(--text-faint); font-family:var(--font-mono); font-size:.84rem; }
+
+/* ---------- Cek Pemahaman (Feynman) page ---------- */
+.uc-form{
+  max-width:680px; margin-top:28px; padding:24px; background:var(--surface);
+  border:1px solid var(--border); border-radius:var(--radius);
+}
+.uc-label{
+  display:block; font-family:var(--font-mono); font-size:.78rem; color:var(--text-faint);
+  margin:16px 0 8px;
+}
+.uc-form-actions .uc-label:first-child{ margin-top:0; }
+.uc-form input[type="text"], .uc-form textarea{
+  width:100%; padding:12px 14px; background:var(--surface-2); border:1px solid var(--border);
+  border-radius:var(--radius-sm); color:var(--text); font-family:var(--font-body); font-size:.9rem;
+  resize:vertical;
+}
+.uc-form input[type="text"]:focus, .uc-form textarea:focus{ outline:none; border-color:var(--accent-2-dim); }
+.uc-rating{ margin-top:16px; }
+.uc-rating-btns{ display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+.uc-rating-btns button{
+  padding:8px 12px; background:var(--surface-2); border:1px solid var(--border);
+  border-radius:var(--radius-sm); color:var(--text-muted); font-size:.8rem; cursor:pointer;
+}
+.uc-rating-btns button:hover{ border-color:var(--accent-2-dim); }
+.uc-rating-btns button.active{ border-color:var(--accent); color:var(--accent); background:var(--surface); }
+.uc-form-actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top:22px; }
+.uc-hint{ font-size:.82rem; color:var(--text-faint); margin-top:14px; }
+.uc-hint a{ color:var(--accent-2); }
+
+.uc-list{ display:flex; flex-direction:column; gap:14px; margin-top:20px; }
+.uc-item{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+  padding:18px 20px;
+}
+.uc-item-top{ display:flex; justify-content:space-between; align-items:center; gap:10px; }
+.uc-item-top h3{ font-size:1rem; }
+.uc-item-rating{ color:var(--accent); font-size:.9rem; letter-spacing:1px; white-space:nowrap; }
+.uc-item p{ color:var(--text-muted); font-size:.88rem; margin-top:8px; white-space:pre-wrap; }
+.uc-item-foot{
+  display:flex; justify-content:space-between; align-items:center; margin-top:12px;
+  font-family:var(--font-mono); font-size:.72rem; color:var(--text-faint);
+}
+
+/* ---------- Sertifikat / Learning Passport box (Dashboard) ---------- */
+.cert-box{
+  max-width:520px; padding:22px; background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius);
+}
+.cert-box input[type="text"]{
+  width:100%; padding:12px 14px; background:var(--surface-2); border:1px solid var(--border);
+  border-radius:var(--radius-sm); color:var(--text); font-family:var(--font-body); font-size:.9rem;
+}
+.cert-box input[type="text"]:focus{ outline:none; border-color:var(--accent-2-dim); }

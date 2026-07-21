@@ -45,6 +45,9 @@ CHECKS = {
         'class="node-actions"',
         'class="node-notes-area"',
         'node-prompt-link',
+        'data-node-quiz-toggle',
+        'data-node-quiz-panel',
+        'id="node-quiz-data"',
     ],
     "/courses": [
         'class="fav-btn"',
@@ -107,6 +110,17 @@ CHECKS = {
         'id="dash-roadmap-pct"',
         'id="dash-badges"',
         'id="dash-reset"',
+        'id="cert-download"',
+        'id="cert-name"',
+        'id="dash-node-quiz"',
+        'id="dash-understanding"',
+    ],
+    "/cek-pemahaman": [
+        'id="uc-topic"',
+        'id="uc-note"',
+        'id="uc-rating-btns"',
+        'id="uc-save"',
+        'id="uc-list"',
     ],
 }
 
@@ -144,6 +158,9 @@ STATIC_FILES = [
     "/static/js/export.js",
     "/static/js/badges.js",
     "/static/js/dashboard.js",
+    "/static/js/node-quiz.js",
+    "/static/js/understanding-check.js",
+    "/static/js/certificate.js",
 ]
 
 # Jumlah minimum item yang wajib ada — kalau berkurang berarti ada

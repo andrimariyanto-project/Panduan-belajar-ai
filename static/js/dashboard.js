@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextSubEl = document.getElementById('dash-next-sub');
   const badgeGrid = document.getElementById('badge-grid');
   const emptyWrap = document.getElementById('dash-empty-wrap');
+  const nodeQuizEl = document.getElementById('dash-node-quiz');
+  const nodeQuizSubEl = document.getElementById('dash-node-quiz-sub');
+  const understandingEl = document.getElementById('dash-understanding');
 
   const pct = Math.round((stats.doneCount / TOTAL_MODULES) * 100);
   if (pctEl) pctEl.textContent = `${pct}%`;
@@ -37,6 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
   if (cardsEl) cardsEl.textContent = stats.masteredCount;
   if (favEl) favEl.textContent = stats.favoritesCount;
   if (notesEl) notesEl.textContent = stats.notesCount;
+
+  if (nodeQuizEl) nodeQuizEl.textContent = `${stats.nodeQuizPassedCount} / ${stats.nodeQuizTotalNodes}`;
+  if (nodeQuizSubEl) {
+    nodeQuizSubEl.textContent =
+      stats.nodeQuizPassedCount >= stats.nodeQuizTotalNodes
+        ? 'semua node terverifikasi 🎉'
+        : 'coba di halaman Roadmap';
+  }
+  if (understandingEl) understandingEl.textContent = stats.understandingChecksCount;
 
   const badges = getBadgeStatus();
   const unlockedCount = badges.filter((b) => b.unlocked).length;
@@ -78,6 +90,30 @@ document.addEventListener('DOMContentLoaded', () => {
     stats.doneCount > 0 || stats.quizHistory.length > 0 || stats.masteredCount > 0 || stats.favoritesCount > 0;
   if (emptyWrap) emptyWrap.hidden = hasAnyActivity;
 
+  // ---- Unduh Sertifikat / Learning Passport (PDF) ----
+  const certNameEl = document.getElementById('cert-name');
+  const certBtn = document.getElementById('cert-download');
+  const certHint = document.getElementById('cert-hint');
+  if (certBtn && window.AndreCertificate) {
+    certBtn.addEventListener('click', () => {
+      certBtn.disabled = true;
+      const original = certBtn.textContent;
+      certBtn.textContent = 'Menyusun PDF...';
+      window.AndreCertificate.generateCertificate(certNameEl ? certNameEl.value.trim() : '', stats, badges, TOTAL_MODULES)
+        .then(() => {
+          if (window.andreToast) window.andreToast('Sertifikat berhasil diunduh', 'success');
+        })
+        .catch((err) => {
+          if (certHint) certHint.textContent = err.message || 'Gagal membuat PDF, coba lagi.';
+          if (window.andreToast) window.andreToast(err.message || 'Gagal membuat PDF', 'error');
+        })
+        .finally(() => {
+          certBtn.disabled = false;
+          certBtn.textContent = original;
+        });
+    });
+  }
+
   const resetBtn = document.getElementById('dash-reset');
   if (resetBtn) {
     resetBtn.addEventListener('click', () => {
@@ -87,9 +123,12 @@ document.addEventListener('DOMContentLoaded', () => {
         'andre_roadmap_notes_v1',
         'andre_skillcheck_history_v1',
         'andre_glossary_mastered_v1',
+        'andre_glossary_leitner_v1',
         'andre_favorites_v1',
+        'andre_node_quiz_v1',
+        'andre_understanding_checks_v1',
       ];
-      if (!window.confirm('Yakin reset SEMUA data lokal (roadmap, streak, catatan, skill check, kamus, favorit)? Aksi ini tidak bisa dibatalkan.')) return;
+      if (!window.confirm('Yakin reset SEMUA data lokal (roadmap, streak, catatan, skill check, kamus, favorit, cek pemahaman)? Aksi ini tidak bisa dibatalkan.')) return;
       keys.forEach((k) => localStorage.removeItem(k));
       if (window.andreToast) window.andreToast('Semua data lokal direset', 'info');
       setTimeout(() => window.location.reload(), 600);

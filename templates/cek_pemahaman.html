@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Cek Pemahaman — andremedia.ai{% endblock %}
+{% block content %}
+<section class="section" style="border-top:1px solid var(--border-soft)">
+  <div class="container">
+    <span class="eyebrow">&gt; ./cek_pemahaman --feynman</span>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">Cek Pemahaman</h1>
+    <p class="lead" style="max-width:680px">Pakai <strong>teknik Feynman</strong>: kalau kamu bisa menjelaskan sebuah konsep AI dengan bahasamu sendiri — seolah-olah ke rekan kerja yang belum tahu sama sekali — berarti kamu benar-benar paham, bukan cuma merasa paham. Kalau macet di tengah jalan, itu tandanya bagian itu yang perlu ditinjau ulang.</p>
+
+    <div class="uc-form">
+      <label class="uc-label" for="uc-topic">Topik/konsep yang mau kamu jelaskan</label>
+      <input id="uc-topic" type="text" placeholder="mis. RAG, context window, chain-of-thought, prompt injection...">
+
+      <label class="uc-label" for="uc-note">Jelaskan dengan bahasamu sendiri</label>
+      <textarea id="uc-note" rows="6" placeholder="Tulis seolah-olah menjelaskan ke rekan kerja yang belum tahu AI sama sekali. Kalau kamu kesulitan menemukan kata-kata sederhana, itu sinyal bagian itu belum benar-benar dikuasai."></textarea>
+
+      <div class="uc-rating">
+        <span class="uc-label" style="margin:0">Seberapa yakin kamu dengan penjelasan ini?</span>
+        <div class="uc-rating-btns" id="uc-rating-btns">
+          <button type="button" data-r="1">1 · ragu-ragu</button>
+          <button type="button" data-r="2">2</button>
+          <button type="button" data-r="3">3 · cukup</button>
+          <button type="button" data-r="4">4</button>
+          <button type="button" data-r="5">5 · sangat yakin</button>
+        </div>
+      </div>
+
+      <div class="uc-form-actions">
+        <button type="button" class="btn btn-primary" id="uc-save" disabled>Simpan sebagai Terverifikasi</button>
+        <a href="{{ url_for('prompts') }}?cat=belajar&q=apa_itu" class="btn btn-outline">Pakai prompt tutor AI dulu</a>
+      </div>
+      <p class="uc-hint">Tips: kalau masih ragu, buka <a href="{{ url_for('prompts') }}?cat=belajar">kategori 🎓 Pembelajaran</a> di Prompt Library, minta AI menguji pemahamanmu, baru kembali ke sini untuk mencatatnya.</p>
+    </div>
+
+    <div class="dash-section">
+      <h2>Riwayat Konsep Terverifikasi</h2>
+      <p class="ref-desc" style="margin-top:-8px" id="uc-summary">Belum ada konsep yang disimpan.</p>
+      <div id="uc-list" class="uc-list"></div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/understanding-check.js') }}"></script>
+{% endblock %}

@@ -13,6 +13,7 @@ window.ANDRE_SEARCH_INDEX = [
   { type: 'page', title: 'Monetize', desc: 'Jalur monetisasi skill AI', url: '/monetize' },
   { type: 'page', title: 'Kamus AI', desc: 'Istilah AI dijelaskan singkat', url: '/glossary' },
   { type: 'page', title: 'Skill Check', desc: 'Kuis 8 soal untuk cek level AI kamu', url: '/skill-check' },
+  { type: 'page', title: 'Cek Pemahaman', desc: 'Teknik Feynman — jelaskan konsep AI dengan bahasamu sendiri', url: '/cek-pemahaman' },
   { type: 'page', title: 'Tersimpan', desc: 'Tools & prompt yang kamu favoritkan', url: '/tersimpan' },
   { type: 'page', title: 'Referensi', desc: 'Kurasi sumber belajar AI resmi & jalur kilat 30-60-90 hari', url: '/referensi' },
   { type: 'page', title: 'Dashboard', desc: 'Ringkasan progres belajar & badge pencapaian', url: '/dashboard' },

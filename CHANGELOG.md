@@ -10,6 +10,45 @@ MINOR untuk fitur baru, PATCH untuk perbaikan kecil/typo.
 
 ## [Unreleased]
 
+## [2.1.0] — 2026-07-21
+### Ditambahkan — "Validasi Pemahaman, Bukan Cuma Checklist"
+Tiga fitur pedagogis baru yang saling terhubung, menutup celah terbesar dari v2.0.0:
+belajar pasif tanpa validasi nyata.
+
+- **Micro-quiz "Cek Pemahaman" per node roadmap** — tiap node roadmap (node_00–node_04)
+  sekarang punya tombol **🧪 Cek Pemahaman** dengan 3 soal pilihan ganda (15 soal total),
+  dirender inline tanpa reload halaman (`static/js/node-quiz.js`, data soal di
+  `templates/roadmap.html`). Hasil (skor & status lolos, ambang 66%) tersimpan di
+  `localStorage` (`andre_node_quiz_v1`) dan tombolnya menampilkan status terakhir
+  (mis. "🧪 Cek Pemahaman ✓ 3/3"). Ini menerapkan *active recall* — soal singkat jauh
+  lebih efektif memverifikasi pemahaman dibanding sekadar mencentang checklist manual.
+- **Halaman baru `/cek-pemahaman`** — penerapan teknik Feynman: pengguna menulis
+  penjelasan konsep AI dengan bahasanya sendiri, menilai keyakinannya sendiri (1-5),
+  lalu menyimpannya sebagai "konsep terverifikasi" (`static/js/understanding-check.js`,
+  tersimpan di `andre_understanding_checks_v1`). Riwayat konsep yang sudah dijelaskan
+  ditampilkan di halaman yang sama, bisa dihapus satu per satu. Terhubung ke Prompt
+  Library kategori 🎓 Pembelajaran untuk pengguna yang masih ragu sebelum mencatat.
+- **Sertifikat / Learning Passport (PDF)** di halaman `/dashboard` — tombol "Unduh
+  Sertifikat PDF" yang merangkum progress roadmap, streak, hasil Cek Pemahaman node,
+  jumlah konsep Feynman terverifikasi, hasil Skill Check terakhir, istilah Kamus AI
+  dikuasai, dan badge terbuka jadi satu dokumen PDF landscape rapi (`static/js/certificate.js`,
+  memakai jsPDF dengan pola loading sama seperti export favorit yang sudah ada). Judul
+  otomatis berubah jadi "SERTIFIKAT PENYELESAIAN ROADMAP" begitu progress mencapai 100%.
+- **2 badge pencapaian baru** (total naik dari 12 ke 14): **🧪 Pemahaman Terverifikasi**
+  (lolos Cek Pemahaman di seluruh 5 node) dan **💡 Feynman Explainer** (≥5 konsep
+  dijelaskan sendiri). `static/js/badges.js` diperluas untuk membaca hasil node quiz dan
+  riwayat Cek Pemahaman tanpa mengubah struktur badge lama.
+- Dashboard menampilkan 2 statistik baru: **Cek Pemahaman Node** (X/5 node lolos) dan
+  **Konsep Terverifikasi** (jumlah catatan Feynman tersimpan); tombol reset data lokal
+  diperluas untuk turut membersihkan `andre_node_quiz_v1`, `andre_understanding_checks_v1`,
+  dan `andre_glossary_leitner_v1`.
+- Navigasi & footer menambahkan link **Cek Pemahaman**; `search-data.js` mengindeks
+  halaman baru ini ke command palette.
+- Penanda smoke test baru untuk `/roadmap` (soal Cek Pemahaman), `/dashboard` (elemen
+  sertifikat & statistik baru), dan route baru `/cek-pemahaman`; tiga file JS baru
+  (`node-quiz.js`, `understanding-check.js`, `certificate.js`) ditambahkan ke daftar
+  static file wajib. Total pengecekan smoke test naik dari 196 ke 219.
+
 ## [2.0.0] — 2026-07-21
 ### Ditambahkan — "Update Final: Jalan Pintas Belajar AI Mendalam"
 - **Prompt Library diperluas dari 100 menjadi 200 prompt**: 100 prompt baru di kategori
